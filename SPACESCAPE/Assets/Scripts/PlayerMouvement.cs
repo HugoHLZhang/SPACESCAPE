@@ -8,6 +8,11 @@ public class PlayerMouvement : MonoBehaviour
 
 
     public float speed = 12f;
+
+    private float walkSpeed = 5f;
+    private float runSpeed = 10f;
+    
+
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
@@ -39,6 +44,21 @@ public class PlayerMouvement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
 
         Vector3 move = transform.right * x + transform.forward * z;
+
+        if (move != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = walkSpeed;
+
+        }
+        else if (move != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = runSpeed;
+        }
+        else if (move == Vector3.zero)
+        {
+            speed = 0;
+        }
+
 
         controller.Move(move * speed * Time.deltaTime);
 
