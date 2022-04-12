@@ -262,7 +262,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23264
+  m_Name: pb_Mesh17686
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7801,8 +7801,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1773222018}
   animator: {fileID: 0}
-  speed: 1
-  runspeed: 6
+  walkSpeed: 6
+  runSpeed: 20
+  runBuildUpSpeed: 4
   gravity: -9.81
   jumpHeight: 3
   groundCheck: {fileID: 2094063468}

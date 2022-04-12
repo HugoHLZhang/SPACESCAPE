@@ -7,17 +7,23 @@ public class PlayerMouvement : MonoBehaviour
     public CharacterController controller;
 
     public Animator animator;
-
-    public float speed = 1f;
-    public float runspeed = 6f;
+    public float walkSpeed;
+    public float runSpeed;
+    public float runBuildUpSpeed;
+    private float movementSpeed;
+    private bool isHitting;
+    public float isHittingValue;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
+    public float time;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
     Vector3 velocity;
+   
+    
     bool isGrounded;
     float animVelocity;
 
@@ -28,11 +34,15 @@ public class PlayerMouvement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        time = 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -43,25 +53,36 @@ public class PlayerMouvement : MonoBehaviour
 
         float z = Input.GetAxis("Vertical");
         float x = Input.GetAxis("Horizontal");
+        time += 0.03f;
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        isHittingValue = -3 * Mathf.Sin(0.5f * (time - 2)) + 1;
 
-        controller.Move(move * 4 * speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded)
-        {
-            speed = runspeed;
-        }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            speed = 1f;
-        }
+        Debug.Log(isHittingValue);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
         }
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * movementSpeed * Time.deltaTime);
+
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            isHitting = true;
+            animator.SetBool("isHitting", isHitting);
+        }
+
+        else
+        {
+            isHitting = false;
+            animator.SetBool("isHitting", isHitting);
+        }
+
+
+
 
         velocity.y += gravity * Time.deltaTime;
 
@@ -77,8 +98,23 @@ public class PlayerMouvement : MonoBehaviour
             animator.SetBool("isGrounded", false);
         }
 
-        speed = Mathf.SmoothDamp(animator.GetFloat("Speed"), speed, ref animVelocity, 0f);
-        animator.SetFloat("Speed", speed);
+        animator.SetFloat("MovementSpeed", movementSpeed);
+        animator.SetFloat("isHittingValue", isHittingValue);
+
+        SetMovementSpeed();
+        
+    }
+    public void SetMovementSpeed()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+        }
+        else
+        {
+            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+        }
     }
 
 }
+
