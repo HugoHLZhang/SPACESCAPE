@@ -15,7 +15,7 @@ public class PlayerMouvement : MonoBehaviour
     public float isHittingValue;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
-    public float time;
+    public float SceneStartTime;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -34,7 +34,7 @@ public class PlayerMouvement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        time = 0.1f;
+        SceneStartTime = 0.1f;
     }
 
     // Update is called once per frame
@@ -53,11 +53,11 @@ public class PlayerMouvement : MonoBehaviour
 
         float z = Input.GetAxis("Vertical");
         float x = Input.GetAxis("Horizontal");
-        time += 0.03f;
+        SceneStartTime += 0.03f;
 
-        isHittingValue = -3 * Mathf.Sin(0.5f * (time - 2)) + 1;
+        isHittingValue = -3 * Mathf.Sin(0.5f * (SceneStartTime - 2)) + 1;
 
-        Debug.Log(isHittingValue);
+        Debug.Log(Time.time);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
