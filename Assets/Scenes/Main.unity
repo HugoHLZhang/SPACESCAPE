@@ -1421,7 +1421,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16650
+  m_Name: pb_Mesh16648
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7862,6 +7862,7 @@ GameObject:
   - component: {fileID: 1827037474}
   - component: {fileID: 1827037473}
   - component: {fileID: 1827037477}
+  - component: {fileID: 1827037478}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7954,6 +7955,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isCharacterGrounded: 0
+--- !u!114 &1827037478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827037472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6500c5307c269ec42b3b2ed61159d599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1891886312
 GameObject:
   m_ObjectHideFlags: 0
@@ -8023,7 +8036,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16612
+  m_Name: pb_Mesh16606
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
