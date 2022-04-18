@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: gun
   m_EditorClassIdentifier: 
   name: Gun
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 33cd3ada9c5c9914a98f17c70fd7e60a, type: 3}
   description: Gun
   prefab: {fileID: 8175341977376106364, guid: fd23a27831f38dc438f90fd8c34ec6c0, type: 3}
   range: 100
   itemType: 1
+  itemOrder: 2

@@ -9,8 +9,10 @@ public class Items : Item
     public GameObject prefab;
     public float range;
     public ItemType itemType;
+    public ItemOrder itemOrder;
 }
 
 
 public enum ItemType { Hands, Gun, Saber}
 
+public enum ItemOrder { Hands, Primary, Secondary}
