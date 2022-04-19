@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
+    private int currentlyEquipedItem = 0;
+    private GameObject currentItemObject = null;
+
     [SerializeField] private Transform ItemHolderR = null;
     private Animator anim;
     private Inventory inventory;
+
+    [SerializeField] Items defaultItem = null;
 
     private void Start()
     {
@@ -17,42 +22,36 @@ public class EquipmentManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquipedItem != 0)
         {
-            anim.SetInteger("itemType",(int)ItemType.Hands);
+            anim.SetTrigger("unequipItem");
+            Destroy(currentItemObject);
+            anim.SetInteger("itemType", 0);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1)
         {
-            SetItemAnimations(1, ItemType.Saber);
-            EquipItem(inventory.GetItem(1).prefab,1);
-            anim.SetFloat("Motion",0f);
+            UnequipItem();
+            EquipItem(inventory.GetItem(1));
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2)
         {
-            SetItemAnimations(2, ItemType.Gun);
-            EquipItem(inventory.GetItem(2).prefab,2);
-        }
-    }
-
-    private void SetItemAnimations(int itemOrder, ItemType itemType)
-    {
-        Items item = inventory.GetItem(itemOrder);
-        if(item != null)
-        {
-            if (item.itemType == itemType)
-            {
-                anim.SetInteger("itemType", (int)itemType);
-            }
+            UnequipItem();
+            EquipItem(inventory.GetItem(2));
         }
     }
 
-    private void EquipItem(GameObject itemObject, int itemOrder)
+    private void EquipItem(Items item)
     {
-        Items item = inventory.GetItem(itemOrder);
-        if (item != null)
-        {
-            Instantiate(itemObject, ItemHolderR);
-        }
+        currentlyEquipedItem = (int)item.itemOrder;
+        anim.SetInteger("itemType", (int)item.itemType);
+        currentItemObject = Instantiate(item.prefab, ItemHolderR);
+
+    }
+
+    private void UnequipItem()
+    {
+        anim.SetTrigger("unequipItem");
+        Destroy(currentItemObject);
     }
     private void GetReference()
     {
