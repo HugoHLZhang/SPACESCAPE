@@ -17,5 +17,5 @@ MonoBehaviour:
   description: Gun
   prefab: {fileID: 8175341977376106364, guid: fd23a27831f38dc438f90fd8c34ec6c0, type: 3}
   range: 100
-  itemType: 1
+  itemType: 2
   itemOrder: 2

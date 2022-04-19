@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Item : ScriptableObject
 {
-    public new string name;
+    public string nom;
     public Sprite icon;
     public string description;
 
     public virtual void Use()
     {
-        Debug.Log(name + "was used");
+        Debug.Log(nom + "was used");
     }
 }

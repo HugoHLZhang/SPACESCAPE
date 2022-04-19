@@ -13,6 +13,6 @@ public class Items : Item
 }
 
 
-public enum ItemType { Hands, Gun, Saber}
+public enum ItemType { Hands, Saber, Gun}
 
 public enum ItemOrder { Hands, Primary, Secondary}
