@@ -5,12 +5,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Items[] inventory;
-
-    [SerializeField] PlayerHUD hud;
+    [SerializeField] private Items hands;
+    
 
     public void Start()
     {
-        GetReference();
         InitVariables();
     }
 
@@ -24,8 +23,6 @@ public class Inventory : MonoBehaviour
         }
         inventory[newItemIndex] = newItem;
 
-        //Update itemUI
-        hud.UpdateItemUI(newItem);
     }
 
     public void RemoveItem(int index)
@@ -41,10 +38,7 @@ public class Inventory : MonoBehaviour
     private void InitVariables()
     {
         inventory = new Items[3];
+        inventory[0] = hands;
     }
 
-    private void GetReference()
-    {
-        hud = GetComponent<PlayerHUD>();
-    }
 }

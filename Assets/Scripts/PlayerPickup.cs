@@ -24,12 +24,12 @@ public class PlayerPickup : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit, pickupRange, pickupLayer))
             {
-                Debug.Log("Hit: " + hit.transform.name);
+                
                 Items newItem = hit.transform.GetComponent<ItemObject>().item as Items;
                 inventory.AddItem(newItem);
+                Debug.Log("Well played ! You have added " + newItem.nom + " to your inventory !");
                 Destroy(hit.transform.gameObject);
             }
-            
         }
     }
 
