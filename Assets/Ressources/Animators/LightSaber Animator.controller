@@ -10,8 +10,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 4574637283540416942}
-    m_Position: {x: 401.85184, y: 112.19236, z: 0}
+    m_State: {fileID: 5468635915685343090}
+    m_Position: {x: 330, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -21,7 +21,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 4574637283540416942}
+  m_DefaultState: {fileID: 5468635915685343090}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -31,13 +31,13 @@ AnimatorController:
   m_Name: LightSaber Animator
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: unequip
+  - m_Name: expand
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: equipe
+  - m_Name: collapse
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -56,7 +56,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &4574637283540416942
+--- !u!1102 &5468635915685343090
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1

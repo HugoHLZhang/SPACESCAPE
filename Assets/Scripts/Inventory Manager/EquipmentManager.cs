@@ -16,6 +16,7 @@ public class EquipmentManager : MonoBehaviour
     private void Start()
     {
         GetReference();
+        InitVariables();
     }
 
    
@@ -78,6 +79,11 @@ public class EquipmentManager : MonoBehaviour
         inventory = GetComponent<Inventory>();
         hud = GetComponent<PlayerHUD>();
         
+    }
+
+    private void InitVariables()
+    {
+        inventory.AddItem(defaultItem);
     }
 
 }

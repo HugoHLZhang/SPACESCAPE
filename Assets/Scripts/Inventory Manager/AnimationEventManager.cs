@@ -7,6 +7,7 @@ public class AnimationEventManager : MonoBehaviour
 
     private EquipmentManager manager;
     private Inventory inventory;
+    
 
     private void Start()
     {

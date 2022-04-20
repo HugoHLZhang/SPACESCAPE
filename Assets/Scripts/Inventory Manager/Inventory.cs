@@ -5,7 +5,6 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Items[] inventory;
-    [SerializeField] private Items hands;
     
 
     public void Start()
@@ -38,7 +37,6 @@ public class Inventory : MonoBehaviour
     private void InitVariables()
     {
         inventory = new Items[3];
-        inventory[0] = hands;
     }
 
 }
