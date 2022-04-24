@@ -288,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7591433214578768960}
   - component: {fileID: 4592014231203505722}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: lightsaber
   m_TagString: Untagged
   m_Icon: {fileID: 0}

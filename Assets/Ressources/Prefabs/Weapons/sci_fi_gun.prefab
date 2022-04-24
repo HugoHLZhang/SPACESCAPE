@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7991425037884502585}
   - component: {fileID: 4037215862354700355}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: sci_fi_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

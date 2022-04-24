@@ -10,6 +10,7 @@ public class EquipmentManager : MonoBehaviour
     [SerializeField] public Transform ItemHolderR = null;
     private Animator anim;
     private Inventory inventory;
+    private int LayerArms;
 
     [SerializeField] Items defaultItem = null;
     [SerializeField] PlayerHUD hud;
@@ -17,6 +18,8 @@ public class EquipmentManager : MonoBehaviour
     {
         GetReference();
         InitVariables();
+
+        LayerArms = LayerMask.NameToLayer("Arms");
     }
 
    
@@ -24,6 +27,7 @@ public class EquipmentManager : MonoBehaviour
     private void Update()
     {
 
+        //currentItemObject.layer = LayerArms ;
         if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquipedItem != 0 && inventory.GetItem(0) != null)
         {
             UnequipItem();
@@ -45,6 +49,7 @@ public class EquipmentManager : MonoBehaviour
             }
             UnequipItem();
             EquipItem(inventory.GetItem(1));
+            inventory.GetItem(1).prefab.layer = LayerArms;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2) 
         {
@@ -55,6 +60,8 @@ public class EquipmentManager : MonoBehaviour
             }
             UnequipItem();
             EquipItem(inventory.GetItem(2));
+            //inventory.GetItem(2).prefab.layer = LayerArms;
+
         }
         
         
