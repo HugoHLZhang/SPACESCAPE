@@ -11,9 +11,11 @@ public class EquipmentManager : MonoBehaviour
     private Animator anim;
     private Inventory inventory;
     private int LayerArms;
+    [SerializeField] private Animator saber = null;
 
     [SerializeField] Items defaultItem = null;
     [SerializeField] PlayerHUD hud;
+
     private void Start()
     {
         GetReference();
@@ -33,10 +35,6 @@ public class EquipmentManager : MonoBehaviour
             UnequipItem();
             currentlyEquipedItem = 0;
             anim.SetInteger("itemType", 0);
-            if (currentItemObject != null)
-            {
-                Destroy(currentItemObject);
-            }
             //Update itemUI
             hud.UpdateItemUI(inventory.GetItem(0));
         }
@@ -47,7 +45,9 @@ public class EquipmentManager : MonoBehaviour
                 Debug.Log("No item here ! Try to find it !");
                 return;
             }
+
             UnequipItem();
+            
             EquipItem(inventory.GetItem(1));
             inventory.GetItem(1).prefab.layer = LayerArms;
         }
@@ -85,12 +85,12 @@ public class EquipmentManager : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         inventory = GetComponent<Inventory>();
         hud = GetComponent<PlayerHUD>();
-        
     }
 
     private void InitVariables()
     {
         inventory.AddItem(defaultItem);
+        
     }
 
 }

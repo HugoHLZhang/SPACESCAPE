@@ -19,7 +19,7 @@ public class AnimationEventManager : MonoBehaviour
         Destroy(manager.currentItemObject);
     }
 
-    private void InstantiateItem()
+    public void InstantiateItem()
     {
         manager.currentItemObject =  Instantiate(inventory.GetItem(manager.currentlyEquipedItem).prefab, manager.ItemHolderR);
     }
