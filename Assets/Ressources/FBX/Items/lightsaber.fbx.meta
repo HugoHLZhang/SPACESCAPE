@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Ressources/FBX/Items/lightsaber.fbx.meta
 guid: b4a9bbac103b883459e3435c7ed39b2a
+========
+guid: 6b6261be3fad30149bdfd421736dea2c
+>>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Blender/untitled.blend.meta
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,13 +11,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+<<<<<<<< HEAD:Assets/Ressources/FBX/Items/lightsaber.fbx.meta
       name: saber
     second: {fileID: 2100000, guid: 9e0e2856eb9767d408437b06d2053976, type: 2}
+========
+      name: Laser Sabre
+    second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manche sabre_
+    second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: manche sabre
+    second: {instanceID: 0}
+>>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Blender/untitled.blend.meta
   materials:
     materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -39,7 +58,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.05
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -90,7 +109,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.05
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1

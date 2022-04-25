@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/PlayerSkin/Player Arms Color Palette.png.meta
 guid: df34f4795ee1da04f8b8c34dde3ebd4e
+========
+guid: 5579dd9531c04c341835650e92111416
+>>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Textures/puzzle.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

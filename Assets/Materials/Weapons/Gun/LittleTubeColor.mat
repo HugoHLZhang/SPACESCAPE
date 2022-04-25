@@ -7,9 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Materials/Weapons/Gun/LittleTubeColor.mat
   m_Name: LittleTubeColor
+========
+  m_Name: manche sabre
+>>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Blender/Materials/manche sabre.mat
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,7 +24,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
+<<<<<<<< HEAD:Assets/Materials/Weapons/Gun/LittleTubeColor.mat
         m_Texture: {fileID: 2800000, guid: 15e04af4e5d5c1340839e17902cfae4c, type: 3}
+========
+        m_Texture: {fileID: 0}
+>>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Blender/Materials/manche sabre.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,7 +48,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+<<<<<<<< HEAD:Assets/Materials/Weapons/Gun/LittleTubeColor.mat
         m_Texture: {fileID: 2800000, guid: 7ebfa112ad594904ba549b3b173cc3da, type: 3}
+========
+        m_Texture: {fileID: 0}
+>>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Blender/Materials/manche sabre.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -73,6 +85,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.1473221, g: 0.15232576, b: 0.14509022, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
