@@ -9,7 +9,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float jumpForce;
+
+    
     private bool isFire;
+    [SerializeField] private float damage = 10f;
+    [SerializeField] private float range = 100f;
+    //public GameObject player;
+    public EquipmentManager inventory;
+    public Camera fpscam;
+    public ParticleSystem fireEffect;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
 
@@ -37,6 +45,7 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleAnimations();
         HandleIsFiring();
+        Fire();
     }
 
     private void HandleMovement()
@@ -55,6 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Mouse0))
         {
+            
             isFire = true;
             
         }
@@ -65,8 +75,35 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isFiring", isFire);
     }
-    
-    private void HandleRunning()
+
+    private void Fire()
+    {
+        if(isFire && anim.GetBool("isFiring") == true)
+        {
+            Shoot();
+        }
+    }
+    private void Shoot()
+    {
+        fireEffect.Play();
+        if (GameObject.Find("Player").GetComponent<EquipmentManager>().GunEquiped == true)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+            {
+                Debug.Log(hit.transform.name);
+
+                Target target = hit.transform.GetComponent<Target>();
+
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
+            }
+        }
+    }
+
+        private void HandleRunning()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
