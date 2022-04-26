@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float jumpForce;
+    private bool isFire;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
 
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         HandleRunning();
         HandleMovement();
         HandleAnimations();
+        HandleIsFiring();
     }
 
     private void HandleMovement()
@@ -49,6 +51,21 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
     }
 
+    private void HandleIsFiring()
+    {
+        if(Input.GetKey(KeyCode.Mouse0))
+        {
+            isFire = true;
+            
+        }
+        else
+        {
+            isFire = false;
+        }
+
+        anim.SetBool("isFiring", isFire);
+    }
+    
     private void HandleRunning()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
