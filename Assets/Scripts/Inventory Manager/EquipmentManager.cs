@@ -6,7 +6,7 @@ public class EquipmentManager : MonoBehaviour
 {
     public int currentlyEquipedItem = 0;
     public GameObject currentItemObject = null;
-
+    public bool GunEquiped;
     [SerializeField] public Transform ItemHolderR = null;
     private Animator anim;
     private Inventory inventory;
@@ -37,6 +37,7 @@ public class EquipmentManager : MonoBehaviour
             anim.SetInteger("itemType", 0);
             //Update itemUI
             hud.UpdateItemUI(inventory.GetItem(0));
+            GunEquiped = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1)
         {
@@ -49,6 +50,7 @@ public class EquipmentManager : MonoBehaviour
             UnequipItem();
             
             EquipItem(inventory.GetItem(1));
+            GunEquiped = false;
             inventory.GetItem(1).prefab.layer = LayerArms;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2) 
@@ -60,6 +62,7 @@ public class EquipmentManager : MonoBehaviour
             }
             UnequipItem();
             EquipItem(inventory.GetItem(2));
+            GunEquiped = true;
             //inventory.GetItem(2).prefab.layer = LayerArms;
 
         }
@@ -92,5 +95,7 @@ public class EquipmentManager : MonoBehaviour
         inventory.AddItem(defaultItem);
         
     }
+
+    
 
 }
