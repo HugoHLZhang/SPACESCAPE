@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject player;
     public EquipmentManager inventory;
     public Camera fpscam;
-    public ParticleSystem fireEffect;
+    //public ParticleSystem fireEffect;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
 
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Shoot()
     {
-        fireEffect.Play();
+        //fireEffect.Play();
         if (GameObject.Find("Player").GetComponent<EquipmentManager>().GunEquiped == true)
         {
             RaycastHit hit;
