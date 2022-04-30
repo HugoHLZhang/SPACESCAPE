@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject player;
     public EquipmentManager inventory;
     public Camera fpscam;
-    public ParticleSystem fireEffect;
+    //public ParticleSystem fireEffect;
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
 
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private bool isCharacterGrounded = false;
+    private  ParticleSystem particleSystem;
     private Vector3 velocity = Vector3.zero;
 
     private Animator anim;
@@ -85,7 +86,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Shoot()
     {
-        fireEffect.Play();
+        //fireEffect.Play();
         if (GameObject.Find("Player").GetComponent<EquipmentManager>().GunEquiped == true)
         {
             RaycastHit hit;
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+        particleSystem = GetComponent<ParticleSystem>();
     }
 
     private void InitVariables()
