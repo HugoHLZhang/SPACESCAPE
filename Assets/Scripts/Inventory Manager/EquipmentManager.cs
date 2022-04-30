@@ -7,11 +7,12 @@ public class EquipmentManager : MonoBehaviour
     public int currentlyEquipedItem = 0;
     public GameObject currentItemObject = null;
     public bool GunEquiped;
+    public bool SaberEquiped;
     [SerializeField] public Transform ItemHolderR = null;
     private Animator anim;
     private Inventory inventory;
     private int LayerArms;
-    [SerializeField] private Animator saber = null;
+    [SerializeField] private GameObject saber;
 
     [SerializeField] Items defaultItem = null;
     [SerializeField] PlayerHUD hud;
@@ -38,6 +39,7 @@ public class EquipmentManager : MonoBehaviour
             //Update itemUI
             hud.UpdateItemUI(inventory.GetItem(0));
             GunEquiped = false;
+            SaberEquiped = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1)
         {
@@ -46,11 +48,11 @@ public class EquipmentManager : MonoBehaviour
                 Debug.Log("No item here ! Try to find it !");
                 return;
             }
-
             UnequipItem();
             
             EquipItem(inventory.GetItem(1));
             GunEquiped = false;
+            SaberEquiped = true;
             inventory.GetItem(1).prefab.layer = LayerArms;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2) 
@@ -63,6 +65,7 @@ public class EquipmentManager : MonoBehaviour
             UnequipItem();
             EquipItem(inventory.GetItem(2));
             GunEquiped = true;
+            SaberEquiped = false;
             //inventory.GetItem(2).prefab.layer = LayerArms;
 
         }

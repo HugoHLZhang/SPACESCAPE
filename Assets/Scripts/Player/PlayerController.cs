@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     
     private bool isFire;
+    private bool isSlash;
     [SerializeField] private float damage = 10f;
     [SerializeField] private float range = 100f;
     //public GameObject player;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour
         HandleAnimations();
         HandleIsFiring();
         Fire();
+        HandleSaberAttack();
+        Slash();
     }
 
     private void HandleMovement()
@@ -61,6 +64,46 @@ public class PlayerController : MonoBehaviour
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
     }
 
+    private void HandleSaberAttack()
+    {
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+
+            isSlash = true;
+
+        }
+        else
+        {
+            isSlash = false;
+        }
+
+        anim.SetBool("isSlashing", isSlash);
+    }
+    private void Slash()
+    {
+        if (GameObject.Find("Player").GetComponent<EquipmentManager>().SaberEquiped == true)
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+            {
+                Debug.Log(hit.transform.name);
+
+                Target target = hit.transform.GetComponent<Target>();
+
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
+            }
+        }
+    }
+    private void Cut()
+    {
+        if (isSlash && anim.GetBool("isSlashing") == true)
+        {
+            Slash();
+        }
+    }
     private void HandleIsFiring()
     {
         if(Input.GetKey(KeyCode.Mouse0))
