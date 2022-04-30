@@ -6,6 +6,7 @@ public class Doors : MonoBehaviour
 {
     [SerializeField] public Camera fpscam;
     [SerializeField] public float range = 5f;
+    [SerializeField] private GameObject door;
     public Animator anim;
     public static bool isOpen = false;
 
@@ -34,8 +35,8 @@ public class Doors : MonoBehaviour
         {
             if (hit.transform.name == "Trigger")
             {
-                anim.SetBool("isOpen", true);
-
+                anim.SetTrigger("open");
+                Destroy(door.GetComponent<BoxCollider>());
                 isOpen = true;
             }
 
@@ -49,8 +50,8 @@ public class Doors : MonoBehaviour
         {
             if (hit.transform.name == "Trigger")
             {
-                anim.SetBool("isOpen", false);
-
+                anim.SetTrigger("close");
+                door.AddComponent<BoxCollider>();
                 isOpen = false;
             }
 
