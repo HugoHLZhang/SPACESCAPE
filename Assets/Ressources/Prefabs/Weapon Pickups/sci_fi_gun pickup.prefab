@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4037215862354700355}
   - component: {fileID: -7253791759092862945}
   - component: {fileID: -6510296348204900343}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: sci_fi_gun pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
