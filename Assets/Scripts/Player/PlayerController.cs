@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private bool isCharacterGrounded = false;
+    private  ParticleSystem particleSystem;
     private Vector3 velocity = Vector3.zero;
 
     private Animator anim;
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+        particleSystem = GetComponent<ParticleSystem>();
     }
 
     private void InitVariables()
