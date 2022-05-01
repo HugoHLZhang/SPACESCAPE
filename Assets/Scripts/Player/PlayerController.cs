@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isSlash;
     [SerializeField] private float damage = 10f;
     [SerializeField] private float range = 100f;
+    [SerializeField] private float saberRange = 2f;
     //public GameObject player;
     public EquipmentManager inventory;
     public Camera fpscam;
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
         HandleIsFiring();
         Fire();
         HandleSaberAttack();
-        Slash();
+        Cut();
     }
 
     private void HandleMovement()
@@ -84,9 +85,9 @@ public class PlayerController : MonoBehaviour
         if (GameObject.Find("Player").GetComponent<EquipmentManager>().SaberEquiped == true)
         {
             RaycastHit hit;
-            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, saberRange))
             {
-                Debug.Log(hit.transform.name);
+                
 
                 Target target = hit.transform.GetComponent<Target>();
 
@@ -147,7 +148,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-        private void HandleRunning()
+    private void HandleRunning()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
