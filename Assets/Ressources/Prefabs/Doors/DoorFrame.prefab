@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7534308619757093703}
   - component: {fileID: 7534308619757093700}
   - component: {fileID: 7534308619757093701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,8 +674,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6012536492005457314, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
+--- !u!1 &4323437845693486188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6012536492005457314, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
+  m_PrefabInstance: {fileID: 7534308617999395278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7534308618020456472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -727,14 +736,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8300995608264430573, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8068073526183931155, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
       propertyPath: m_Name
       value: door
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727127885508284192, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5564110907535994185, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6f4666962fa96704fb797e52bd05c418, type: 2}
+    - target: {fileID: 7036213049465896255, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618080197961361904, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
 --- !u!1 &7227806900632106313 stripped
@@ -752,24 +789,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
   m_PrefabInstance: {fileID: 7534308618020456472}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8684994084707031797 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
-  m_PrefabInstance: {fileID: 7534308618020456472}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &7534308618505045415
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8684994084707031797}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.6223855, y: 3.2609887, z: 0.32217288}
-  m_Center: {x: -0.00006365776, y: 1.6350348, z: -0.00018950757}
 --- !u!114 &7534308619354887339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,5 +803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpscam: {fileID: 0}
   range: 10
-  door: {fileID: 8684994084707031797}
+  door: {fileID: 7534308619757093698}
+  trigger: {fileID: 4323437845693486188}
   anim: {fileID: 4171925815908808073}
+  isOpen: 0
