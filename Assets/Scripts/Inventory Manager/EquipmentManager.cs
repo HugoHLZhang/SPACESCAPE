@@ -12,7 +12,7 @@ public class EquipmentManager : MonoBehaviour
     private Animator anim;
     private Inventory inventory;
     private int LayerArms;
-    [SerializeField] private GameObject saber;
+    public Animator saberAnim;
 
     [SerializeField] Items defaultItem = null;
     [SerializeField] PlayerHUD hud;
@@ -49,7 +49,6 @@ public class EquipmentManager : MonoBehaviour
                 return;
             }
             UnequipItem();
-            
             EquipItem(inventory.GetItem(1));
             GunEquiped = false;
             SaberEquiped = true;

@@ -14,6 +14,7 @@ public class AnimationItemsEventManager : MonoBehaviour
         GetReference();
     }
 
+
     public void DestroyItem()
     {
         Destroy(manager.currentItemObject);
@@ -22,7 +23,23 @@ public class AnimationItemsEventManager : MonoBehaviour
     public void InstantiateItem()
     {
         manager.currentItemObject =  Instantiate(inventory.GetItem(manager.currentlyEquipedItem).prefab, manager.ItemHolderR);
+        if(manager.currentlyEquipedItem == 1)
+        {
+            manager.saberAnim = manager.currentItemObject.GetComponent<Animator>();
+        }
+
     }
+
+    public void ExpandSaber()
+    {
+        manager.saberAnim.SetTrigger("expand");
+    }
+
+    public void CollapseSaber()
+    {
+        manager.saberAnim.SetTrigger("collapse");
+    }
+
 
     private void GetReference()
     {
