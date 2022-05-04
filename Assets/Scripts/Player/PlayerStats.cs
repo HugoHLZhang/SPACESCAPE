@@ -16,7 +16,7 @@ public class PlayerStats : CharacterStats
     {
         if(nextBreath < Time.time)
         { 
-            LoseOxygen(1);
+            LoseOxygen(100);
             nextBreath += 5f;
         }
     }

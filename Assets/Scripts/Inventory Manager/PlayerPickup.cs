@@ -22,13 +22,14 @@ public class PlayerPickup : MonoBehaviour
         {
             Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
             RaycastHit hit;
+            Debug.Log("hello");
 
             if(Physics.Raycast(ray, out hit, pickupRange, pickupLayer))
             {
                 
                 Items newItem = hit.transform.GetComponent<ItemObject>().item as Items;
                 inventory.AddItem(newItem);
-                Debug.Log("Well played ! You have added " + newItem.nom + " to your inventory !");
+                hud.UpdateMessage("Well played ! You have added " + newItem.nom + " to your inventory !");
                 Destroy(hit.transform.gameObject);
                 hud.UpdateItemColor(newItem);
             }

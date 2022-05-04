@@ -12,6 +12,29 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private ItemUI saber;
     [SerializeField] private ItemUI gun;
 
+    [SerializeField] private MessageUI message;
+    [SerializeField] private float messageTiming = 0f;
+
+    private void Start()
+    {
+        message.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if(messageTiming < Time.time)
+        {
+            message.gameObject.SetActive(false);
+        }
+    }
+
+    public void UpdateMessage(string msg)
+    {
+        message.gameObject.SetActive(true);
+        message.UpdateMessage(msg);
+        messageTiming = Time.time + 3f;
+    }
+
     public void UpdateHealth(int currentHealth, int maxHealth)
     {
         healthBar.SetValues(currentHealth, maxHealth);
