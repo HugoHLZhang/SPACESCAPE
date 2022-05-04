@@ -13,6 +13,7 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private ItemUI gun;
 
     [SerializeField] private MessageUI message;
+    [SerializeField] private MessageUI pickUpMessage;
     [SerializeField] private float messageTiming = 0f;
 
     private void Start()
@@ -26,6 +27,11 @@ public class PlayerHUD : MonoBehaviour
         {
             message.gameObject.SetActive(false);
         }
+    }
+
+    public void UpdatePickUpMessage(bool active)
+    {
+        pickUpMessage.gameObject.SetActive(active);
     }
 
     public void UpdateMessage(string msg)

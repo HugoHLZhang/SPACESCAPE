@@ -27,10 +27,11 @@ public class GunShooting : MonoBehaviour
         if ( GameObject.Find("Player").GetComponent<EquipmentManager>().GunEquiped == true)
         {
             RaycastHit hit;
+            
             if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
             {
-                
-                
+
+                Debug.Log(hit.transform.name);
                 Target target = hit.transform.GetComponent<Target>();
 
                 if(target!= null)

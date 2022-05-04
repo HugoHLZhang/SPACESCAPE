@@ -18,12 +18,18 @@ public class PlayerPickup : MonoBehaviour
 
     private void Update()
     {
+        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, pickupRange, pickupLayer) && hit.transform.name != null)
+        {
+            hud.UpdatePickUpMessage(true);
+        }
+        else
+        {
+            hud.UpdatePickUpMessage(false);
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-            RaycastHit hit;
-            Debug.Log("hello");
-
             if(Physics.Raycast(ray, out hit, pickupRange, pickupLayer))
             {
                 
