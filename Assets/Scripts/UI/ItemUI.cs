@@ -11,4 +11,14 @@ public class ItemUI : MonoBehaviour
     {
         icon.sprite = itemIcon;
     }
+
+    public void UpdateSize(Sprite itemIcon, float width, float height)
+    {
+        icon.rectTransform.sizeDelta = new Vector2(width, height);
+    }
+
+    public void UpdateColor(Sprite itemIcon, Color color)
+    {
+        icon.color = color;
+    }
 }

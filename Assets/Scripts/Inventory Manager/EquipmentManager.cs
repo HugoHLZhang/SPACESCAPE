@@ -38,6 +38,14 @@ public class EquipmentManager : MonoBehaviour
             anim.SetInteger("itemType", 0);
             //Update itemUI
             hud.UpdateItemUI(inventory.GetItem(0));
+            if (inventory.GetItem(2) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(2));
+            }
+            if (inventory.GetItem(1) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(1));
+            }
             GunEquiped = false;
             SaberEquiped = false;
         }
@@ -50,6 +58,11 @@ public class EquipmentManager : MonoBehaviour
             }
             UnequipItem();
             EquipItem(inventory.GetItem(1));
+            hud.UpdateItemSize(inventory.GetItem(0));
+            if (inventory.GetItem(2) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(2));
+            }
             GunEquiped = false;
             SaberEquiped = true;
             inventory.GetItem(1).prefab.layer = LayerArms;
@@ -63,6 +76,11 @@ public class EquipmentManager : MonoBehaviour
             }
             UnequipItem();
             EquipItem(inventory.GetItem(2));
+            hud.UpdateItemSize(inventory.GetItem(0));
+            if (inventory.GetItem(1) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(1));
+            }
             GunEquiped = true;
             SaberEquiped = false;
             //inventory.GetItem(2).prefab.layer = LayerArms;

@@ -9,6 +9,7 @@ public class PlayerPickup : MonoBehaviour
 
     private Camera cam;
     private Inventory inventory;
+    [SerializeField]  private PlayerHUD hud;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerPickup : MonoBehaviour
                 inventory.AddItem(newItem);
                 Debug.Log("Well played ! You have added " + newItem.nom + " to your inventory !");
                 Destroy(hit.transform.gameObject);
+                hud.UpdateItemColor(newItem);
             }
         }
     }
