@@ -53,7 +53,7 @@ public class EquipmentManager : MonoBehaviour
         {
             if (inventory.GetItem(1) == null)
             {
-                Debug.Log("No item here ! Try to find it !");
+                hud.UpdateMessage("No item here ! Try to find it !");
                 return;
             }
             UnequipItem();
@@ -71,7 +71,7 @@ public class EquipmentManager : MonoBehaviour
         {
             if(inventory.GetItem(2) == null)
             {
-                Debug.Log("No item here ! Try to find it !");
+                hud.UpdateMessage("No item here ! Try to find it !");
                 return;
             }
             UnequipItem();

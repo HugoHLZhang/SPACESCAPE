@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6012536492005457314, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
@@ -807,3 +807,4 @@ MonoBehaviour:
   trigger: {fileID: 4323437845693486188}
   anim: {fileID: 4171925815908808073}
   isOpen: 0
+  hud: {fileID: 0}

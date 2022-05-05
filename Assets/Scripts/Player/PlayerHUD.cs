@@ -14,6 +14,7 @@ public class PlayerHUD : MonoBehaviour
 
     [SerializeField] private MessageUI message;
     [SerializeField] private MessageUI pickUpMessage;
+    [SerializeField] private MessageUI doorMessage;
     [SerializeField] private float messageTiming = 0f;
 
     private void Start()
@@ -29,8 +30,14 @@ public class PlayerHUD : MonoBehaviour
         }
     }
 
-    public void UpdatePickUpMessage(bool active)
+    public void UpdateDoorMessage(string key, string message, bool active)
     {
+        doorMessage.UpdateMessage(key + "\n" + message);
+        doorMessage.gameObject.SetActive(active);
+    }
+    public void UpdatePickUpMessage(string key, string message, bool active)
+    {
+        pickUpMessage.UpdateMessage(key + "\n" + message);
         pickUpMessage.gameObject.SetActive(active);
     }
 

@@ -22,11 +22,11 @@ public class PlayerPickup : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, pickupRange, pickupLayer) && hit.transform.name != null)
         {
-            hud.UpdatePickUpMessage(true);
+            hud.UpdatePickUpMessage("E","PickUp",true);
         }
         else
         {
-            hud.UpdatePickUpMessage(false);
+            hud.UpdatePickUpMessage("", "",false);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
