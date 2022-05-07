@@ -6,12 +6,13 @@ public class EquipmentManager : MonoBehaviour
 {
     public int currentlyEquipedItem = 0;
     public GameObject currentItemObject = null;
-
+    public bool GunEquiped;
+    public bool SaberEquiped;
     [SerializeField] public Transform ItemHolderR = null;
     private Animator anim;
     private Inventory inventory;
     private int LayerArms;
-    [SerializeField] private Animator saber = null;
+    public Animator saberAnim;
 
     [SerializeField] Items defaultItem = null;
     [SerializeField] PlayerHUD hud;
@@ -37,29 +38,51 @@ public class EquipmentManager : MonoBehaviour
             anim.SetInteger("itemType", 0);
             //Update itemUI
             hud.UpdateItemUI(inventory.GetItem(0));
+            if (inventory.GetItem(2) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(2));
+            }
+            if (inventory.GetItem(1) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(1));
+            }
+            GunEquiped = false;
+            SaberEquiped = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1)
         {
             if (inventory.GetItem(1) == null)
             {
-                Debug.Log("No item here ! Try to find it !");
+                hud.UpdateMessage("No item here ! Try to find it !");
                 return;
             }
-
             UnequipItem();
-            
             EquipItem(inventory.GetItem(1));
+            hud.UpdateItemSize(inventory.GetItem(0));
+            if (inventory.GetItem(2) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(2));
+            }
+            GunEquiped = false;
+            SaberEquiped = true;
             inventory.GetItem(1).prefab.layer = LayerArms;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2) 
         {
             if(inventory.GetItem(2) == null)
             {
-                Debug.Log("No item here ! Try to find it !");
+                hud.UpdateMessage("No item here ! Try to find it !");
                 return;
             }
             UnequipItem();
             EquipItem(inventory.GetItem(2));
+            hud.UpdateItemSize(inventory.GetItem(0));
+            if (inventory.GetItem(1) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(1));
+            }
+            GunEquiped = true;
+            SaberEquiped = false;
             //inventory.GetItem(2).prefab.layer = LayerArms;
 
         }
@@ -92,5 +115,7 @@ public class EquipmentManager : MonoBehaviour
         inventory.AddItem(defaultItem);
         
     }
+
+    
 
 }

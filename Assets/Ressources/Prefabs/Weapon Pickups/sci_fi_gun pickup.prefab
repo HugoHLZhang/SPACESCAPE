@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4037215862354700355}
   - component: {fileID: -7253791759092862945}
   - component: {fileID: -6510296348204900343}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: sci_fi_gun pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,15 +298,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7326492479915878531}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.72140616, w: 0.6925122}
+  m_LocalPosition: {x: 1.0833775, y: 0.094, z: -5.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7669569562690936433}
   - {fileID: 1987278649628256704}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 92.341}
 --- !u!95 &4037215862354700355
 Animator:
   serializedVersion: 3
@@ -320,7 +320,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 0470a25b7cf3ee1498d5b5b9425ba68a, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

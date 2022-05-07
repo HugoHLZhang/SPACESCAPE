@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationEventManager : MonoBehaviour
+public class AnimationItemsEventManager : MonoBehaviour
 {
 
     private EquipmentManager manager;
@@ -14,6 +14,7 @@ public class AnimationEventManager : MonoBehaviour
         GetReference();
     }
 
+
     public void DestroyItem()
     {
         Destroy(manager.currentItemObject);
@@ -22,7 +23,23 @@ public class AnimationEventManager : MonoBehaviour
     public void InstantiateItem()
     {
         manager.currentItemObject =  Instantiate(inventory.GetItem(manager.currentlyEquipedItem).prefab, manager.ItemHolderR);
+        if(manager.currentlyEquipedItem == 1)
+        {
+            manager.saberAnim = manager.currentItemObject.GetComponent<Animator>();
+        }
+
     }
+
+    public void ExpandSaber()
+    {
+        manager.saberAnim.SetTrigger("expand");
+    }
+
+    public void CollapseSaber()
+    {
+        manager.saberAnim.SetTrigger("collapse");
+    }
+
 
     private void GetReference()
     {
