@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     private Animator anim;
+    private PlayerStats stats;
 
     private void Start()
     {
@@ -43,13 +44,16 @@ public class PlayerController : MonoBehaviour
     {
         HandleIsGrounded();
         HandleGravity();
-        HandleJumping();
-        HandleRunning();
-        HandleMovement();
+        if (!stats.Dead())
+        {
+            HandleJumping();
+            HandleRunning();
+            HandleMovement();
+        }
         HandleAnimations();
         HandleIsFiring();
-        Fire();
         HandleSaberAttack();
+        Fire();
         Cut();
     }
 
@@ -62,21 +66,28 @@ public class PlayerController : MonoBehaviour
         moveDirection = moveDirection.normalized;
         moveDirection = transform.TransformDirection(moveDirection);
 
-        controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        if (!stats.Dead())
+        {
+            controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        }
     }
 
     private void HandleSaberAttack()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (!stats.Dead())
         {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
 
-            isSlash = true;
+                isSlash = true;
 
+            }
+            else
+            {
+                isSlash = false;
+            }
         }
-        else
-        {
-            isSlash = false;
-        }
+           
 
         anim.SetBool("isSlashing", isSlash);
     }
@@ -107,16 +118,20 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleIsFiring()
     {
-        if(Input.GetKey(KeyCode.Mouse0))
+        if (!stats.Dead())
         {
-            
-            isFire = true;
-            
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+
+                isFire = true;
+
+            }
+            else
+            {
+                isFire = false;
+            }
         }
-        else
-        {
-            isFire = false;
-        }
+            
 
         anim.SetBool("isFiring", isFire);
     }
@@ -204,6 +219,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
         particleSystem = GetComponent<ParticleSystem>();
+        stats = GetComponent<PlayerStats>();
     }
 
     private void InitVariables()

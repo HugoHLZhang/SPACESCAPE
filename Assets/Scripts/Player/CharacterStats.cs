@@ -24,8 +24,7 @@ public class CharacterStats : MonoBehaviour
         if(health <= 0)
         {
             health = 0;
-            oxygen = 0;
-            isDead = true;
+            Die();
         }
         if(health >= maxHealth)
         {
@@ -38,8 +37,7 @@ public class CharacterStats : MonoBehaviour
         if( oxygen <= 0)
         {
             oxygen = 0;
-            health = 0;
-            isDead = true;
+            Die();
         }
         if (oxygen >= maxOxygen)
         {
@@ -47,9 +45,14 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         isDead = true;
+    }
+
+    public bool Dead()
+    {
+        return isDead;
     }
 
     public void SetOxygenTo(int oxygenToSetTo)

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
     private PlayerHUD hud;
+    private UIManager ui;
     [SerializeField] private float nextBreath = 5f;
     private void Start()
     {
@@ -14,16 +15,16 @@ public class PlayerStats : CharacterStats
 
     private void Update()
     {
-        if(nextBreath < Time.time)
+        if(Input.GetKeyDown(KeyCode.T))
         { 
             LoseOxygen(100);
-            nextBreath += 5f;
         }
     }
 
     private void GetReferences()
     {
         hud = GetComponent<PlayerHUD>();
+        ui = GetComponent<UIManager>();
     }
 
     public override void CheckHealth()
@@ -43,4 +44,9 @@ public class PlayerStats : CharacterStats
         LoseOxygen(1);
     }
 
+    public override void Die()
+    {
+        base.Die();
+        ui.SetActiveHud(false);
+    }
 }

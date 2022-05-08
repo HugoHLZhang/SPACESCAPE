@@ -8,11 +8,14 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform arms;
     [SerializeField] private Transform body;
 
+    private PlayerStats stats;
+
     private float xRot;
 
     private void Start()
     {
         LockCursor();
+        stats = GetComponentInParent<PlayerStats>();
     }
 
     private void Update()
@@ -28,8 +31,16 @@ public class CameraController : MonoBehaviour
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -90, 90);
 
-        arms.localRotation = Quaternion.Euler(new Vector3(xRot, 0, 0));
-        body.Rotate(new Vector3(0, mouseX, 0));
+        if (!stats.Dead())
+        {
+            arms.localRotation = Quaternion.Euler(new Vector3(xRot, 0, 0));
+            body.Rotate(new Vector3(0, mouseX, 0));
+        }
+        else if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Debug.Log("hfgojsdlfkgkj");
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     private void LockCursor()
