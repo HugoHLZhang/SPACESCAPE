@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -19,17 +20,19 @@ public class CharacterStats : MonoBehaviour
 
 
 
+
     public virtual void CheckHealth()
     {
         if(health <= 0)
         {
             health = 0;
             oxygen = 0;
-            isDead = true;
+            Die();
         }
         if(health >= maxHealth)
         {
             health = maxHealth;
+            isDead = false;
         }
     }
 
@@ -39,17 +42,25 @@ public class CharacterStats : MonoBehaviour
         {
             oxygen = 0;
             health = 0;
-            isDead = true;
+            Die();
         }
         if (oxygen >= maxOxygen)
         {
             oxygen = maxOxygen;
+            isDead = false;
         }
     }
 
     public void Die()
     {
         isDead = true;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 
     public void SetOxygenTo(int oxygenToSetTo)
@@ -92,8 +103,9 @@ public class CharacterStats : MonoBehaviour
     {
         maxOxygen = 100;
         maxHealth = 100;
+        isDead = false;
         SetHealthTo(maxHealth);
         SetOxygenTo(maxOxygen);
-        isDead = false;
+        
     }
 }
