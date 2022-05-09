@@ -16,9 +16,16 @@ public class PlayerStats : CharacterStats
     {
         if(nextBreath < Time.time)
         { 
-            LoseOxygen(100);
+            LoseOxygen(1);
             nextBreath += 5f;
         }
+        //if (isDead == true)
+        //{
+        //    InitVariables();
+        //    CheckHealth();
+        //    CheckOxygen();
+        //    Debug.Log(isDead);
+        //}
     }
 
     private void GetReferences()
