@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180844200008486034}
   - component: {fileID: 6080510424884696808}
+  - component: {fileID: 7054347995654121958}
   m_Layer: 7
   m_Name: lightsaber
   m_TagString: Untagged
@@ -52,6 +53,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7054347995654121958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705284464825226792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: c3bd818ca85af2e42b7ecae02d70b355, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &1851791865794456352
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +110,7 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 1851791865794456352}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -102,8 +120,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 435397bd3f8cf4647947d51a780479e8, type: 2}
   - {fileID: 2100000, guid: f5ad30b134fc7df4d9a36fffc5550a1e, type: 2}
-  - {fileID: 2100000, guid: 9e0e2856eb9767d408437b06d2053976, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
