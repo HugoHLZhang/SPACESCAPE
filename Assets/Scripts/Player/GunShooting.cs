@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GunShooting : MonoBehaviour
 {
-    [SerializeField] private float damage = 10f;
+    [SerializeField] private int damage = 10;
     [SerializeField] private float range = 100f;
     //public GameObject player;
     public EquipmentManager inventory;
@@ -33,10 +33,14 @@ public class GunShooting : MonoBehaviour
 
                 Debug.Log(hit.transform.name);
                 Target target = hit.transform.GetComponent<Target>();
-
+                CharacterStats alienStats = hit.transform.GetComponent<CharacterStats>();
                 if(target!= null)
                 {
                     target.TakeDamage(damage);
+                }
+                if(alienStats != null)
+                {
+                    alienStats.TakeDamage(damage);
                 }
             }
 
