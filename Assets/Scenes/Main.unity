@@ -4977,9 +4977,10 @@ GameObject:
   - component: {fileID: 442197959}
   - component: {fileID: 442197958}
   - component: {fileID: 442197957}
+  - component: {fileID: 442197962}
   m_Layer: 11
   m_Name: Alien
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5064,6 +5065,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442197962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442197956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996f4d5a841faeb47abf2371e769c128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 0
+  oxygen: 0
+  maxOxygen: 0
+  isDead: 0
+  damage: 0
+  attackSpeed: 0
+  canAttack: 0
 --- !u!1 &444433263
 GameObject:
   m_ObjectHideFlags: 0
@@ -16812,9 +16833,9 @@ GameObject:
   - component: {fileID: 594773362}
   - component: {fileID: 594773361}
   - component: {fileID: 594773365}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Target (5)
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48433,9 +48454,9 @@ GameObject:
   - component: {fileID: 949656088}
   - component: {fileID: 949656087}
   - component: {fileID: 949656092}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Target (1)
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48605,7 +48626,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3958
+    m_Bits: 8054
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -51963,9 +51984,9 @@ GameObject:
   - component: {fileID: 1057457537}
   - component: {fileID: 1057457541}
   - component: {fileID: 1057457542}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55410,7 +55431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236286864}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6184ad424d0209445bde3be65cddca44, type: 3}
   m_Name: 
@@ -55427,7 +55448,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236286864}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd1a10e7690567e4fa89208487c3db4f, type: 3}
   m_Name: 
@@ -55639,7 +55660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1264284617}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Targets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55816,9 +55837,9 @@ GameObject:
   - component: {fileID: 1308612177}
   - component: {fileID: 1308612176}
   - component: {fileID: 1308612181}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Target (2)
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67181,9 +67202,9 @@ GameObject:
   - component: {fileID: 1528342526}
   - component: {fileID: 1528342525}
   - component: {fileID: 1528342530}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Target (3)
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
@@ -85498,9 +85519,9 @@ GameObject:
   - component: {fileID: 1854175965}
   - component: {fileID: 1854175964}
   - component: {fileID: 1854175968}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Target (4)
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
