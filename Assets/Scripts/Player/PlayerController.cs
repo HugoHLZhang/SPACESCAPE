@@ -88,12 +88,18 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, saberRange))
             {
                 
-
                 Target target = hit.transform.GetComponent<Target>();
+                CharacterStats enemyStats = hit.transform.GetComponent<CharacterStats>();
 
-                if (target != null)
+                if (hit.transform.tag == "Destroyable" && target != null)
                 {
                     target.TakeDamage(damage);
+                    Debug.Log(damage);
+                }
+                if (hit.transform.tag == "Destroyable" && enemyStats != null)
+                {
+                    enemyStats.TakeDamage((int)damage);
+                    Debug.Log(damage);
                 }
             }
         }
@@ -136,12 +142,16 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
             {
                 Debug.Log(hit.transform.name);
-
                 Target target = hit.transform.GetComponent<Target>();
+                CharacterStats enemyStats = hit.transform.GetComponent<CharacterStats>();
 
-                if (target != null)
+                if (hit.transform.tag == "Destroyable" && target != null)
                 {
                     target.TakeDamage(damage);
+                }
+                if (hit.transform.tag == "Destroyable" && enemyStats != null)
+                {
+                    enemyStats.TakeDamage((int)damage);
                 }
             }
         }
