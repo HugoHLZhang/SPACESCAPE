@@ -23,6 +23,7 @@ public class AnimationItemsEventManager : MonoBehaviour
     public void InstantiateItem()
     {
         manager.currentItemObject =  Instantiate(inventory.GetItem(manager.currentlyEquipedItem).prefab, manager.ItemHolderR);
+        manager.currentItemBarrel = manager.currentItemObject.transform.GetChild(0);
         if(manager.currentlyEquipedItem == 1)
         {
             manager.saberAnim = manager.currentItemObject.GetComponent<Animator>();

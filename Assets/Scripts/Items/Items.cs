@@ -7,8 +7,10 @@ using UnityEngine;
 public class Items : Item
 {
     public GameObject prefab;
+    public GameObject gunParticules;
     public float range;
     public int damage;
+    public float fireRate;
     public ItemType itemType;
     public ItemOrder itemOrder;
 }

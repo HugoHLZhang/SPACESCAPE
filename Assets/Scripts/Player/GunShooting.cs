@@ -5,40 +5,40 @@ using UnityEngine.UI;
 
 public class GunShooting : MonoBehaviour
 {
-    private Camera cam;
-    private Inventory inventory;
-    private EquipmentManager manager;
+    //private Camera cam;
+    //private Inventory inventory;
+    //private EquipmentManager manager;
 
-    private void Start()
-    {
-        GetReferences();
-    }
+    //private void Start()
+    //{
+    //    GetReferences();
+    //}
 
-    private void GetReferences()
-    {
-        cam = GetComponentInChildren<Camera>();
-        inventory = GetComponent<Inventory>();
-        manager = GetComponent<EquipmentManager>();
-    }
+    //private void GetReferences()
+    //{
+    //    cam = GetComponentInChildren<Camera>();
+    //    inventory = GetComponent<Inventory>();
+    //    manager = GetComponent<EquipmentManager>();
+    //}
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Shoot();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Mouse0))
+    //    {
+    //        Shoot();
+    //    }
+    //}
 
-    private void Shoot()
-    {
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        RaycastHit hit;
+    //private void Shoot()
+    //{
+    //    Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+    //    RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, inventory.GetItem(manager.currentlyEquipedItem).range))
-        {
-            Debug.Log(hit.transform.name);
-        }
-    }
+    //    if(Physics.Raycast(ray, out hit, inventory.GetItem(manager.currentlyEquipedItem).range))
+    //    {
+    //        Debug.Log(hit.transform.name);
+    //    }
+    //}
     //[SerializeField] private int damage = 10;
     //[SerializeField] private float range = 100f;
     ////public GameObject player;

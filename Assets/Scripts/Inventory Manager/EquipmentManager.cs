@@ -5,9 +5,13 @@ using UnityEngine;
 public class EquipmentManager : MonoBehaviour
 {
     public int currentlyEquipedItem = 0;
+    public Transform currentItemBarrel = null;
+
+
     public GameObject currentItemObject = null;
     public bool GunEquiped;
     public bool SaberEquiped;
+
     [SerializeField] public Transform ItemHolderR = null;
     private Animator anim;
     private Inventory inventory;
