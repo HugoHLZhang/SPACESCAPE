@@ -47,9 +47,9 @@ public class PlayerController : MonoBehaviour
         HandleRunning();
         HandleMovement();
         HandleAnimations();
-        HandleIsFiring();
+        //HandleIsFiring();
         //Fire();
-        HandleSaberAttack();
+        //HandleSaberAttack();
         //Cut();
     }
 
@@ -111,21 +111,21 @@ public class PlayerController : MonoBehaviour
     //        Slash();
     //    }
     //}
-    private void HandleIsFiring()
-    {
-        if(Input.GetKey(KeyCode.Mouse0))
-        {
+    //private void HandleIsFiring()
+    //{
+    //    if(Input.GetKey(KeyCode.Mouse0))
+    //    {
             
-            isFire = true;
+    //        isFire = true;
             
-        }
-        else
-        {
-            isFire = false;
-        }
+    //    }
+    //    else
+    //    {
+    //        isFire = false;
+    //    }
 
-        anim.SetBool("isFiring", isFire);
-    }
+    //    anim.SetBool("isFiring", isFire);
+    //}
     //private void Fire()
     //{
     //    if(isFire && anim.GetBool("isFiring") == true)
