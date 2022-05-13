@@ -7,12 +7,12 @@ public class EndMenu : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);//main
+        SceneManager.LoadScene(1);//main
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);//menu
+        SceneManager.LoadScene(0);//menu
     }
     public void QuitGame()
     {

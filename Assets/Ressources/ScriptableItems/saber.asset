@@ -16,6 +16,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: c26b012e5b701184d8d633ef95e5f23c, type: 3}
   description: saber
   prefab: {fileID: 705284464825226792, guid: ec19dcbde98fdc4429b4debf9df7a9ed, type: 3}
+  gunParticules: {fileID: 0}
   range: 5
+  damage: 25
+  fireRate: 1
   itemType: 1
   itemOrder: 1
