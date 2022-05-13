@@ -60,7 +60,7 @@ public class EnnemiesController : MonoBehaviour
     private IEnumerator AttackTarget(CharacterStats statsToDamage)
     {
         anim.SetTrigger("Attack");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         anim.SetFloat("Speed", 0f, 0.3f, Time.deltaTime);
         float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
         if (distanceBetweenPlayer <= agent.stoppingDistance)
