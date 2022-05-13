@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Doors : MonoBehaviour
 {
     [SerializeField] public Camera fpscam;
     [SerializeField] public float range = 5f;
+    [SerializeField] private GameObject doorFrame;
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject trigger;
     public Animator anim;
@@ -14,7 +16,8 @@ public class Doors : MonoBehaviour
 
     private void Start()
     {
-        door.AddComponent<BoxCollider>();
+        doorFrame.AddComponent<BoxCollider>();
+        door.AddComponent<NavMeshObstacle>();
     }
 
     // Update is called once per frame
@@ -43,7 +46,7 @@ public class Doors : MonoBehaviour
         {
             hud.UpdateDoorMessage("E", "Open", true);
         }
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == door.transform.name)
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == door.transform.name && hit.transform.name != trigger.transform.name)
         {
             hud.UpdateDoorMessage("", "", false);
         }
@@ -59,7 +62,8 @@ public class Doors : MonoBehaviour
             if (hit.transform.name == trigger.transform.name)
             {
                 anim.SetTrigger("open");
-                Destroy(door.GetComponent<BoxCollider>());
+                Destroy(doorFrame.GetComponent<BoxCollider>());
+                Destroy(door.GetComponent<NavMeshObstacle>());
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
             }
@@ -76,7 +80,8 @@ public class Doors : MonoBehaviour
             if (hit.transform.name == trigger.transform.name)
             {
                 anim.SetTrigger("close");
-                door.AddComponent<BoxCollider>();
+                doorFrame.AddComponent<BoxCollider>();
+                door.AddComponent<NavMeshObstacle>();
                 isOpen = false;
                 hud.UpdateDoorMessage("", "", false);
             }

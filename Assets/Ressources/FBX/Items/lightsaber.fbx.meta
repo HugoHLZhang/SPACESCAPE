@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Ressources/FBX/Items/lightsaber.fbx.meta
-guid: b4a9bbac103b883459e3435c7ed39b2a
-========
-guid: 6b6261be3fad30149bdfd421736dea2c
->>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Blender/untitled.blend.meta
+guid: 7d2c9fc2504aa0d46a499e03a36c8b4e
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -11,28 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-<<<<<<<< HEAD:Assets/Ressources/FBX/Items/lightsaber.fbx.meta
-      name: saber
+      name: Manche
     second: {fileID: 2100000, guid: 9e0e2856eb9767d408437b06d2053976, type: 2}
-========
-      name: Laser Sabre
-    second: {instanceID: 0}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Manche sabre_
-    second: {instanceID: 0}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: manche sabre
-    second: {instanceID: 0}
->>>>>>>> 8f5a181 (Merge branch 'hugov5'):Assets/Blender/untitled.blend.meta
+      name: Saber
+    second: {fileID: 2100000, guid: f5ad30b134fc7df4d9a36fffc5550a1e, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -58,7 +44,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.05
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -109,14 +95,14 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.05
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1

@@ -48,9 +48,9 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleAnimations();
         HandleIsFiring();
-        Fire();
+        //Fire();
         HandleSaberAttack();
-        Cut();
+        //Cut();
     }
 
     private void HandleMovement()
@@ -80,31 +80,37 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isSlashing", isSlash);
     }
-    private void Slash()
-    {
-        if (GameObject.Find("Player").GetComponent<EquipmentManager>().SaberEquiped == true)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, saberRange))
-            {
+    //private void Slash()
+    //{
+    //    if (GameObject.Find("Player").GetComponent<EquipmentManager>().SaberEquiped == true)
+    //    {
+    //        RaycastHit hit;
+    //        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, saberRange))
+    //        {
                 
+    //            Target target = hit.transform.GetComponent<Target>();
+    //            CharacterStats enemyStats = hit.transform.GetComponent<CharacterStats>();
 
-                Target target = hit.transform.GetComponent<Target>();
-
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-            }
-        }
-    }
-    private void Cut()
-    {
-        if (isSlash && anim.GetBool("isSlashing") == true)
-        {
-            Slash();
-        }
-    }
+    //            if (hit.transform.tag == "Destroyable" && target != null)
+    //            {
+    //                target.TakeDamage(damage);
+    //                Debug.Log(damage);
+    //            }
+    //            if (hit.transform.tag == "Destroyable" && enemyStats != null)
+    //            {
+    //                enemyStats.TakeDamage((int)damage);
+    //                Debug.Log(damage);
+    //            }
+    //        }
+    //    }
+    //}
+    //private void Cut()
+    //{
+    //    if (isSlash && anim.GetBool("isSlashing") == true)
+    //    {
+    //        Slash();
+    //    }
+    //}
     private void HandleIsFiring()
     {
         if(Input.GetKey(KeyCode.Mouse0))
@@ -120,33 +126,36 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isFiring", isFire);
     }
+    //private void Fire()
+    //{
+    //    if(isFire && anim.GetBool("isFiring") == true)
+    //    {
+    //        Shoot();
+    //    }
+    //}
+    //private void Shoot()
+    //{
+    //    //fireEffect.Play();
+    //    if (GameObject.Find("Player").GetComponent<EquipmentManager>().GunEquiped == true)
+    //    {
+    //        RaycastHit hit;
+    //        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+    //        {
+    //            Debug.Log(hit.transform.name);
+    //            Target target = hit.transform.GetComponent<Target>();
+    //            CharacterStats enemyStats = hit.transform.GetComponent<CharacterStats>();
 
-    private void Fire()
-    {
-        if(isFire && anim.GetBool("isFiring") == true)
-        {
-            Shoot();
-        }
-    }
-    private void Shoot()
-    {
-        //fireEffect.Play();
-        if (GameObject.Find("Player").GetComponent<EquipmentManager>().GunEquiped == true)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
-            {
-                Debug.Log(hit.transform.name);
-
-                Target target = hit.transform.GetComponent<Target>();
-
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-            }
-        }
-    }
+    //            if (hit.transform.tag == "Destroyable" && target != null)
+    //            {
+    //                target.TakeDamage(damage);
+    //            }
+    //            if (hit.transform.tag == "Destroyable" && enemyStats != null)
+    //            {
+    //                enemyStats.TakeDamage((int)damage);
+    //            }
+    //        }
+    //    }
+    //}
 
     private void HandleRunning()
     {

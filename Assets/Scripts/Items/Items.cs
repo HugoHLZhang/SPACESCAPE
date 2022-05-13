@@ -8,6 +8,7 @@ public class Items : Item
 {
     public GameObject prefab;
     public float range;
+    public int damage;
     public ItemType itemType;
     public ItemOrder itemOrder;
 }
