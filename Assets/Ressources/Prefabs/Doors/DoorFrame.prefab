@@ -789,6 +789,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
   m_PrefabInstance: {fileID: 7534308618020456472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8684994084707031797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8068073526183931155, guid: 16fcc2c1f81ceb741a9fa2dc3220c948, type: 3}
+  m_PrefabInstance: {fileID: 7534308618020456472}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7534308619354887339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,7 +808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpscam: {fileID: 0}
   range: 10
-  door: {fileID: 7534308619757093698}
+  doorFrame: {fileID: 7534308619757093698}
+  door: {fileID: 8684994084707031797}
   trigger: {fileID: 4323437845693486188}
   anim: {fileID: 4171925815908808073}
   isOpen: 0

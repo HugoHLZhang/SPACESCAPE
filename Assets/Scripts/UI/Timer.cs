@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public float time = 600f;
-    bool CountDownOn = true;
     void Start()
     {
         StartCoroutine(timer());

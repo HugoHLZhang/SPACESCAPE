@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    #region
+    public static Transform instance;
+
+    private void Awake()
+    {
+        instance = this.transform;
+    }
+    #endregion
+
+
     [Header("Move Variables")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float jumpForce;
 
-    
-    private bool isFire;
-    private bool isSlash;
-    [SerializeField] private float damage = 10f;
-    [SerializeField] private float range = 100f;
-    [SerializeField] private float saberRange = 2f;
-    //public GameObject player;
-    public EquipmentManager inventory;
-    public Camera fpscam;
-    //public ParticleSystem fireEffect;
-    private Vector3 moveDirection = Vector3.zero;
-    private CharacterController controller;
-
     [Header("Gravity")]
     [SerializeField] private float gravity;
     [SerializeField] private float groundDistance;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private bool isCharacterGrounded = false;
-    private  ParticleSystem particleSystem;
     private Vector3 velocity = Vector3.zero;
 
+    public EquipmentManager inventory;
+    public Camera fpscam;
+    private Vector3 moveDirection = Vector3.zero;
+    private CharacterController controller;
     private Animator anim;
 
     private void Start()
@@ -47,10 +47,6 @@ public class PlayerController : MonoBehaviour
         HandleRunning();
         HandleMovement();
         HandleAnimations();
-        HandleIsFiring();
-        Fire();
-        HandleSaberAttack();
-        Cut();
     }
 
     private void HandleMovement()
@@ -63,89 +59,6 @@ public class PlayerController : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
 
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
-    }
-
-    private void HandleSaberAttack()
-    {
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-
-            isSlash = true;
-
-        }
-        else
-        {
-            isSlash = false;
-        }
-
-        anim.SetBool("isSlashing", isSlash);
-    }
-    private void Slash()
-    {
-        if (GameObject.Find("Player").GetComponent<EquipmentManager>().SaberEquiped == true)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, saberRange))
-            {
-                
-
-                Target target = hit.transform.GetComponent<Target>();
-
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-            }
-        }
-    }
-    private void Cut()
-    {
-        if (isSlash && anim.GetBool("isSlashing") == true)
-        {
-            Slash();
-        }
-    }
-    private void HandleIsFiring()
-    {
-        if(Input.GetKey(KeyCode.Mouse0))
-        {
-            
-            isFire = true;
-            
-        }
-        else
-        {
-            isFire = false;
-        }
-
-        anim.SetBool("isFiring", isFire);
-    }
-
-    private void Fire()
-    {
-        if(isFire && anim.GetBool("isFiring") == true)
-        {
-            Shoot();
-        }
-    }
-    private void Shoot()
-    {
-        //fireEffect.Play();
-        if (GameObject.Find("Player").GetComponent<EquipmentManager>().GunEquiped == true)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
-            {
-                Debug.Log(hit.transform.name);
-
-                Target target = hit.transform.GetComponent<Target>();
-
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-            }
-        }
     }
 
     private void HandleRunning()
@@ -203,7 +116,6 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-        particleSystem = GetComponent<ParticleSystem>();
     }
 
     private void InitVariables()

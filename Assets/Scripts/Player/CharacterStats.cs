@@ -51,7 +51,7 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         isDead = true;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -99,7 +99,7 @@ public class CharacterStats : MonoBehaviour
         SetOxygenTo(oxygenAfterTakeOxygen);
     }
 
-    public void InitVariables()
+    public virtual void InitVariables()
     {
         maxOxygen = 100;
         maxHealth = 100;

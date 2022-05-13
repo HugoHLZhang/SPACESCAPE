@@ -49,7 +49,7 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Loading Menu...");
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //change scene
+        SceneManager.LoadScene(0); //change scene
         RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f); 
     }
 
