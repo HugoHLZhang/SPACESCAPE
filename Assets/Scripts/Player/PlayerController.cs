@@ -120,7 +120,6 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isFiring", isFire);
     }
-
     private void Fire()
     {
         if(isFire && anim.GetBool("isFiring") == true)
