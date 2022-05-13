@@ -28,10 +28,10 @@ public class EnnemiesController : MonoBehaviour
         anim.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
         
 
-        float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
+        float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.5f;
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
-            anim.SetFloat("Speed", 0, 0.3f, Time.deltaTime);
+            anim.SetFloat("Speed", 0f);
             RotateToTarget();
             //Attack
             CharacterStats targetStats = target.GetComponent<CharacterStats>();
@@ -61,7 +61,7 @@ public class EnnemiesController : MonoBehaviour
     {
         anim.SetTrigger("Attack");
         yield return new WaitForSeconds(1.5f);
-        float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
+        float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.5f;
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
             stats.DealDamage(statsToDamage);
