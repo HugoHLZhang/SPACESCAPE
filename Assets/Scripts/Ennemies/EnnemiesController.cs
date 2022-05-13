@@ -26,12 +26,13 @@ public class EnnemiesController : MonoBehaviour
     {
         agent.SetDestination(target.position);
         anim.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
-        RotateToTarget();
+        
 
         float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
             anim.SetFloat("Speed", 0, 0.3f, Time.deltaTime);
+            RotateToTarget();
             //Attack
             CharacterStats targetStats = target.GetComponent<CharacterStats>();
             if (!hasStopped)
@@ -69,9 +70,9 @@ public class EnnemiesController : MonoBehaviour
     private void RotateToTarget()
     {
         //transform.LookAt(target);
-        //Vector3 direction = target.position - transform.position;
-        //Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-        //transform.rotation = rotation;
+        Vector3 direction = target.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = rotation;
     }
 
     private void GetReference()
