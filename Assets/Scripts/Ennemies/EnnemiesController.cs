@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnnemiesController : MonoBehaviour
 {
     private NavMeshAgent agent = null;
-    [SerializeField] private Transform target;
+    private Transform target;
     private Animator anim = null;
     private float attackTimer;
     private bool hasStopped = false;
@@ -69,10 +69,9 @@ public class EnnemiesController : MonoBehaviour
     private void RotateToTarget()
     {
         //transform.LookAt(target);
-
-        Vector3 direction = target.position - transform.position;
-        Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
-        transform.rotation = rotation;
+        //Vector3 direction = target.position - transform.position;
+        //Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
+        //transform.rotation = rotation;
     }
 
     private void GetReference()
@@ -80,5 +79,6 @@ public class EnnemiesController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         stats = GetComponent<AlienStats>();
+        target = PlayerController.instance.transform;
     }
 }

@@ -39,7 +39,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void RaycastShoot(Items currentItem)
+    private void RaycastAttack(Items currentItem)
     {
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         RaycastHit hit;
@@ -70,7 +70,7 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("Shoot");
             shootTimer = Time.time;
             Instantiate(currentItem.gunParticules, manager.currentItemBarrel);
-            RaycastShoot(currentItem);
+            RaycastAttack(currentItem);
             anim.SetTrigger("isFiring");
         }
     }
@@ -83,7 +83,7 @@ public class PlayerAttack : MonoBehaviour
         {
             Debug.Log(currentItem.fireRate);
             shootTimer = Time.time;
-            RaycastShoot(currentItem);
+            RaycastAttack(currentItem);
             anim.SetTrigger("isSlashing");
         }
     }

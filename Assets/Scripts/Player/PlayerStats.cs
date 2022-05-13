@@ -15,15 +15,7 @@ public class PlayerStats : CharacterStats
 
     private void Update()
     {
-            
-            
-        //if (isDead == true)
-        //{
-        //    InitVariables();
-        //    CheckHealth();
-        //    CheckOxygen();
-        //    Debug.Log(isDead);
-        //}
+        
     }
 
     IEnumerator timer()

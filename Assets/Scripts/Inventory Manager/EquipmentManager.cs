@@ -6,11 +6,7 @@ public class EquipmentManager : MonoBehaviour
 {
     public int currentlyEquipedItem = 0;
     public Transform currentItemBarrel = null;
-
-
     public GameObject currentItemObject = null;
-    public bool GunEquiped;
-    public bool SaberEquiped;
 
     [SerializeField] public Transform ItemHolderR = null;
     private Animator anim;
@@ -50,8 +46,6 @@ public class EquipmentManager : MonoBehaviour
             {
                 hud.UpdateItemSize(inventory.GetItem(1));
             }
-            GunEquiped = false;
-            SaberEquiped = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1)
         {
@@ -67,8 +61,6 @@ public class EquipmentManager : MonoBehaviour
             {
                 hud.UpdateItemSize(inventory.GetItem(2));
             }
-            GunEquiped = false;
-            SaberEquiped = true;
             inventory.GetItem(1).prefab.layer = LayerArms;
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2) 
@@ -85,8 +77,6 @@ public class EquipmentManager : MonoBehaviour
             {
                 hud.UpdateItemSize(inventory.GetItem(1));
             }
-            GunEquiped = true;
-            SaberEquiped = false;
             //inventory.GetItem(2).prefab.layer = LayerArms;
 
         }

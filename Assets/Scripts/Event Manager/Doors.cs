@@ -10,7 +10,7 @@ public class Doors : MonoBehaviour
     [SerializeField] private GameObject doorFrame;
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject trigger;
-    public Animator anim;
+    [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
     [SerializeField] private PlayerHUD hud;
 
