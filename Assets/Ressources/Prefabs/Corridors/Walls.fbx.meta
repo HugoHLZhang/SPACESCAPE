@@ -1,12 +1,24 @@
 fileFormatVersion: 2
-guid: a033b04f1b4f6a249a9b5128f36d4fdf
+guid: 5c3148103a3ecda46afe78b229c8c68d
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bord
+    second: {fileID: 2100000, guid: 9e0e2856eb9767d408437b06d2053976, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cable
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls
+    second: {fileID: 2100000, guid: 179a8553d51a9824baa584d467531188, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,10 +54,10 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 1
-    importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -75,10 +87,8 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 09c57f859dc2984458c53e9aad800626
-  - 13ea518939c695745b3916d6a0ecc4b5
-  importAnimation: 1
+  referencedClips: []
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
