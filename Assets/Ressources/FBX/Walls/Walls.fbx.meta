@@ -3,7 +3,22 @@ guid: f2f38319ea82f844ea16b0c46e9eda92
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bord
+    second: {fileID: 2100000, guid: 4907c69618c6ec3419a45f0f177c9644, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cable
+    second: {fileID: 2100000, guid: 35808af96a6ab4e42bc0348d5e5baffc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Walls
+    second: {fileID: 2100000, guid: 655b0bbb4f640cb4abb5c542f2075b04, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

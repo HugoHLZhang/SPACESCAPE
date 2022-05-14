@@ -5,19 +5,21 @@ using UnityEngine.AI;
 
 public class Doors : MonoBehaviour
 {
-    [SerializeField] public Camera fpscam;
+    private Camera fpscam;
     [SerializeField] public float range = 5f;
     [SerializeField] private GameObject doorFrame;
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject trigger;
     [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
-    [SerializeField] private PlayerHUD hud;
+    private PlayerHUD hud;
 
     private void Start()
     {
         doorFrame.AddComponent<BoxCollider>();
         door.AddComponent<NavMeshObstacle>();
+        fpscam = CameraController.cam;
+        hud = PlayerHUD.hud;
     }
 
     // Update is called once per frame

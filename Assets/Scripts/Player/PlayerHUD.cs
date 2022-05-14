@@ -5,6 +5,15 @@ using UnityEngine.UI;
 
 public class PlayerHUD : MonoBehaviour
 {
+    #region
+    public static PlayerHUD hud;
+
+    private void Awake()
+    {
+        hud = this.GetComponent<PlayerHUD>();
+    }
+    #endregion
+
     [SerializeField] private Bar oxygenBar;
     [SerializeField] private Bar healthBar;
 

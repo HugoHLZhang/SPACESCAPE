@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eec1a9a04caa59d43aa2390960d48968
+guid: 0f34a0ee5f0a7074fb9e0059ba71bf84
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bord
-    second: {fileID: 2100000, guid: 4907c69618c6ec3419a45f0f177c9644, type: 2}
+    second: {fileID: 2100000, guid: 399864730f185e04b80cd85dcd62c377, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Cable
-    second: {fileID: 2100000, guid: 35808af96a6ab4e42bc0348d5e5baffc, type: 2}
+    second: {fileID: 2100000, guid: f914989fd99f9d44b9a8d59ef2880baf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Walls
-    second: {fileID: 2100000, guid: 655b0bbb4f640cb4abb5c542f2075b04, type: 2}
+    second: {fileID: 2100000, guid: 2a6505ade4607814caa4d3df53ee6e52, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
