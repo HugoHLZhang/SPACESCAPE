@@ -73,5 +73,6 @@ public class PlayerPickup : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
         inventory = GetComponent<Inventory>();
         stats = GetComponent<PlayerStats>();
+        timer = Timer.instanceTimer;
     }
 }

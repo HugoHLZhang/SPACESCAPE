@@ -5,6 +5,16 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    #region
+    public static Timer instanceTimer;
+
+    private void Awake()
+    {
+        instanceTimer = this.GetComponent<Timer>();
+    }
+    #endregion
+
+
     public float time = 600f;
     void Start()
     {
