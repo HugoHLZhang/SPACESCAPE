@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5933937483573897936}
   - component: {fileID: 8484047199936503322}
   - component: {fileID: 1367730823989818380}
+  - component: {fileID: 4699244895971987401}
   m_Layer: 13
   m_Name: SmallWalls-droite
   m_TagString: Wall
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.99681, y: 8, z: 1.0264705}
   m_Center: {x: -3.1136785, y: 3.976801, z: -0.59830314}
+--- !u!208 &4699244895971987401
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979709531694530511}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9980001, y: 4, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -3.114, y: 3.9770002, z: -0.112}
+  m_TimeToStationary: 0.5

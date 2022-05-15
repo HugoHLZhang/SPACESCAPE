@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8867028730616615376}
   - component: {fileID: 2464277167021587528}
   - component: {fileID: 6288410202031455089}
+  - component: {fileID: -3974726324707563178}
   m_Layer: 13
   m_Name: Walls-gauche
   m_TagString: Wall
@@ -111,3 +112,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.999999, y: 1.0934535, z: 1.4491792}
   m_Center: {x: -6.115273, y: 0.5235272, z: -0.38694882}
+--- !u!208 &-3974726324707563178
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921750974373146629}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 6.0000005, y: 4, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -6.1150002, y: 3.9770002, z: -0.112}
+  m_TimeToStationary: 0.5

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5929531686012771021}
   - component: {fileID: 8479463286925307399}
   - component: {fileID: 4697631350435645578}
+  - component: {fileID: -1445119186966382572}
   m_Layer: 13
   m_Name: Walls-90-haut
   m_TagString: Wall
@@ -97,3 +98,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.177113, y: 8, z: 1.1441258}
   m_Center: {x: 0.0045613353, y: 3.976861, z: -1.0462615}
+--- !u!208 &-1445119186966382572
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975284085071908818}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.4120001, y: 4, z: 1.1730001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.9770002, z: -0.446}
+  m_TimeToStationary: 0.5
