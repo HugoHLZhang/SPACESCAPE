@@ -20,4 +20,17 @@ public class Timer : MonoBehaviour
             GetComponent<Text>().text = string.Format("{0:0}:{1:00}", Mathf.Floor(time/60), time % 60);
         }
     }
+
+    public void addTime(float TimeAdd)
+    {
+        if(time < 540f)
+        {
+            time = time + TimeAdd;
+        }
+        else
+        {
+            time = 600f;
+        }
+        
+    }
 }

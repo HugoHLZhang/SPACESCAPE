@@ -119,7 +119,9 @@ MonoBehaviour:
   isDead: 0
   damage: 0
   attackSpeed: 0
-  loot: {fileID: 7815063583972096574, guid: 49ee4caa596cb4a4c8cd75b8abc190a8, type: 3}
+  loot_O2: {fileID: 7815063583972096574, guid: 49ee4caa596cb4a4c8cd75b8abc190a8, type: 3}
+  loot_MedKit: {fileID: 6498165198289567710, guid: d805b3239178ff7408dbdbe6326e5444, type: 3}
+  loot_Timer: {fileID: 6241608496634937283, guid: 97be89f04f5200a429af97b1a9dbbb4f, type: 3}
   canAttack: 0
 --- !u!1001 &134428623005290914
 PrefabInstance:

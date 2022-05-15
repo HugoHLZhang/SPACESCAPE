@@ -6,7 +6,9 @@ public class AlienStats : CharacterStats
 {
     [SerializeField] public int damage;
     [SerializeField] public float attackSpeed;
-    [SerializeField] public GameObject loot;
+    [SerializeField] public GameObject loot_O2;
+    [SerializeField] public GameObject loot_MedKit;
+    [SerializeField] public GameObject loot_Timer;
     [SerializeField] private bool canAttack;
 
     
@@ -29,10 +31,22 @@ public class AlienStats : CharacterStats
         base.GetComponentInChildren<Animator>().SetBool("isDying",true);
         RememberMeLocation =new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         Destroy(gameObject,3f);
-        if (hasDroppedLoot == false && Random.value > 0.5f)
+        if (hasDroppedLoot == false && Random.value < 0.4f)
         {
-            Instantiate(loot, RememberMeLocation, gameObject.transform.rotation);
+            Instantiate(loot_O2, RememberMeLocation, gameObject.transform.rotation);
             hasDroppedLoot = true;        
+        }
+        if (hasDroppedLoot == false &&  0.4f < Random.value && Random.value < 0.7f )
+        {
+            Instantiate(loot_MedKit, RememberMeLocation + new Vector3(0,0.22f,0), loot_MedKit.transform.rotation);
+            
+            hasDroppedLoot = true;
+        }
+        if (hasDroppedLoot == false && Random.value > 0.7f)
+        {
+            Instantiate(loot_Timer, RememberMeLocation + new Vector3(0, 0.22f, 0), loot_Timer.transform.rotation);
+
+            hasDroppedLoot = true;
         }
     }
 
