@@ -10,6 +10,7 @@ public class PlayerPickup : MonoBehaviour
     private Camera cam;
     private Inventory inventory;
     [SerializeField]  private PlayerHUD hud;
+    [SerializeField]  private Timer timer;
 
     private PlayerStats stats;
 
@@ -49,6 +50,16 @@ public class PlayerPickup : MonoBehaviour
                     {
                         stats.takeOxygen(newItem.amount);
                         Debug.Log("you got " + newItem.amount + " oxygen");
+                    }
+                    if (newItem.type == ConsumableType.Medkit)
+                    {
+                        stats.Heal(newItem.amount);
+                        Debug.Log("you healed " + newItem.amount + " HP");
+                    }
+                    if (newItem.type == ConsumableType.Time)
+                    {
+                        timer.addTime(newItem.amount);
+                        Debug.Log("you added 1minute");
                     }
                 }
 
