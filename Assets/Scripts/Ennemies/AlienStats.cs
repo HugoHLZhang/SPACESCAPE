@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class AlienStats : CharacterStats
 {
-    [SerializeField] private int damage;
+    [SerializeField] public int damage;
     [SerializeField] public float attackSpeed;
-
+    [SerializeField] public GameObject loot;
     [SerializeField] private bool canAttack;
+
+    
+    Vector3 RememberMeLocation;
+    private bool hasDroppedLoot = false;
 
     private void Start()
     {
@@ -22,7 +26,14 @@ public class AlienStats : CharacterStats
     public override void Die()
     {
         base.Die();
-        Destroy(gameObject);
+        base.GetComponentInChildren<Animator>().SetBool("isDying",true);
+        RememberMeLocation =new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+        Destroy(gameObject,3f);
+        if (hasDroppedLoot == false && Random.value > 0.5f)
+        {
+            Instantiate(loot, RememberMeLocation, gameObject.transform.rotation);
+            hasDroppedLoot = true;        
+        }
     }
 
     public override void InitVariables()

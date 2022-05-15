@@ -10,7 +10,8 @@ public class EnnemiesController : MonoBehaviour
     private Animator anim = null;
     private float attackTimer;
     private bool hasStopped = false;
-
+   
+    
     private AlienStats stats = null;
 
     private void Start()
@@ -21,7 +22,8 @@ public class EnnemiesController : MonoBehaviour
     {
         moveToTarget();
     }
-
+ 
+        
     private void moveToTarget()
     {
         agent.SetDestination(target.position);
@@ -46,6 +48,13 @@ public class EnnemiesController : MonoBehaviour
                 attackTimer = Time.time;
                 StartCoroutine(AttackTarget(targetStats));
             }
+        }
+        if(anim.GetBool("isDying") == true)
+        {
+            agent.speed = 0;
+            agent.angularSpeed = 0;
+            agent.stoppingDistance = 0;
+            stats.damage = 0;
         }
         else
         {
@@ -75,6 +84,9 @@ public class EnnemiesController : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
     }
+
+    
+
 
     private void GetReference()
     {
