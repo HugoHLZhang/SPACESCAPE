@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1367730823989818380}
   m_Layer: 13
   m_Name: SmallWalls-droite
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

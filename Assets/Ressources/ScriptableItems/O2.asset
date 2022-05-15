@@ -9,16 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b99e9db129a2148986e42d533a70af, type: 3}
+  m_Script: {fileID: 11500000, guid: 00dddb3792e4eeb43b9f752c89625eef, type: 3}
   m_Name: O2
   m_EditorClassIdentifier: 
   nom: O2
   icon: {fileID: 0}
-  description: o2
-  prefab: {fileID: 14990520281068244, guid: b10de7bd2037e8d4da8121c16d05c87e, type: 3}
-  gunParticules: {fileID: 0}
-  range: 0
-  damage: 0
-  fireRate: 0
-  itemType: 0
-  itemOrder: 0
+  description: Restore O2
+  type: 0
+  amount: 20

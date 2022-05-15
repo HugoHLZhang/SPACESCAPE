@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6439003911408878008}
   m_Layer: 13
   m_Name: Walls-90-gauche
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,5 +95,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8719223, y: 8, z: 1.8435771}
-  m_Center: {x: -0.04067393, y: 3.976801, z: -0.6965299}
+  m_Size: {x: 1.8719223, y: 8, z: 1.3220137}
+  m_Center: {x: -0.04067469, y: 3.976801, z: -0.9573117}

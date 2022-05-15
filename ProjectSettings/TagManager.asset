@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Destroyable
+  - Wall
   layers:
   - Default
   - TransparentFX

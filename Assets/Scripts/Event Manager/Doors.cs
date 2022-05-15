@@ -48,7 +48,7 @@ public class Doors : MonoBehaviour
         {
             hud.UpdateDoorMessage("E", "Open", true);
         }
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == doorFrame.transform.name && hit.transform.name != trigger.transform.name)
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name)
         {
             hud.UpdateDoorMessage("", "", false);
         }

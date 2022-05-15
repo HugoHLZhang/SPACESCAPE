@@ -11,6 +11,8 @@ public class PlayerPickup : MonoBehaviour
     private Inventory inventory;
     [SerializeField]  private PlayerHUD hud;
 
+    private PlayerStats stats;
+
     private void Start()
     {
         GetReference();
@@ -32,12 +34,25 @@ public class PlayerPickup : MonoBehaviour
         {
             if(Physics.Raycast(ray, out hit, pickupRange, pickupLayer))
             {
-                
-                Items newItem = hit.transform.GetComponent<ItemObject>().item as Items;
-                inventory.AddItem(newItem);
-                hud.UpdateMessage("Well played ! You have added " + newItem.nom + " to your inventory !");
+                Debug.Log("hit: " + hit.transform.name);
+                if (hit.transform.GetComponent<ItemObject>().item as Items)
+                {
+                    Items newItem = hit.transform.GetComponent<ItemObject>().item as Items;
+                    inventory.AddItem(newItem);
+                    hud.UpdateMessage("Well played ! You have added " + newItem.nom + " to your inventory !");
+                    hud.UpdateItemColor(newItem);
+                }
+                else
+                {
+                    Consumable newItem = hit.transform.GetComponent<ItemObject>().item as Consumable;
+                    if(newItem.type == ConsumableType.O2)
+                    {
+                        stats.takeOxygen(newItem.amount);
+                        Debug.Log("you got " + newItem.amount + " oxygen");
+                    }
+                }
+
                 Destroy(hit.transform.gameObject);
-                hud.UpdateItemColor(newItem);
             }
         }
     }
@@ -46,5 +61,6 @@ public class PlayerPickup : MonoBehaviour
     {
         cam = GetComponentInChildren<Camera>();
         inventory = GetComponent<Inventory>();
+        stats = GetComponent<PlayerStats>();
     }
 }
