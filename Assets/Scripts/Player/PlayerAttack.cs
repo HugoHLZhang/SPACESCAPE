@@ -42,6 +42,7 @@ public class PlayerAttack : MonoBehaviour
     private void RaycastAttack(Items currentItem)
     {
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+        Ray rayLaser = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, currentItem.range))
@@ -53,7 +54,14 @@ public class PlayerAttack : MonoBehaviour
                 StartCoroutine(DamageDelay(enemyStats, currentItem));
             }
         }
-        
+        /*
+        if (Physics.Raycast(ray,out hit, currentItem.range))
+        {
+            GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
+            //laser.GetComponent<ShotBehavior>().setTarget(hit.point);
+            GameObject.Destroy(laser, 2f);
+        }
+        */
     }
     private IEnumerator DamageDelay(CharacterStats enemyStats, Items currentItem)
     {

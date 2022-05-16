@@ -61,6 +61,11 @@ public class PlayerPickup : MonoBehaviour
                         timer.addTime(newItem.amount);
                         Debug.Log("you added 1minute");
                     }
+                    if (newItem.type == ConsumableType.MedKit_Virus)
+                    {
+                        stats.Heal(-newItem.amount);
+                        Debug.Log("Ughh the MedKit had a virus inside, you lost " + newItem.amount + " HP");
+                    }
                 }
 
                 Destroy(hit.transform.gameObject);
