@@ -68,6 +68,7 @@ public class Doors : MonoBehaviour
                 Destroy(door.GetComponent<NavMeshObstacle>());
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
+                FindObjectOfType<AudioManager>().Play("DoorSound");
             }
 
         }
@@ -86,6 +87,7 @@ public class Doors : MonoBehaviour
                 door.AddComponent<NavMeshObstacle>();
                 isOpen = false;
                 hud.UpdateDoorMessage("", "", false);
+                FindObjectOfType<AudioManager>().Play("DoorSound");
             }
         }
     }

@@ -57,6 +57,10 @@ public class PlayerStats : CharacterStats
         SceneManager.LoadScene(2); //change scene
         Cursor.lockState = CursorLockMode.Confined;
         RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f);
+
+        FindObjectOfType<AudioManager>().Stop("Theme");
+        FindObjectOfType<AudioManager>().Play("DeathSound");
+
     }
 
 }

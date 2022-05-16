@@ -72,6 +72,7 @@ public class PlayerAttack : MonoBehaviour
             Instantiate(currentItem.gunParticules, manager.currentItemBarrel);
             RaycastAttack(currentItem);
             anim.SetTrigger("isFiring");
+            FindObjectOfType<AudioManager>().Play("GunSound");
         }
     }
 
@@ -85,6 +86,7 @@ public class PlayerAttack : MonoBehaviour
             shootTimer = Time.time;
             RaycastAttack(currentItem);
             anim.SetTrigger("isSlashing");
+            FindObjectOfType<AudioManager>().Play("SwingSound");
         }
     }
 }

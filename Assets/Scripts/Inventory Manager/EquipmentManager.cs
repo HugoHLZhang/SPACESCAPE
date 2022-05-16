@@ -56,6 +56,7 @@ public class EquipmentManager : MonoBehaviour
             }
             UnequipItem();
             EquipItem(inventory.GetItem(1));
+            FindObjectOfType<AudioManager>().Play("EquipSaber");
             hud.UpdateItemSize(inventory.GetItem(0));
             if (inventory.GetItem(2) != null)
             {
