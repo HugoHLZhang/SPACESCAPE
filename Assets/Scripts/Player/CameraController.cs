@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    #region
+    public static Camera cam;
+
+    private void Awake()
+    {
+        cam = this.GetComponent<Camera>();
+    }
+    #endregion
+
+
     [SerializeField] private float mouseSensitivity;
     [SerializeField] private Transform arms;
     [SerializeField] private Transform body;

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerStats : CharacterStats
 {
     private PlayerHUD hud;
@@ -15,15 +15,7 @@ public class PlayerStats : CharacterStats
 
     private void Update()
     {
-            
-            
-        //if (isDead == true)
-        //{
-        //    InitVariables();
-        //    CheckHealth();
-        //    CheckOxygen();
-        //    Debug.Log(isDead);
-        //}
+        
     }
 
     IEnumerator timer()
@@ -56,6 +48,19 @@ public class PlayerStats : CharacterStats
     public void Breathe()
     {
         LoseOxygen(1);
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(2); //change scene
+        Cursor.lockState = CursorLockMode.Confined;
+        RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f);
+
+        FindObjectOfType<AudioManager>().Stop("Theme");
+        FindObjectOfType<AudioManager>().Play("DeathSound");
+
     }
 
 }

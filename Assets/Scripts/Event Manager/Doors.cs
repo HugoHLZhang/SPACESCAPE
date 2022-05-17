@@ -5,19 +5,21 @@ using UnityEngine.AI;
 
 public class Doors : MonoBehaviour
 {
-    [SerializeField] public Camera fpscam;
+    private Camera fpscam;
     [SerializeField] public float range = 5f;
     [SerializeField] private GameObject doorFrame;
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject trigger;
-    public Animator anim;
+    [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
-    [SerializeField] private PlayerHUD hud;
+    private PlayerHUD hud;
 
     private void Start()
     {
         doorFrame.AddComponent<BoxCollider>();
         door.AddComponent<NavMeshObstacle>();
+        fpscam = CameraController.cam;
+        hud = PlayerHUD.hud;
     }
 
     // Update is called once per frame
@@ -46,7 +48,7 @@ public class Doors : MonoBehaviour
         {
             hud.UpdateDoorMessage("E", "Open", true);
         }
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == door.transform.name && hit.transform.name != trigger.transform.name)
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name)
         {
             hud.UpdateDoorMessage("", "", false);
         }
@@ -66,6 +68,7 @@ public class Doors : MonoBehaviour
                 Destroy(door.GetComponent<NavMeshObstacle>());
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
+                FindObjectOfType<AudioManager>().Play("DoorSound");
             }
 
         }
@@ -84,6 +87,7 @@ public class Doors : MonoBehaviour
                 door.AddComponent<NavMeshObstacle>();
                 isOpen = false;
                 hud.UpdateDoorMessage("", "", false);
+                FindObjectOfType<AudioManager>().Play("DoorSound");
             }
         }
     }

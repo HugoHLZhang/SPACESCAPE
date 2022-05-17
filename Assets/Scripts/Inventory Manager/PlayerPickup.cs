@@ -10,6 +10,9 @@ public class PlayerPickup : MonoBehaviour
     private Camera cam;
     private Inventory inventory;
     [SerializeField]  private PlayerHUD hud;
+    [SerializeField]  private Timer timer;
+
+    private PlayerStats stats;
 
     private void Start()
     {
@@ -32,12 +35,40 @@ public class PlayerPickup : MonoBehaviour
         {
             if(Physics.Raycast(ray, out hit, pickupRange, pickupLayer))
             {
-                
-                Items newItem = hit.transform.GetComponent<ItemObject>().item as Items;
-                inventory.AddItem(newItem);
-                hud.UpdateMessage("Well played ! You have added " + newItem.nom + " to your inventory !");
+                Debug.Log("hit: " + hit.transform.name);
+                if (hit.transform.GetComponent<ItemObject>().item as Items)
+                {
+                    Items newItem = hit.transform.GetComponent<ItemObject>().item as Items;
+                    inventory.AddItem(newItem);
+                    hud.UpdateMessage("Well played ! You have added " + newItem.nom + " to your inventory !");
+                    hud.UpdateItemColor(newItem);
+                }
+                else
+                {
+                    Consumable newItem = hit.transform.GetComponent<ItemObject>().item as Consumable;
+                    if(newItem.type == ConsumableType.O2)
+                    {
+                        stats.takeOxygen(newItem.amount);
+                        Debug.Log("you got " + newItem.amount + " oxygen");
+                    }
+                    if (newItem.type == ConsumableType.Medkit)
+                    {
+                        stats.Heal(newItem.amount);
+                        Debug.Log("you healed " + newItem.amount + " HP");
+                    }
+                    if (newItem.type == ConsumableType.Time)
+                    {
+                        timer.addTime(newItem.amount);
+                        Debug.Log("you added 1minute");
+                    }
+                    if (newItem.type == ConsumableType.MedKit_Virus)
+                    {
+                        stats.Heal(-newItem.amount);
+                        Debug.Log("Ughh the MedKit had a virus inside, you lost " + newItem.amount + " HP");
+                    }
+                }
+
                 Destroy(hit.transform.gameObject);
-                hud.UpdateItemColor(newItem);
             }
         }
     }
@@ -46,5 +77,7 @@ public class PlayerPickup : MonoBehaviour
     {
         cam = GetComponentInChildren<Camera>();
         inventory = GetComponent<Inventory>();
+        stats = GetComponent<PlayerStats>();
+        timer = Timer.instanceTimer;
     }
 }

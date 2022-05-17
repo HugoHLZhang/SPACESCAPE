@@ -6,11 +6,12 @@ using UnityEngine.AI;
 public class EnnemiesController : MonoBehaviour
 {
     private NavMeshAgent agent = null;
-    [SerializeField] private Transform target;
+    private Transform target;
     private Animator anim = null;
     private float attackTimer;
     private bool hasStopped = false;
-
+   
+    
     private AlienStats stats = null;
 
     private void Start()
@@ -21,17 +22,18 @@ public class EnnemiesController : MonoBehaviour
     {
         moveToTarget();
     }
-
+ 
+        
     private void moveToTarget()
     {
         agent.SetDestination(target.position);
-        anim.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
-        RotateToTarget();
+        
 
         float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
-            anim.SetFloat("Speed", 0, 0.3f, Time.deltaTime);
+            anim.SetFloat("Speed", 0f, 0.3f, Time.deltaTime);
+            RotateToTarget();
             //Attack
             CharacterStats targetStats = target.GetComponent<CharacterStats>();
             if (!hasStopped)
@@ -47,8 +49,16 @@ public class EnnemiesController : MonoBehaviour
                 StartCoroutine(AttackTarget(targetStats));
             }
         }
+        if(anim.GetBool("isDying") == true)
+        {
+            agent.speed = 0;
+            agent.angularSpeed = 0;
+            agent.stoppingDistance = 0;
+            stats.damage = 0;
+        }
         else
         {
+            anim.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
             if (hasStopped)
             {
                 hasStopped = true;
@@ -59,7 +69,8 @@ public class EnnemiesController : MonoBehaviour
     private IEnumerator AttackTarget(CharacterStats statsToDamage)
     {
         anim.SetTrigger("Attack");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
+        anim.SetFloat("Speed", 0f, 0.3f, Time.deltaTime);
         float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
@@ -69,16 +80,19 @@ public class EnnemiesController : MonoBehaviour
     private void RotateToTarget()
     {
         //transform.LookAt(target);
-
         Vector3 direction = target.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = rotation;
     }
+
+    
+
 
     private void GetReference()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         stats = GetComponent<AlienStats>();
+        target = PlayerController.instance.transform;
     }
 }
