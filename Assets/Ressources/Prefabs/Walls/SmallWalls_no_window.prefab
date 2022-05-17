@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7463709207290963795}
   - component: {fileID: 4643383509194576793}
   - component: {fileID: -7792819351798251378}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SmallWalls_no_window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6588872645945373260}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.23, y: 0, z: -25.97}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
