@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8484047199936503322}
   - component: {fileID: 5242668473017318042}
   - component: {fileID: 5737442468298745484}
+  - component: {fileID: 2323858251203598733}
+  - component: {fileID: 4914770689259784775}
   m_Layer: 13
   m_Name: SmallWalls-gauche
   m_TagString: Wall
@@ -96,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.99681, y: 8, z: 1.1167198}
-  m_Center: {x: -3.1136785, y: 3.976801, z: -0.5531785}
+  m_Size: {x: 5.99681, y: 8, z: 0.2516439}
+  m_Center: {x: -3.1136785, y: 3.976801, z: -0.98571646}
 --- !u!208 &5737442468298745484
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -114,3 +116,29 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -3.114, y: 3.9770002, z: -0.112}
   m_TimeToStationary: 0.5
+--- !u!65 &2323858251203598733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979709531694530511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.99681, y: 0.3, z: 1.5}
+  m_Center: {x: -3.1136785, y: 0.15, z: -0.35}
+--- !u!65 &4914770689259784775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979709531694530511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.99681, y: 0.6, z: 1}
+  m_Center: {x: -3.1136785, y: 0.3, z: -0.61}

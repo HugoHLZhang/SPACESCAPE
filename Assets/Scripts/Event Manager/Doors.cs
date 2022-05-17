@@ -8,7 +8,6 @@ public class Doors : MonoBehaviour
     private Camera fpscam;
     [SerializeField] public float range = 5f;
     [SerializeField] private GameObject doorFrame;
-    [SerializeField] private GameObject door;
     [SerializeField] private GameObject trigger;
     [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
@@ -16,10 +15,11 @@ public class Doors : MonoBehaviour
 
     private void Start()
     {
-        doorFrame.AddComponent<BoxCollider>();
-        door.AddComponent<NavMeshObstacle>();
+        
         fpscam = CameraController.cam;
         hud = PlayerHUD.hud;
+        doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
+        doorFrame.GetComponent<BoxCollider>().enabled = true;
     }
 
     // Update is called once per frame
@@ -64,8 +64,8 @@ public class Doors : MonoBehaviour
             if (hit.transform.name == trigger.transform.name)
             {
                 anim.SetTrigger("open");
-                Destroy(doorFrame.GetComponent<BoxCollider>());
-                Destroy(door.GetComponent<NavMeshObstacle>());
+                doorFrame.GetComponent<BoxCollider>().enabled = false;
+                doorFrame.GetComponent<NavMeshObstacle>().enabled = false;
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
                 FindObjectOfType<AudioManager>().Play("DoorSound");
@@ -83,8 +83,8 @@ public class Doors : MonoBehaviour
             if (hit.transform.name == trigger.transform.name)
             {
                 anim.SetTrigger("close");
-                doorFrame.AddComponent<BoxCollider>();
-                door.AddComponent<NavMeshObstacle>();
+                doorFrame.GetComponent<BoxCollider>().enabled = true;
+                doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
                 isOpen = false;
                 hud.UpdateDoorMessage("", "", false);
                 FindObjectOfType<AudioManager>().Play("DoorSound");

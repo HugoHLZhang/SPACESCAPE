@@ -25,7 +25,10 @@ public class PlayerPickup : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, pickupRange, pickupLayer) && hit.transform.name != null)
         {
-            hud.UpdatePickUpMessage("E","PickUp",true);
+            if (hit.transform.GetComponent<ItemObject>().item as Items)
+                hud.UpdatePickUpMessage("E","PickUp",true);
+            else
+                hud.UpdatePickUpMessage("E", "Use", true);
         }
         else
         {
@@ -49,22 +52,22 @@ public class PlayerPickup : MonoBehaviour
                     if(newItem.type == ConsumableType.O2)
                     {
                         stats.takeOxygen(newItem.amount);
-                        Debug.Log("you got " + newItem.amount + " oxygen");
+                        hud.UpdateMessage("you got " + newItem.amount + " oxygen");
                     }
                     if (newItem.type == ConsumableType.Medkit)
                     {
                         stats.Heal(newItem.amount);
-                        Debug.Log("you healed " + newItem.amount + " HP");
+                        hud.UpdateMessage("you healed " + newItem.amount + " HP");
                     }
                     if (newItem.type == ConsumableType.Time)
                     {
                         timer.addTime(newItem.amount);
-                        Debug.Log("you added 1minute");
+                        hud.UpdateMessage("you added 1minute");
                     }
                     if (newItem.type == ConsumableType.MedKit_Virus)
                     {
                         stats.Heal(-newItem.amount);
-                        Debug.Log("Ughh the MedKit had a virus inside, you lost " + newItem.amount + " HP");
+                        hud.UpdateMessage("Ughh the MedKit had a virus inside, you lost " + newItem.amount + " HP");
                     }
                 }
 

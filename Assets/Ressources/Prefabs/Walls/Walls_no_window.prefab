@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2982949583730016047}
   - component: {fileID: -1230383416971675743}
   - component: {fileID: -6088987608078180689}
-  - component: {fileID: 7761236855223107599}
+  - component: {fileID: 3588177165580035275}
+  - component: {fileID: 7634458560802592670}
   m_Layer: 13
   m_Name: Walls_no_window
   m_TagString: Untagged
@@ -115,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.000001, y: 8, z: 0.37818006}
   m_Center: {x: -6.1152744, y: 3.976801, z: -0.9224488}
---- !u!65 &7761236855223107599
+--- !u!65 &3588177165580035275
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,5 +127,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.000001, y: 1.5610828, z: 1.5647794}
-  m_Center: {x: -6.1152744, y: 0.75734234, z: -0.329149}
+  m_Size: {x: 12.000002, y: 0.3, z: 1.5}
+  m_Center: {x: -6.1152744, y: 0.15, z: -0.11153847}
+--- !u!65 &7634458560802592670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631428141870735098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.000001, y: 0.6, z: 1}
+  m_Center: {x: -6.1152744, y: 0.3, z: -0.37125373}

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 7463709207290963795}
   - component: {fileID: 4643383509194576793}
   - component: {fileID: -7792819351798251378}
+  - component: {fileID: 236420152688806333}
+  - component: {fileID: -537747930917381737}
+  - component: {fileID: 3341832941135550147}
   m_Layer: 13
   m_Name: SmallWalls_no_window
   m_TagString: Untagged
@@ -100,3 +103,42 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -3.114, y: 3.9770002, z: -0.112}
   m_TimeToStationary: 0.5
+--- !u!65 &236420152688806333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6588872645945373260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.99681, y: 8, z: 0.5928141}
+  m_Center: {x: -3.1136785, y: 3.976801, z: -0.81513137}
+--- !u!65 &-537747930917381737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6588872645945373260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.99681, y: 0.6, z: 1}
+  m_Center: {x: -3.1136785, y: 0.3, z: -0.59}
+--- !u!65 &3341832941135550147
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6588872645945373260}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.99681, y: 0.3, z: 1.5}
+  m_Center: {x: -3.1136785, y: 0.15, z: -0.32}

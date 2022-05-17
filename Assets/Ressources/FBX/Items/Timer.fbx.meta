@@ -1,9 +1,44 @@
 fileFormatVersion: 2
-guid: 411196c422a322844815c2224b12e20e
+guid: 7b44bb350f0e26c4da5c7d33fa57c940
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bleu Ecran
+    second: {fileID: 2100000, guid: 5336c268157ee4b4c8c3dc502adb1959, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bordure Dor\xE9"
+    second: {fileID: 2100000, guid: 4264359b35bb8ab4d81fb1272bb61a88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bouton Rouge
+    second: {fileID: 2100000, guid: 513e6aa579062904bbde220d3edffadb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ecran Blanc
+    second: {fileID: 2100000, guid: 99c30b4e6eb107b458d0c5faf5e1ec23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 508d0d5d3bf70f343a4ad4aeae6e6784, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "M\xE9tal Gris"
+    second: {fileID: 2100000, guid: 25e17bb899e83f64a8433f311871f969, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Noir
+    second: {fileID: 2100000, guid: 7b42ebfb7e7e9e948b8e8a05324516f6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -73,7 +108,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -88,11 +123,11 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1

@@ -80,62 +80,7 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: lightsaber(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Light Saber Modal
-      parentName: lightsaber(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Light Saber
-      parentName: lightsaber(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: manche
-      parentName: Light Saber
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.000000021855694, y: -0.00000011920924, z: 2.6054007e-15, w: 1}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: saber1
-      parentName: manche
-      position: {x: -1.3234901e-23, y: 0.20587856, z: 0}
-      rotation: {x: 2.6645353e-15, y: -1.4210855e-14, z: -2.37847e-22, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: saber2
-      parentName: saber1
-      position: {x: 1.0587917e-22, y: 0.12474337, z: 8.881785e-16}
-      rotation: {x: -5.3290705e-15, y: -7.1054274e-15, z: 5.1340956e-22, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: saber3
-      parentName: saber2
-      position: {x: -2.3372515e-22, y: 0.1721417, z: -4.2351647e-22}
-      rotation: {x: 0, y: 0, z: 5.1384526e-22, w: 1}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: saber4
-      parentName: saber3
-      position: {x: -6.703869e-23, y: 0.1247434, z: -8.4703295e-22}
-      rotation: {x: 0.00000014431332, y: -5.961306e-15, z: 0.60529405, w: 0.79600203}
-      scale: {x: 1, y: 1, z: 1}
-    - name: saber5
-      parentName: saber4
-      position: {x: -6.4150603e-22, y: 0.12474334, z: 1.7763564e-15}
-      rotation: {x: 0.000000023429639, y: 4.0440046e-15, z: 0.09827106, w: 0.99515975}
-      scale: {x: 1, y: 0.99999994, z: 1}
-    - name: saber6
-      parentName: saber5
-      position: {x: 5.8397174e-22, y: 0.1247434, z: -2.5410988e-21}
-      rotation: {x: 1.15463195e-14, y: -5.38e-43, z: -2.2385767e-21, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: saber6_end
-      parentName: saber6
-      position: {x: -0, y: 0.1247434, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -148,7 +93,7 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b4a9bbac103b883459e3435c7ed39b2a, type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 7d2c9fc2504aa0d46a499e03a36c8b4e, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1

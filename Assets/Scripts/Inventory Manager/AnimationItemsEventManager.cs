@@ -31,6 +31,11 @@ public class AnimationItemsEventManager : MonoBehaviour
 
     }
 
+    public void EndAnimation()
+    {
+        manager.isSwitching = false;
+    }
+
     public void ExpandSaber()
     {
         manager.saberAnim.SetTrigger("expand");

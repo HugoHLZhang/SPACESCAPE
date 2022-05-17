@@ -17,6 +17,7 @@ public class EquipmentManager : MonoBehaviour
     [SerializeField] Items defaultItem = null;
     [SerializeField] PlayerHUD hud;
 
+    public bool isSwitching;
     private void Start()
     {
         GetReference();
@@ -31,8 +32,9 @@ public class EquipmentManager : MonoBehaviour
     {
 
         //currentItemObject.layer = LayerArms ;
-        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquipedItem != 0 && inventory.GetItem(0) != null)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquipedItem != 0 && inventory.GetItem(0) != null && isSwitching == false)
         {
+            isSwitching = true;
             UnequipItem();
             currentlyEquipedItem = 0;
             anim.SetInteger("itemType", 0);
@@ -47,13 +49,14 @@ public class EquipmentManager : MonoBehaviour
                 hud.UpdateItemSize(inventory.GetItem(1));
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1 && isSwitching == false)
         {
             if (inventory.GetItem(1) == null)
             {
                 hud.UpdateMessage("No item here ! Try to find it !");
                 return;
             }
+            isSwitching = true;
             UnequipItem();
             EquipItem(inventory.GetItem(1));
             FindObjectOfType<AudioManager>().Play("EquipSaber");
@@ -64,13 +67,14 @@ public class EquipmentManager : MonoBehaviour
             }
             inventory.GetItem(1).prefab.layer = LayerArms;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2) 
+        if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2 && isSwitching == false) 
         {
             if(inventory.GetItem(2) == null)
             {
                 hud.UpdateMessage("No item here ! Try to find it !");
                 return;
             }
+            isSwitching = true;
             UnequipItem();
             EquipItem(inventory.GetItem(2));
             hud.UpdateItemSize(inventory.GetItem(0));

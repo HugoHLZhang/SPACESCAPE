@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6744009726494199428}
   - component: {fileID: 8765512354447095775}
   - component: {fileID: -2881772371220097702}
+  - component: {fileID: 2673294041889516470}
   m_Layer: 13
   m_Name: Walls-droite
   m_TagString: Wall
@@ -110,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.999999, y: 0.8322373, z: 1.3827252}
-  m_Center: {x: -6.115273, y: 0.3929191, z: -0.4201758}
+  m_Size: {x: 11.999999, y: 0.3, z: 1.5}
+  m_Center: {x: -6.115273, y: 0.15, z: -0.4201758}
 --- !u!208 &-2881772371220097702
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -128,3 +129,16 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -6.1150002, y: 3.9770002, z: -0.112}
   m_TimeToStationary: 0.5
+--- !u!65 &2673294041889516470
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921750974373146629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.999999, y: 0.6, z: 1}
+  m_Center: {x: -6.115273, y: 0.3, z: -0.65}
