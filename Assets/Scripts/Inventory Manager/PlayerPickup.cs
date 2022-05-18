@@ -60,13 +60,11 @@ public class PlayerPickup : MonoBehaviour
                     {
                         stats.Heal(newItem.amount);
                         hud.UpdateMessage("you healed " + newItem.amount + " HP");
-                        FindObjectOfType<AudioManager>().Play("HealSound");
                     }
                     if (newItem.type == ConsumableType.Time)
                     {
                         timer.addTime(newItem.amount);
                         hud.UpdateMessage("you added 1minute");
-                        FindObjectOfType<AudioManager>().Play("TimeSound");
                     }
                     if (newItem.type == ConsumableType.MedKit_Virus)
                     {
