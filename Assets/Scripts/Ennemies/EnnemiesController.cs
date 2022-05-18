@@ -10,7 +10,7 @@ public class EnnemiesController : MonoBehaviour
     private Animator anim = null;
     private float attackTimer;
     private bool hasStopped = false;
-   
+    
     
     private AlienStats stats = null;
 
@@ -75,9 +75,13 @@ public class EnnemiesController : MonoBehaviour
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
             stats.DealDamage(statsToDamage);
+            target.GetComponent<PlayerHUD>().FadeRedScreen();
             FindObjectOfType<AudioManager>().Play("GettingHit");
+            yield return new WaitForSeconds(0.3f);
+            target.GetComponent<PlayerHUD>().FadeRedScreen();
         }
     }
+
     private void RotateToTarget()
     {
         //transform.LookAt(target);

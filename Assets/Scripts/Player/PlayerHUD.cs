@@ -28,6 +28,10 @@ public class PlayerHUD : MonoBehaviour
 
     [SerializeField] private DoorPassword doorPassword;
 
+    [SerializeField] private FadeInOut takingDamage;
+
+    private bool fadeOut, fadeIn;
+
     private void Start()
     {
         message.gameObject.SetActive(false);
@@ -42,12 +46,24 @@ public class PlayerHUD : MonoBehaviour
         }
     }
 
+
+    public void FadeRedScreen()
+    {
+        takingDamage.Fade();
+    }
+
     public void PopUpDoorWindow()
     {
         doorPassword.gameObject.SetActive(true);
-        Time.timeScale = 0f;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    public void ClosePopUpWindow()
+    {
+        doorPassword.gameObject.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void UpdateDoorMessage(string key, string message, bool active)

@@ -7,11 +7,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region
-    public static Transform instance;
+    public static GameObject instance;
 
     private void Awake()
     {
-        instance = this.transform;
+        instance = this.gameObject;
     }
     #endregion
 
