@@ -13,16 +13,19 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) //et différent de mort
+        if (Input.GetKeyDown(KeyCode.P)) //et différent de mort
         {
             if (GameIsPaused)
             {
                 Resume();
+                Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+
             }
             else//pause on key escape
             {
                 Pause();
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
             }
         }
