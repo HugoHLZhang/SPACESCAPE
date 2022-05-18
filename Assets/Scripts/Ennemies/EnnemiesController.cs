@@ -30,7 +30,7 @@ public class EnnemiesController : MonoBehaviour
         
 
         float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
-        if (distanceBetweenPlayer <= agent.stoppingDistance)
+        if (distanceBetweenPlayer <= agent.stoppingDistance + 5f)
         {
             anim.SetFloat("Speed", 0f, 0.3f, Time.deltaTime);
             RotateToTarget();
@@ -72,7 +72,7 @@ public class EnnemiesController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         anim.SetFloat("Speed", 0f, 0.3f, Time.deltaTime);
         float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
-        if (distanceBetweenPlayer <= agent.stoppingDistance)
+        if (distanceBetweenPlayer <= agent.stoppingDistance + 5f)
         {
             stats.DealDamage(statsToDamage);
             FindObjectOfType<AudioManager>().Play("GettingHit");

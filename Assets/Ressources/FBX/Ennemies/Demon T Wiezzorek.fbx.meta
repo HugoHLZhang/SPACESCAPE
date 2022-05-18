@@ -96,7 +96,7 @@ ModelImporter:
   - 9c476de4d4225314c9b0f544a8a3d184
   - 6be574c7b3c64d048b10e51e92642979
   - c43f1d7bfaac3e54cad377063a471008
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human:

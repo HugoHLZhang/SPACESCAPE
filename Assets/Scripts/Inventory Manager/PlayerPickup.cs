@@ -54,6 +54,7 @@ public class PlayerPickup : MonoBehaviour
                         stats.takeOxygen(newItem.amount);
                         hud.UpdateMessage("you got " + newItem.amount + " oxygen");
                         FindObjectOfType<AudioManager>().Play("PickOxygen");
+                        Debug.Log("PickOxygen"+Random.Range(1, 2).ToString());
                     }
                     if (newItem.type == ConsumableType.Medkit)
                     {

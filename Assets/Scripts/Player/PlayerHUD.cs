@@ -26,6 +26,8 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private MessageUI doorMessage;
     [SerializeField] private float messageTiming = 0f;
 
+    [SerializeField] private DoorPassword doorPassword;
+
     private void Start()
     {
         message.gameObject.SetActive(false);
@@ -36,7 +38,16 @@ public class PlayerHUD : MonoBehaviour
         if(messageTiming < Time.time)
         {
             message.gameObject.SetActive(false);
+            
         }
+    }
+
+    public void PopUpDoorWindow()
+    {
+        doorPassword.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void UpdateDoorMessage(string key, string message, bool active)
