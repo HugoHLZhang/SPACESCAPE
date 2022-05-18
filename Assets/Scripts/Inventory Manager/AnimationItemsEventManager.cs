@@ -7,7 +7,7 @@ public class AnimationItemsEventManager : MonoBehaviour
 
     private EquipmentManager manager;
     private Inventory inventory;
-    private int randomIndex;
+
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class AnimationItemsEventManager : MonoBehaviour
         {
             manager.saberAnim = manager.currentItemObject.GetComponent<Animator>();
         }
+
     }
 
     public void EndAnimation()
@@ -45,20 +46,18 @@ public class AnimationItemsEventManager : MonoBehaviour
         manager.saberAnim.SetTrigger("collapse");
     }
 
-    public void randomFootStepSound()
-    {
-        randomIndex = Random.Range(1, 4);
-        FindObjectOfType<AudioManager>().Play("Footsteps" + randomIndex );
-    }
-
-    public void stopfootstepsound()
-    {
-        FindObjectOfType<AudioManager>().Pause("Footsteps" + randomIndex);
-    }
 
     private void GetReference()
     {
         inventory = GetComponentInParent<Inventory>();
         manager = GetComponentInParent<EquipmentManager>();
+    }
+
+    public IEnumerator randomfootsteps()
+    {
+        string random = Random.Range(1, 4).ToString();
+        FindObjectOfType<AudioManager>().Play("Footsteps"+random);
+        yield return new WaitForSeconds(0.15f);
+        FindObjectOfType<AudioManager>().Stop("Footsteps"+random);
     }
 }
