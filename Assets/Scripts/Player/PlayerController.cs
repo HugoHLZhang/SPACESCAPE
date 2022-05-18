@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
         else if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
         {
             anim.SetFloat("Speed", 0.5f, 0.2f, Time.deltaTime);
+            StartCoroutine( randomfootsteps());
         }
         else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
         {
@@ -91,6 +92,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public IEnumerator randomfootsteps()
+    {
+        string random = UnityEngine.Random.Range(1, 4).ToString();
+        FindObjectOfType<AudioManager>().Play("Footsteps" + random);
+        yield return new WaitForSeconds(1f);
+        FindObjectOfType<AudioManager>().Stop("Footsteps" + random);
+    }
     private void HandleIsGrounded()
     {
         isCharacterGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask);
