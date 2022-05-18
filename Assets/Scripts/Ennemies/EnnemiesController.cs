@@ -75,6 +75,7 @@ public class EnnemiesController : MonoBehaviour
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
             stats.DealDamage(statsToDamage);
+            FindObjectOfType<AudioManager>().Play("GettingHit");
         }
     }
     private void RotateToTarget()

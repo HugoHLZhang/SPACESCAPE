@@ -49,6 +49,10 @@ public class CharacterStats : MonoBehaviour
             oxygen = maxOxygen;
             isDead = false;
         }
+        if (oxygen <= 10)
+        {
+            FindObjectOfType<AudioManager>().Play("BreathingPlayer");
+        }
     }
 
     public virtual void Die()

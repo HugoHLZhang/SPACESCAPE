@@ -50,6 +50,7 @@ public class PlayerPickup : MonoBehaviour
                     {
                         stats.takeOxygen(newItem.amount);
                         Debug.Log("you got " + newItem.amount + " oxygen");
+                        FindObjectOfType<AudioManager>().Play("PickOxygen");
                     }
                     if (newItem.type == ConsumableType.Medkit)
                     {
@@ -59,12 +60,13 @@ public class PlayerPickup : MonoBehaviour
                     if (newItem.type == ConsumableType.Time)
                     {
                         timer.addTime(newItem.amount);
-                        Debug.Log("you added 1minute");
+                        Debug.Log("you added 1 minute");
                     }
                     if (newItem.type == ConsumableType.MedKit_Virus)
                     {
                         stats.Heal(-newItem.amount);
                         Debug.Log("Ughh the MedKit had a virus inside, you lost " + newItem.amount + " HP");
+                        FindObjectOfType<AudioManager>().Play("PoisonSound");
                     }
                 }
 
