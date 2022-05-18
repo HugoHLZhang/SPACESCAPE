@@ -5,4 +5,12 @@ using UnityEngine;
 public class ItemObject : MonoBehaviour
 {
     public Item item;
+
+    public void Update()
+    {
+        if(item.nom == "Timer")
+        {
+            gameObject.transform.Rotate(Vector3.up, 50f * Time.deltaTime, Space.World);
+        }
+    }
 }

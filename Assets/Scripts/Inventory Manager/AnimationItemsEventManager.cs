@@ -28,7 +28,6 @@ public class AnimationItemsEventManager : MonoBehaviour
         {
             manager.saberAnim = manager.currentItemObject.GetComponent<Animator>();
         }
-
     }
 
     public void EndAnimation()
