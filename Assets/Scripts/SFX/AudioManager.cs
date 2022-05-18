@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     public static AudioManager instance;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,7 +32,6 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-
     }
 
     void Start()
@@ -56,4 +56,5 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Pause();
     }
+    
 }
