@@ -159,10 +159,12 @@ public class PlayerHUD : MonoBehaviour
         if (newItem.name == "saber")
         {
             saber.UpdateColor(newItem.icon, Color.white);
+            FindObjectOfType<AudioManager>().Play("PickupSaber");
         }
         if (newItem.name == "gun")
         {
             gun.UpdateColor(newItem.icon, Color.white);
+            FindObjectOfType<AudioManager>().Play("PickupGun");
         }
     }
 
