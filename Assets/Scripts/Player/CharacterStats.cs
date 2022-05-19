@@ -81,12 +81,14 @@ public class CharacterStats : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        CheckHealth();
         int healthAfterDamge = health - damage;
         SetHealthTo(healthAfterDamge);
     }
 
     public void LoseOxygen(int amount)
     {
+        CheckHealth();
         int oxygenAfterTime = oxygen - amount;
         SetOxygenTo(oxygenAfterTime);
     }

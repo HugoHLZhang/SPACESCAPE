@@ -71,6 +71,7 @@ public class PlayerHUD : MonoBehaviour
         {
             doorPassword.Fade();
             passwordPopup.popUpIsOpen = !doorPassword.isFaded;
+            Debug.Log(passwordPopup.popUpIsOpen);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
         }
