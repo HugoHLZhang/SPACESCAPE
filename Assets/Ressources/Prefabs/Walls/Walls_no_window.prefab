@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: -6088987608078180689}
   - component: {fileID: 3588177165580035275}
   - component: {fileID: 7634458560802592670}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: Walls_no_window
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

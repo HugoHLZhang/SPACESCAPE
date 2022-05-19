@@ -20,6 +20,9 @@ public class PauseMenu : MonoBehaviour
                 Resume();
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                FindObjectOfType<AudioManager>().Play("Theme");
+                FindObjectOfType<AudioManager>().Stop("PauseTheme");
+                FindObjectOfType<AudioManager>().Play("PauseHit");
 
             }
             else//pause on key escape
@@ -27,6 +30,9 @@ public class PauseMenu : MonoBehaviour
                 Pause();
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
+                FindObjectOfType<AudioManager>().Play("PauseHit");
+                FindObjectOfType<AudioManager>().Pause("Theme");
+                FindObjectOfType<AudioManager>().Play("PauseTheme");
             }
         }
 
@@ -39,6 +45,8 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f; //time is back to normal 
         GameIsPaused = false;
+        FindObjectOfType<AudioManager>().Play("Theme");
+        FindObjectOfType<AudioManager>().Stop("PauseTheme");
     }
 
     void Pause()
@@ -53,7 +61,10 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Loading Menu...");
         Time.timeScale = 1f;
         SceneManager.LoadScene(0); //change scene
-        RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f); 
+        RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f);
+        FindObjectOfType<AudioManager>().Stop("Theme");
+        FindObjectOfType<AudioManager>().Stop("PauseTheme");
+        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
     }
 
     public void QuitGame()

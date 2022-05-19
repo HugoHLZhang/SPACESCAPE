@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform body;
 
     private float xRot;
-
+    [SerializeField] private DoorsWithPW door;
     private void Start()
     {
         LockCursor();
@@ -37,9 +37,11 @@ public class CameraController : MonoBehaviour
 
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -90, 90);
-
-        arms.localRotation = Quaternion.Euler(new Vector3(xRot, 0, 0));
-        body.Rotate(new Vector3(0, mouseX, 0));
+        if (!door.popUpIsOpen)
+        {
+            arms.localRotation = Quaternion.Euler(new Vector3(xRot, 0, 0));
+            body.Rotate(new Vector3(0, mouseX, 0));
+        }
     }
 
     private void LockCursor()

@@ -7,11 +7,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     #region
-    public static Transform instance;
+    public static GameObject instance;
 
     private void Awake()
     {
-        instance = this.transform;
+        instance = this.gameObject;
     }
     #endregion
 
@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Animator anim;
 
+    [SerializeField] private DoorsWithPW door;
+
+
     private void Start()
     {
         GetReferences();
@@ -45,9 +48,12 @@ public class PlayerController : MonoBehaviour
     {
         HandleIsGrounded();
         HandleGravity();
-        HandleJumping();
-        HandleRunning();
-        HandleMovement();
+        if (!door.popUpIsOpen)
+        {
+            HandleJumping();
+            HandleRunning();
+            HandleMovement();
+        }
         HandleAnimations();
     }
 
@@ -59,7 +65,7 @@ public class PlayerController : MonoBehaviour
         moveDirection = new Vector3(moveX, 0, moveZ);
         moveDirection = moveDirection.normalized;
         moveDirection = transform.TransformDirection(moveDirection);
-
+        
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
     }
 

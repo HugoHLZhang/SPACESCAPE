@@ -26,6 +26,14 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private MessageUI doorMessage;
     [SerializeField] private float messageTiming = 0f;
 
+    [SerializeField] private FadeInOut doorPassword;
+    [SerializeField] private DoorPassword passwordText;
+    [SerializeField] private DoorsWithPW passwordPopup;
+
+    [SerializeField] private FadeInOut takingDamage;
+
+    private bool fadeOut, fadeIn;
+
     private void Start()
     {
         message.gameObject.SetActive(false);
@@ -36,7 +44,49 @@ public class PlayerHUD : MonoBehaviour
         if(messageTiming < Time.time)
         {
             message.gameObject.SetActive(false);
+            
         }
+    }
+
+    public string readPassword()
+    {
+        return passwordText.readPassword();
+    }
+
+    public void showInvalidMessage(string message, bool active, Color color)
+    {
+        passwordText.setMessage(message, color);
+        passwordText.invalidMessage.gameObject.SetActive(active);
+        
+    }
+
+    public void FadeRedScreen()
+    {
+        takingDamage.Fade();
+    }
+
+    public void PopUpDoorWindow()
+    {
+        if (doorPassword.isFaded)
+        {
+            doorPassword.Fade();
+            passwordPopup.popUpIsOpen = !doorPassword.isFaded;
+            Debug.Log(passwordPopup.popUpIsOpen);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            ClosePopUpWindow();
+        }
+    }
+
+    public void ClosePopUpWindow()
+    {
+        doorPassword.Fade();
+        passwordPopup.popUpIsOpen = !doorPassword.isFaded;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void UpdateDoorMessage(string key, string message, bool active)
@@ -109,10 +159,12 @@ public class PlayerHUD : MonoBehaviour
         if (newItem.name == "saber")
         {
             saber.UpdateColor(newItem.icon, Color.white);
+            FindObjectOfType<AudioManager>().Play("PickupSaber");
         }
         if (newItem.name == "gun")
         {
             gun.UpdateColor(newItem.icon, Color.white);
+            FindObjectOfType<AudioManager>().Play("PickupGun");
         }
     }
 

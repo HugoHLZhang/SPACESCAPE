@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8479463286925307399}
   - component: {fileID: 6439003911408878008}
   - component: {fileID: -5729848371212621279}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: Walls-90-gauche
   m_TagString: Wall
   m_Icon: {fileID: 0}

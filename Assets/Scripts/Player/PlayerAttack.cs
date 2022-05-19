@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
     private EquipmentManager manager;
     private Animator anim;
 
+    [SerializeField] private DoorsWithPW door;
+
     private void Start()
     {
         GetReferences();
@@ -26,9 +28,10 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && !door.popUpIsOpen)
         {
-            if(manager.currentlyEquipedItem == 2)
+                
+            if (manager.currentlyEquipedItem == 2)
             {
                 Shoot();
             }
@@ -94,7 +97,14 @@ public class PlayerAttack : MonoBehaviour
             shootTimer = Time.time;
             RaycastAttack(currentItem);
             anim.SetTrigger("isSlashing");
-            FindObjectOfType<AudioManager>().Play("SwingSound");
+            StartCoroutine(playSaberAttackSound());
         }
     }
+
+    public IEnumerator playSaberAttackSound()
+    {
+        yield return new WaitForSeconds(0.05f);
+        FindObjectOfType<AudioManager>().Play("SwingSound");
+    }
+
 }
