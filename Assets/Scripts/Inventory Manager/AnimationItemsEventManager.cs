@@ -47,17 +47,6 @@ public class AnimationItemsEventManager : MonoBehaviour
         manager.saberAnim.SetTrigger("collapse");
     }
 
-    public void randomFootStepSound()
-    {
-        randomIndex = Random.Range(1, 4);
-        FindObjectOfType<AudioManager>().Play("Footsteps" + randomIndex );
-    }
-
-    public void stopfootstepsound()
-    {
-        FindObjectOfType<AudioManager>().Pause("Footsteps" + randomIndex);
-    }
-
     private void GetReference()
     {
         inventory = GetComponentInParent<Inventory>();

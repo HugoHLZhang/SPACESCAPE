@@ -22,8 +22,8 @@ public class PlayerStats : CharacterStats
     {
         while (nextBreath > 0)
         {
-            nextBreath--;
             yield return new WaitForSeconds(5f);
+            nextBreath-=5;
             LoseOxygen(1);
         }
     }
