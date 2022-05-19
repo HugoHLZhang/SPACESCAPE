@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1880561190884584778}
   - component: {fileID: 1880561190884584884}
   - component: {fileID: 1880561190884584779}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1880561190923949821}
   - component: {fileID: 1880561190923949823}
   - component: {fileID: 1880561190923949822}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1880561191043702161}
   - component: {fileID: 1880561191043702163}
   - component: {fileID: 1880561191043702162}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 1880561191154441819}
   - component: {fileID: 1880561191154441818}
   - component: {fileID: 1880561191154441817}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1880561191334956118}
   - component: {fileID: 1880561191333629048}
   - component: {fileID: 1880561191332531896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gun_Tigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 1880561191334956120}
   - component: {fileID: 1880561191333629050}
   - component: {fileID: 1880561191332531898}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gun_Loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 1880561191334956122}
   - component: {fileID: 1880561191333629052}
   - component: {fileID: 1880561191332531900}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gun_Bullet_Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 1880561191334956124}
   - component: {fileID: 1880561191333629054}
   - component: {fileID: 1880561191332531902}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gun_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1880561191334956126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

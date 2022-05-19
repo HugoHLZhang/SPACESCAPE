@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 11489952}
   - component: {fileID: 11468384}
   - component: {fileID: 10825254}
-  - component: {fileID: 2106397028604736739}
+  - component: {fileID: 6539755317852861645}
   m_Layer: 0
   m_Name: shot_prefab
   m_TagString: Untagged
@@ -181,15 +181,16 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &2106397028604736739
-MonoBehaviour:
+--- !u!65 &6539755317852861645
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434f13c46d018ff4892d98594098dcc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Size: {x: 5.9426985, y: 5.8055997, z: 55.4336}
+  m_Center: {x: -0.2926284, y: -0.49265662, z: 24.951693}
