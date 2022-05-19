@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FadeInOut : MonoBehaviour
 {
-    private bool isFaded = true;
+    public bool isFaded = true;
     public float Duration = 0.3f;
 
     public void Fade()

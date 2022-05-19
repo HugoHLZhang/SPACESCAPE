@@ -6,12 +6,18 @@ using UnityEngine.UI;
 public class DoorPassword : MonoBehaviour
 {
     [SerializeField] private InputField password;
-    [SerializeField] private Button enter;
+    [SerializeField] public Text invalidMessage;
 
 
-    public void readPassword()
+    public string readPassword()
     {
-        Debug.Log(password.text);
+        return password.text;
+    }
+
+    public void setMessage(string message, Color color)
+    {
+        invalidMessage.text = message;
+        invalidMessage.color = color;
     }
 
 }

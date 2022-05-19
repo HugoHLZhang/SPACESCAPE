@@ -10,7 +10,7 @@ public class PlayerPickup : MonoBehaviour
     private Camera cam;
     private Inventory inventory;
     [SerializeField]  private PlayerHUD hud;
-    [SerializeField]  private Timer timer;
+    private Timer timer;
 
     private PlayerStats stats;
 

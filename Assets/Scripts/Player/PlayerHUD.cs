@@ -26,7 +26,9 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private MessageUI doorMessage;
     [SerializeField] private float messageTiming = 0f;
 
-    [SerializeField] private DoorPassword doorPassword;
+    [SerializeField] private FadeInOut doorPassword;
+    [SerializeField] private DoorPassword passwordText;
+    [SerializeField] private DoorsWithPW passwordPopup;
 
     [SerializeField] private FadeInOut takingDamage;
 
@@ -46,6 +48,17 @@ public class PlayerHUD : MonoBehaviour
         }
     }
 
+    public string readPassword()
+    {
+        return passwordText.readPassword();
+    }
+
+    public void showInvalidMessage(string message, bool active, Color color)
+    {
+        passwordText.setMessage(message, color);
+        passwordText.invalidMessage.gameObject.SetActive(active);
+        
+    }
 
     public void FadeRedScreen()
     {
@@ -54,14 +67,23 @@ public class PlayerHUD : MonoBehaviour
 
     public void PopUpDoorWindow()
     {
-        doorPassword.gameObject.SetActive(true);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+        if (doorPassword.isFaded)
+        {
+            doorPassword.Fade();
+            passwordPopup.popUpIsOpen = !doorPassword.isFaded;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            ClosePopUpWindow();
+        }
     }
 
     public void ClosePopUpWindow()
     {
-        doorPassword.gameObject.SetActive(false);
+        doorPassword.Fade();
+        passwordPopup.popUpIsOpen = !doorPassword.isFaded;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
