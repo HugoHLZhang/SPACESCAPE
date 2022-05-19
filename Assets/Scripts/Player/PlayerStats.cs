@@ -62,6 +62,7 @@ public class PlayerStats : CharacterStats
         FindObjectOfType<AudioManager>().Play("DeathSound");
         FindObjectOfType<AudioManager>().Stop("BreathingPlayer");
         FindObjectOfType<AudioManager>().Stop("PoisonSound");
+        FindObjectOfType<AudioManager>().Play("DeathScreen");
 
     }
 

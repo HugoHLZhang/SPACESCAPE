@@ -52,12 +52,4 @@ public class AnimationItemsEventManager : MonoBehaviour
         inventory = GetComponentInParent<Inventory>();
         manager = GetComponentInParent<EquipmentManager>();
     }
-
-    public IEnumerator randomfootsteps()
-    {
-        string random = Random.Range(1, 4).ToString();
-        FindObjectOfType<AudioManager>().Play("Footsteps"+random);
-        yield return new WaitForSeconds(0.15f);
-        FindObjectOfType<AudioManager>().Stop("Footsteps"+random);
-    }
 }
