@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5737442468298745484}
   - component: {fileID: 2323858251203598733}
   - component: {fileID: 4914770689259784775}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: SmallWalls-gauche
   m_TagString: Wall
   m_Icon: {fileID: 0}

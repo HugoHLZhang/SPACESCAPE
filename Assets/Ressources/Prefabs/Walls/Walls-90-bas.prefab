@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8479463286925307399}
   - component: {fileID: 5305000749437249457}
   - component: {fileID: 6537247517746856371}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: Walls-90-bas
   m_TagString: Wall
   m_Icon: {fileID: 0}

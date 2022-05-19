@@ -94,7 +94,14 @@ public class PlayerAttack : MonoBehaviour
             shootTimer = Time.time;
             RaycastAttack(currentItem);
             anim.SetTrigger("isSlashing");
-            FindObjectOfType<AudioManager>().Play("SwingSound");
+            StartCoroutine(playSaberAttackSound());
         }
     }
+
+    public IEnumerator playSaberAttackSound()
+    {
+        yield return new WaitForSeconds(0.05f);
+        FindObjectOfType<AudioManager>().Play("SwingSound");
+    }
+
 }
