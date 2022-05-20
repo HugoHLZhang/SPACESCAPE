@@ -177,7 +177,7 @@ public class BossController : MonoBehaviour
 
     public void patternManager()
     {
-        if (MeleePattern && CountAttack > 1)
+        if (MeleePattern && CountAttack > 2)
         {
             CountAttack = 0;
 
