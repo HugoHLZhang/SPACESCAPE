@@ -11,6 +11,7 @@ public class Doors : MonoBehaviour
     [SerializeField] private GameObject trigger;
     [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
+    [SerializeField] private DialogueTrigger Dialogue;
     private PlayerHUD hud;
 
     private void Start()
@@ -20,6 +21,7 @@ public class Doors : MonoBehaviour
         hud = PlayerHUD.hud;
         doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
         doorFrame.GetComponent<BoxCollider>().enabled = true;
+        Dialogue = GetComponentInChildren<DialogueTrigger>();
     }
 
     // Update is called once per frame
@@ -69,6 +71,7 @@ public class Doors : MonoBehaviour
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
                 FindObjectOfType<AudioManager>().Play("DoorSound");
+                Dialogue.TriggerDialogue();
             }
 
         }
