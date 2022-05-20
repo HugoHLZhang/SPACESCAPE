@@ -22,6 +22,11 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private ItemUI saber;
     [SerializeField] private ItemUI gun;
 
+    [SerializeField] private ItemUI element1;
+    [SerializeField] private ItemUI element2;
+    [SerializeField] private ItemUI element3;
+    [SerializeField] private ItemUI element4;
+
     [SerializeField] private MessageUI message;
     [SerializeField] private MessageUI pickUpMessage;
     [SerializeField] private MessageUI doorMessage;
@@ -127,6 +132,54 @@ public class PlayerHUD : MonoBehaviour
     {
         poisonBar.gameObject.SetActive(show);
     }
+
+
+
+    public void UpdateElementUI(int index, Elements newElements)
+    {
+        if(index == 0)
+        {
+            element1.gameObject.SetActive(true);
+            element1.UpdateInfo(newElements.icon);
+        }
+        if (index == 1)
+        {
+            element2.gameObject.SetActive(true);
+            element2.UpdateInfo(newElements.icon);
+        }
+        if (index == 2)
+        {
+            element3.gameObject.SetActive(true);
+            element3.UpdateInfo(newElements.icon);
+        }
+        if (index == 3)
+        {
+            element4.gameObject.SetActive(true);
+            element4.UpdateInfo(newElements.icon);
+        }
+    }
+
+    public void deleteElementUI(int index, Elements element)
+    {
+        if (index == 0)
+        {
+            element1.gameObject.SetActive(false);
+        }
+        if (index == 1)
+        {
+            element2.gameObject.SetActive(false);
+        }
+        if (index == 2)
+        {
+            element3.gameObject.SetActive(false);
+        }
+        if (index == 3)
+        {
+            element4.gameObject.SetActive(false);
+        }
+    }
+
+
 
     public void UpdateItemUI(Items newItem)
     {

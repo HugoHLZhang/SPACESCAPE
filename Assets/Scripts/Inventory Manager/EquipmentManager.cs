@@ -74,7 +74,7 @@ public class EquipmentManager : MonoBehaviour
         {
             if (inventory.GetItem(1) == null)
             {
-                hud.UpdateMessage("No item here ! Try to find it !");
+                hud.UpdateMessage("Tu n'as pas cet objet. Essaye de le trouver.");
                 return;
             }
             isSwitching = true;
@@ -92,7 +92,7 @@ public class EquipmentManager : MonoBehaviour
         {
             if(inventory.GetItem(2) == null)
             {
-                hud.UpdateMessage("No item here ! Try to find it !");
+                hud.UpdateMessage("Tu n'as pas cet objet. Essaye de le trouver.");
                 return;
             }
             isSwitching = true;
@@ -111,7 +111,7 @@ public class EquipmentManager : MonoBehaviour
         {
             if (inventory.GetItem(2) == null)
             {
-                hud.UpdateMessage("No item here ! Try to find it !");
+                hud.UpdateMessage("Tu n'as pas cet objet. Essaye de le trouver.");
                 return;
             }
             isSwitching = true;
@@ -135,9 +135,7 @@ public class EquipmentManager : MonoBehaviour
     {
         currentlyEquipedItem = (int)item.itemOrder;
         anim.SetInteger("itemType", (int)item.itemType);
-        //Update itemUI
         hud.UpdateItemUI(item);
-        
     }
 
     private void UnequipItem()

@@ -47,7 +47,6 @@ public class PlayerStats : CharacterStats
     {
         while (poisonTimer > 0)
         {
-            
             yield return new WaitForSeconds(1f);
             poisonTimer+=1f;
             increasePoison(1);
@@ -56,7 +55,7 @@ public class PlayerStats : CharacterStats
 
     public void CheckPoison()
     {
-        if (poison == 100)
+        if (poison >= 100)
         {
             health = 0;
             oxygen = 0;
@@ -78,8 +77,12 @@ public class PlayerStats : CharacterStats
     public void increasePoison(int amount)
     {
         CheckPoison();
-        int oxygenAfterTime = poison + amount;
-        SetPoisonTo(oxygenAfterTime);
+        int poisonAfterAddition = poison + amount;
+        if(poisonAfterAddition > 100)
+        {
+            poisonAfterAddition = 100;
+        }
+        SetPoisonTo(poisonAfterAddition);
     }
 
     public void healFromPoison(int antidote)

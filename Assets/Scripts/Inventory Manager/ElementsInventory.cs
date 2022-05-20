@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ElementsInventory : MonoBehaviour
 {
     [SerializeField] private Elements[] elements;
-
+    private int currentElementIndex;
+    private int maxElements;
+    private GameObject player;
+    private PlayerHUD hud;
+    
 
     public void Start()
     {
@@ -14,19 +16,27 @@ public class ElementsInventory : MonoBehaviour
 
     public void AddElement(Elements newItem)
     {
-        int newItemIndex = (int)newItem.elementOrder;
 
-        if (elements[newItemIndex] != null)
+        if (currentElementIndex < maxElements )
         {
-            RemoveElement(newItemIndex);
+            elements[currentElementIndex] = newItem;
+            hud.UpdateElementUI(currentElementIndex, elements[currentElementIndex]);
+            currentElementIndex++;
         }
-        elements[newItemIndex] = newItem;
-
     }
 
-    public void RemoveElement(int index)
+    public void RemoveElement()
     {
-        elements[index] = null;
+        if(currentElementIndex > 0)
+        {
+            currentElementIndex--;
+            Debug.Log(currentElementIndex);
+            hud.deleteElementUI(currentElementIndex, elements[currentElementIndex]);
+            hud.UpdateMessage("Tu as jeté" + elements[currentElementIndex].description + " sur le sol");
+            Instantiate(this.GetElement(currentElementIndex).prefab, player.transform.position + player.transform.forward, this.GetElement(currentElementIndex).prefab.transform.rotation);
+            elements[currentElementIndex] = null;
+        }
+        
     }
 
     public Elements GetElement(int index)
@@ -36,6 +46,10 @@ public class ElementsInventory : MonoBehaviour
 
     private void InitVariables()
     {
-        elements = new Elements[4];
+        player = PlayerController.instance;
+        currentElementIndex = 0;
+        maxElements = 4;
+        hud = GetComponent<PlayerHUD>();
+        elements = new Elements[maxElements];
     }
 }

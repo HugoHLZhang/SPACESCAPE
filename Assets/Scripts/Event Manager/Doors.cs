@@ -44,11 +44,11 @@ public class Doors : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name && isOpen == true)
         {
-            hud.UpdateDoorMessage("E", "Close", true);
+            hud.UpdateDoorMessage("E", "Fermer", true);
         }
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name && isOpen == false)
         {
-            hud.UpdateDoorMessage("E", "Open", true);
+            hud.UpdateDoorMessage("E", "Ouvrir", true);
         }
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name)
         {

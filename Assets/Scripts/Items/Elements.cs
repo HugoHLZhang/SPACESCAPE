@@ -6,9 +6,7 @@ using UnityEngine;
 public class Elements : Item
 {
     public ElementsType type;
-    public ElementOrder elementOrder;
+    public GameObject prefab;
 }
 
 public enum ElementsType { Oxygene, Hydrogene, Azote, Carbone }
-
-public enum ElementOrder { Carbone, Hydrogene, Azote, Oxygene }

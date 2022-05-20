@@ -78,7 +78,7 @@ public class PlayerAttack : MonoBehaviour
 
         if(Time.time > shootTimer + currentItem.fireRate)
         {
-            Debug.Log("Shoot");
+            //debug.Log("Shoot");
             shootTimer = Time.time;
             Instantiate(currentItem.gunParticules, manager.currentItemBarrel);
             RaycastAttack(currentItem);
@@ -93,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (Time.time > shootTimer + currentItem.fireRate)
         {
-            Debug.Log(currentItem.fireRate);
+            //Debug.Log(currentItem.fireRate);
             shootTimer = Time.time;
             RaycastAttack(currentItem);
             anim.SetTrigger("isSlashing");
