@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : CharacterStats
 {
     #region
-    public static PlayerStats stats;
+    public static PlayerStats playerStats;
 
     private void Awake()
     {
-        stats = this.GetComponent<PlayerStats>();
+        playerStats = this.GetComponent<PlayerStats>();
     }
     #endregion
 
-
     private PlayerHUD hud;
     [SerializeField] private float nextBreath = 600f;
+
     private void Start()
     {
         GetReferences();
@@ -32,8 +32,8 @@ public class PlayerStats : CharacterStats
     {
         while (nextBreath > 0)
         {
-            yield return new WaitForSeconds(2f);
-            nextBreath-=2;
+            nextBreath--;
+            yield return new WaitForSeconds(5f);
             LoseOxygen(1);
         }
     }

@@ -7,8 +7,12 @@ public class ShotBehavior : MonoBehaviour
     public Vector3 m_target;
     public GameObject collisionExplosion;
     public float speed;
+    public GameObject player;
 
-
+    private void Start()
+    {
+        player = PlayerController.instance;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -19,9 +23,11 @@ public class ShotBehavior : MonoBehaviour
         {
             if (transform.position == m_target)
             {
+               
                 explode();
                 return;
             }
+            
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);
         }
 
