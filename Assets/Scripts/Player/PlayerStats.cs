@@ -13,8 +13,12 @@ public class PlayerStats : CharacterStats
     }
     #endregion
 
+    [SerializeField] protected int poison;
+    [SerializeField] protected int maxPoison;
+
     private PlayerHUD hud;
     [SerializeField] private float nextBreath = 600f;
+    [SerializeField] private float poisonTimer = 300f;
 
     private void Start()
     {
@@ -32,10 +36,56 @@ public class PlayerStats : CharacterStats
     {
         while (nextBreath > 0)
         {
-            nextBreath--;
-            yield return new WaitForSeconds(5f);
+            
+            yield return new WaitForSeconds(2f);
+            nextBreath-=2f;
             LoseOxygen(1);
         }
+    }
+
+    public IEnumerator increasePoisonTimer()
+    {
+        while (poisonTimer > 0)
+        {
+            
+            yield return new WaitForSeconds(1f);
+            poisonTimer+=1f;
+            increasePoison(1);
+        }
+    }
+
+    public void CheckPoison()
+    {
+        if (poison == 100)
+        {
+            health = 0;
+            oxygen = 0;
+            Die();
+        }
+        if (poison < maxPoison)
+        {
+            isDead = false;
+        }
+        hud.UpdatePoison(poison, maxPoison);
+    }
+
+    public void SetPoisonTo(int poisonToSetTo)
+    {
+        poison = poisonToSetTo;
+        CheckPoison();
+    }
+
+    public void increasePoison(int amount)
+    {
+        CheckPoison();
+        int oxygenAfterTime = poison + amount;
+        SetPoisonTo(oxygenAfterTime);
+    }
+
+    public void healFromPoison(int antidote)
+    {
+        int poisonAfterHeal = poison - antidote;
+        SetPoisonTo(poisonAfterHeal);
     }
 
     private void GetReferences()
@@ -74,6 +124,13 @@ public class PlayerStats : CharacterStats
         FindObjectOfType<AudioManager>().Stop("PoisonSound");
         FindObjectOfType<AudioManager>().Play("DeathScreen");
 
+    }
+
+    public override void InitVariables()
+    {
+        base.InitVariables();
+        SetPoisonTo(0);
+        maxPoison = 100;
     }
 
 }

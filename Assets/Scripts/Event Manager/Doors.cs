@@ -12,14 +12,16 @@ public class Doors : MonoBehaviour
     [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
     private PlayerHUD hud;
+    private PlayerStats stats;
 
     private void Start()
     {
-        
+        stats = PlayerStats.playerStats;
         fpscam = CameraController.cam;
         hud = PlayerHUD.hud;
         doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
         doorFrame.GetComponent<BoxCollider>().enabled = true;
+        hud.showPoisonBar(false);
     }
 
     // Update is called once per frame
@@ -69,6 +71,11 @@ public class Doors : MonoBehaviour
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
                 FindObjectOfType<AudioManager>().Play("DoorSound");
+                if(hit.transform.tag == "Poison")
+                {
+                    hud.showPoisonBar(true);
+                    StartCoroutine(stats.increasePoisonTimer());
+                }
             }
 
         }

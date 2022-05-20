@@ -7,6 +7,8 @@ TagManager:
   - Destroyable
   - Wall
   - Ground
+  - Poison
+  - Tube
   layers:
   - Default
   - TransparentFX

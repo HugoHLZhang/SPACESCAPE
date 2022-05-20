@@ -16,6 +16,7 @@ public class PlayerHUD : MonoBehaviour
 
     [SerializeField] private Bar oxygenBar;
     [SerializeField] private Bar healthBar;
+    [SerializeField] private Bar poisonBar;
 
     [SerializeField] private ItemUI hands;
     [SerializeField] private ItemUI saber;
@@ -117,6 +118,15 @@ public class PlayerHUD : MonoBehaviour
         oxygenBar.SetValues(currentOxygen, maxOxygen);
     }
 
+    public void UpdatePoison(int currentPoison, int maxPoison)
+    {
+        poisonBar.SetValues(currentPoison, maxPoison);
+    }
+
+    public void showPoisonBar(bool show)
+    {
+        poisonBar.gameObject.SetActive(show);
+    }
 
     public void UpdateItemUI(Items newItem)
     {

@@ -9,6 +9,7 @@ public class PlayerPickup : MonoBehaviour
 
     private Camera cam;
     private Inventory inventory;
+    private ElementsInventory elements;
     [SerializeField]  private PlayerHUD hud;
     private Timer timer;
 
@@ -46,7 +47,7 @@ public class PlayerPickup : MonoBehaviour
                     hud.UpdateMessage("Well played ! You have added " + newItem.nom + " to your inventory !");
                     hud.UpdateItemColor(newItem);
                 }
-                else
+                else if(hit.transform.GetComponent<ItemObject>().item as Consumable)
                 {
                     Consumable newItem = hit.transform.GetComponent<ItemObject>().item as Consumable;
                     if(newItem.type == ConsumableType.O2)
@@ -75,6 +76,12 @@ public class PlayerPickup : MonoBehaviour
                         FindObjectOfType<AudioManager>().Play("PoisonSound");
                     }
                 }
+                else if(hit.transform.GetComponent<ItemObject>().item as Elements)
+                {
+                    Elements newItem = hit.transform.GetComponent<ItemObject>().item as Elements;
+                    elements.AddElement(newItem);
+                    hud.UpdateMessage("Well played ! You have added " + newItem.nom + " to your elements inventory !");
+                }
 
                 Destroy(hit.transform.gameObject);
             }
@@ -87,5 +94,6 @@ public class PlayerPickup : MonoBehaviour
         inventory = GetComponent<Inventory>();
         stats = GetComponent<PlayerStats>();
         timer = Timer.instanceTimer;
+        elements = GetComponent<ElementsInventory>();
     }
 }
