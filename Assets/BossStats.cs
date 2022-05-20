@@ -7,6 +7,7 @@ public class BossStats : CharacterStats
     [SerializeField] public int damage;
     [SerializeField] public float attackSpeed;
     [SerializeField] private bool canAttack;
+    public HealthBar healthBar;
     
 
     Vector3 RememberMeLocation;
@@ -15,7 +16,13 @@ public class BossStats : CharacterStats
     private void Start()
     {
         InitVariables();
+        healthBar.setMaxHealth(maxHealth);
         
+    }
+
+    private void Update()
+    {
+        healthBar.setHealth(this.health);
     }
 
     public void DealDamage(CharacterStats statsToDamage)
@@ -31,11 +38,16 @@ public class BossStats : CharacterStats
         Destroy(gameObject, 5f);
         
     }
-    
+     
+    public void UpdateHealthBar()
+    {
+        healthBar.setHealth(health);
+    }
+
     public override void InitVariables()
     {
         base.InitVariables();
-        maxHealth = 500;
+        maxHealth = 400;
         SetHealthTo(maxHealth);
         isDead = false;
         

@@ -10,8 +10,9 @@ public class CharacterStats : MonoBehaviour
 
     [SerializeField] protected int oxygen;
     [SerializeField] protected int maxOxygen;
-
+    
     [SerializeField] protected bool isDead;
+    
 
     private void Start()
     {
@@ -84,6 +85,8 @@ public class CharacterStats : MonoBehaviour
         CheckHealth();
         int healthAfterDamge = health - damage;
         SetHealthTo(healthAfterDamge);
+        
+        
     }
 
     public void LoseOxygen(int amount)
