@@ -4,8 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerStats : CharacterStats
 {
+    #region
+    public static PlayerStats playerStats;
+
+    private void Awake()
+    {
+        playerStats = this.GetComponent<PlayerStats>();
+    }
+    #endregion
+
     private PlayerHUD hud;
     [SerializeField] private float nextBreath = 600f;
+
     private void Start()
     {
         GetReferences();
