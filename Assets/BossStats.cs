@@ -35,11 +35,11 @@ public class BossStats : CharacterStats
     public override void InitVariables()
     {
         base.InitVariables();
-        maxHealth = 25;
+        maxHealth = 500;
         SetHealthTo(maxHealth);
         isDead = false;
         
-        damage = 0;
+        damage = 10;
         attackSpeed = 2.6f;
         canAttack = true;
     }
