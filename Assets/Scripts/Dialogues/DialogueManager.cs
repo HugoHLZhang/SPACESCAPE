@@ -7,7 +7,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public Text nameText;
 	public Text dialogueText;
-	public DialogueTrigger trigger;
+	public bool isOpen;
 	public Animator animator;
 
 	private Queue<string> sentences;
@@ -21,8 +21,10 @@ public class DialogueManager : MonoBehaviour {
 	{
 
 		animator.SetBool("IsOpen", true);
-
-		nameText.text = dialogue.name;
+		isOpen = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        nameText.text = dialogue.name;
 
 		sentences.Clear();
 
@@ -34,13 +36,14 @@ public class DialogueManager : MonoBehaviour {
 		DisplayNextSentence();
 	}
 
+
 	public void DisplayNextSentence ()
 	{
 		if (sentences.Count == 0)
 		{
+			isOpen = false;
 			Cursor.visible = false;
 			Cursor.lockState = CursorLockMode.Locked;
-			trigger.DialogueOpen = false;
 			EndDialogue();
 			return;
 		}
@@ -63,6 +66,7 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue()
 	{
+		
 		animator.SetBool("IsOpen", false);
 	}
 

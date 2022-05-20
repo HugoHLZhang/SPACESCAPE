@@ -36,8 +36,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private DoorsWithPW door;
-    [SerializeField] private DialogueTrigger trigger;
-
+    [SerializeField] private DialogueManager dialogueManager;
 
     private void Start()
     {
@@ -49,12 +48,11 @@ public class PlayerController : MonoBehaviour
     {
         HandleIsGrounded();
         HandleGravity();
-        if (!door.popUpIsOpen && !trigger.DialogueOpen) { 
+        if (!door.popUpIsOpen && !dialogueManager.isOpen) { 
             HandleJumping();
             HandleRunning();
             HandleMovement();
         }
-
         HandleAnimations();
     }
 

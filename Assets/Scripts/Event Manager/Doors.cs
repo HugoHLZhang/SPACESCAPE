@@ -13,6 +13,7 @@ public class Doors : MonoBehaviour
     [SerializeField] private bool isOpen= false;
     [SerializeField] private DialogueTrigger Dialogue;
     private PlayerHUD hud;
+    private bool hasAlreadyOpenDialogue = false;
 
     private void Start()
     {
@@ -65,13 +66,18 @@ public class Doors : MonoBehaviour
         {
             if (hit.transform.name == trigger.transform.name)
             {
+                if (!hasAlreadyOpenDialogue)
+                {
+                    Dialogue.TriggerDialogue();
+                    hasAlreadyOpenDialogue = true;
+                }
                 anim.SetTrigger("open");
                 doorFrame.GetComponent<BoxCollider>().enabled = false;
                 doorFrame.GetComponent<NavMeshObstacle>().enabled = false;
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
                 FindObjectOfType<AudioManager>().Play("DoorSound");
-                Dialogue.TriggerDialogue();
+                
             }
 
         }
