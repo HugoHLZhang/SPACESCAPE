@@ -109,7 +109,7 @@ public class PlayerAttack : MonoBehaviour
     public IEnumerator playSaberAttackSound()
     {
         yield return new WaitForSeconds(0.5f);
-        FindObjectOfType<AudioManager>().Play("SwingSound");
+        FindObjectOfType<AudioManager>().Play("SwingSound"+Random.Range(1,5).ToString());
     }
 
 }

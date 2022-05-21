@@ -65,7 +65,6 @@ public class PlayerStats : CharacterStats
             oxygen = 0;
             Die();
         }
-        
         if (poison < maxPoison)
         {
             isDead = false;

@@ -104,6 +104,7 @@ public class PlayerPickup : MonoBehaviour
                     Elements newItem = hit.transform.GetComponent<ItemObject>().item as Elements;
                     elements.AddElement(newItem);
                     hud.UpdateMessage("Tu as ajouté " + newItem.description + " dans ton inventaire.");
+                    FindObjectOfType<AudioManager>().Play("TakeElements");
                 }
 
                 Destroy(hit.transform.gameObject);

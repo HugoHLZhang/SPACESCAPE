@@ -59,7 +59,7 @@ public class RayGunBoss : MonoBehaviour
         Ray ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
         if (Physics.Raycast(ray, out hit, range))
         {
-
+            FindObjectOfType<AudioManager>().Play("GunBoss");
             GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position + new Vector3(0,2f,0), transform.rotation) as GameObject;
             laser.GetComponent<ShotBehavior>().setTarget(hit.point);
             

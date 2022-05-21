@@ -33,6 +33,7 @@ public class BossStats : CharacterStats
     public override void Die()
     {
         base.Die();
+        FindObjectOfType<AudioManager>().Play("BossDie");
         base.GetComponentInChildren<Animator>().SetBool("isDying", true);
         RememberMeLocation = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         Destroy(gameObject, 5f);

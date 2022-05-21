@@ -67,6 +67,7 @@ public class CreateAntidote : MonoBehaviour
                     hud.UpdateMessage("Tu as déjà créé un antidote ! Teste le !");
                     Instantiate(antidote);
                     antidoteInstantiate = true;
+                    FindObjectOfType<AudioManager>().Play("CreateAntidote");
                 }
                 else if( elements.GetElement(0) == null)
                 {
