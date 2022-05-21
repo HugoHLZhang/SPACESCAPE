@@ -76,7 +76,6 @@ public class CreateAntidote : MonoBehaviour
                 {
                     hud.UpdateMessage("Teste d'abord l'antidote que tu viens de créer ↜(╰ •ω•)╯ψ");
                 }
-
             }
         }
     }

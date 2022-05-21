@@ -68,7 +68,7 @@ public class Doors : MonoBehaviour
         {
             if (hit.transform.name == trigger.transform.name)
             {
-                if (!hasAlreadyOpenDialogue)
+                if (!hasAlreadyOpenDialogue && Dialogue != null)
                 {
                     Dialogue.TriggerDialogue();
                     hasAlreadyOpenDialogue = true;

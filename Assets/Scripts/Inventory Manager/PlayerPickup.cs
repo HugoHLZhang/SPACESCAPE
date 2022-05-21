@@ -89,6 +89,7 @@ public class PlayerPickup : MonoBehaviour
                             hud.showPoisonBar(false);
                             StopCoroutine(stats.increasePoisonTimer());
                             FindObjectOfType<AudioManager>().Play("HealSound");
+                            FindObjectOfType<AudioManager>().Stop("Poison75");
                         }
                         else
                         {
