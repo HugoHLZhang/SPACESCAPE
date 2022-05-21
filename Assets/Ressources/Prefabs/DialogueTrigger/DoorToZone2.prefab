@@ -154,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 7534308619354887339, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: Dialogue
       value: 
-      objectReference: {fileID: 3435310452321156268}
+      objectReference: {fileID: 0}
     - target: {fileID: 7534308619354887339, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: doorWall
       value: 
@@ -254,28 +254,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7534308619757093705, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
   m_PrefabInstance: {fileID: 3435310452963236518}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1464588484403859146 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4323437845693486188, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
-  m_PrefabInstance: {fileID: 3435310452963236518}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3435310452321156268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464588484403859146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Player
-    sentences:
-    - "A\xEFe \xE7a m'a piqu\xE9 ! Je suis empoisonn\xE9 !"
-    - Il me faut un antidote, et vite !
 --- !u!1001 &4166486023732245449
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c5c3dda751339b946b3269d4d043483e, type: 2}
     - target: {fileID: 4323437845693486188, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: m_Name
-      value: TriggerToZone5
+      value: TriggerToZone4
       objectReference: {fileID: 0}
     - target: {fileID: 4323437845693486188, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -101,15 +101,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7227806900632106313, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: m_Name
-      value: doorToZone5
+      value: doorToZone4
       objectReference: {fileID: 0}
     - target: {fileID: 7227806900632106313, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7534308619354887339, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
+      propertyPath: Dialogue
+      value: 
+      objectReference: {fileID: 2520872622610426644}
     - target: {fileID: 7534308619757093698, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: m_Name
-      value: DoorFrameToZone5
+      value: DoorFrameToZone4
       objectReference: {fileID: 0}
     - target: {fileID: 7534308619757093698, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -183,6 +187,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4323437845693486188, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
   m_PrefabInstance: {fileID: 3742714398843740566}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2520872622610426644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1228139787431545474, guid: 9e5d1e0d32870bb4d91b2620eeb3b6bd, type: 3}
+  m_PrefabInstance: {fileID: 3742714398843740566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580723808392476154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &567112479006732697
 MonoBehaviour:
   m_ObjectHideFlags: 0

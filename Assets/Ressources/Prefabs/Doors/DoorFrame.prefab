@@ -644,13 +644,31 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8756131702405145420, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
 --- !u!1 &4323437845693486188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6012536492005457314, guid: 6c1d469d2bd924242979f8395565b670, type: 3}
   m_PrefabInstance: {fileID: 7534308617999395278}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5922598271378788949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4323437845693486188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Player
+    sentences:
+    - "A\xEFe \xE7a m'a piqu\xE9 ! Je suis empoisonn\xE9 !"
+    - Il me faut un antidote, et vite !
 --- !u!1001 &7534308618020456472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -828,3 +846,4 @@ MonoBehaviour:
   trigger: {fileID: 4323437845693486188}
   anim: {fileID: 4171925815908808073}
   isOpen: 0
+  Dialogue: {fileID: 0}
