@@ -61,6 +61,10 @@ public class PlayerStats : CharacterStats
             oxygen = 0;
             Die();
         }
+        if (poison >= 75)
+        {
+            FindObjectOfType<AudioManager>().Play("Poison75");
+        }
         if (poison < maxPoison)
         {
             isDead = false;
@@ -82,6 +86,7 @@ public class PlayerStats : CharacterStats
         {
             poisonAfterAddition = 100;
         }
+
         SetPoisonTo(poisonAfterAddition);
     }
 
@@ -126,6 +131,7 @@ public class PlayerStats : CharacterStats
         FindObjectOfType<AudioManager>().Stop("BreathingPlayer");
         FindObjectOfType<AudioManager>().Stop("PoisonSound");
         FindObjectOfType<AudioManager>().Play("DeathScreen");
+        FindObjectOfType<AudioManager>().Stop("Poison75");
 
     }
 

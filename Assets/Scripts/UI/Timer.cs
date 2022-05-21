@@ -14,11 +14,14 @@ public class Timer : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] private DialogueTrigger Dialogue;
+    private bool hasAlreadyOpenDialogue = false;
 
     public float time = 600f;
     void Start()
     {
         StartCoroutine(timer());
+        Dialogue = GetComponentInChildren<DialogueTrigger>();
     }
 
     IEnumerator timer()
@@ -28,7 +31,13 @@ public class Timer : MonoBehaviour
             time--;
             yield return new WaitForSeconds(1f);
             GetComponent<Text>().text = string.Format("{0:0}:{1:00}", Mathf.Floor(time/60), time % 60);
+            if (time == 597f && !hasAlreadyOpenDialogue)
+            {
+                Dialogue.TriggerDialogue();
+                hasAlreadyOpenDialogue = true;
+            }
         }
+        
     }
 
     public void addTime(float TimeAdd)
