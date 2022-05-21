@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1303740151584482806}
   dialogueText: {fileID: 1303740153067904815}
+  isOpen: 0
   animator: {fileID: 1303740152177897122}
 --- !u!1 &1303740151584482801
 GameObject:
@@ -494,7 +495,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1303740152890072812
 MonoBehaviour:
