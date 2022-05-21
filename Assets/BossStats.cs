@@ -38,11 +38,7 @@ public class BossStats : CharacterStats
         Destroy(gameObject, 5f);
         
     }
-     
-    public void UpdateHealthBar()
-    {
-        healthBar.setHealth(health);
-    }
+    
 
     public override void InitVariables()
     {

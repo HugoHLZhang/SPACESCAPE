@@ -32,7 +32,7 @@ public class ElementsInventory : MonoBehaviour
             currentElementIndex--;
             Debug.Log(currentElementIndex);
             hud.deleteElementUI(currentElementIndex, elements[currentElementIndex]);
-            hud.UpdateMessage("Tu as jeté" + elements[currentElementIndex].description + " sur le sol");
+            hud.UpdateMessage("Tu as jeté " + elements[currentElementIndex].description + " sur le sol");
             Instantiate(this.GetElement(currentElementIndex).prefab, player.transform.position + player.transform.forward, this.GetElement(currentElementIndex).prefab.transform.rotation);
             elements[currentElementIndex] = null;
         }
