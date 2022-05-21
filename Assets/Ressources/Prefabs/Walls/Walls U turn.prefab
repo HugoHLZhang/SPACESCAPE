@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 9183368327611469309}
   - component: {fileID: 5250699378382193240}
   - component: {fileID: 8014942830395209362}
-  - component: {fileID: 1605400160939467829}
   - component: {fileID: 3786929207749983710}
+  - component: {fileID: 578472579785262080}
   m_Layer: 6
   m_Name: Walls U turn
   m_TagString: Wall
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1605400160939467829
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8375059758573066055}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.7579883, y: 7.999999, z: 2.6967075}
-  m_Center: {x: -0.85332876, y: 4.0066686, z: 0.005593575}
 --- !u!208 &3786929207749983710
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -114,3 +101,17 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -1.4100001, y: 4.007, z: 0.017}
   m_TimeToStationary: 0.5
+--- !u!64 &578472579785262080
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375059758573066055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: eec1a9a04caa59d43aa2390960d48968, type: 3}
