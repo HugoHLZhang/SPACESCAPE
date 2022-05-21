@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float jumpForce;
-
+    
     [Header("Gravity")]
     [SerializeField] private float gravity;
     [SerializeField] private float groundDistance;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     [SerializeField] private DoorsWithPW door;
-
+    [SerializeField] private DialogueManager dialogueManager;
 
     private void Start()
     {
@@ -48,8 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         HandleIsGrounded();
         HandleGravity();
-        if (!door.popUpIsOpen)
-        {
+        if (!door.popUpIsOpen && !dialogueManager.isOpen) { 
             HandleJumping();
             HandleRunning();
             HandleMovement();
