@@ -13,8 +13,9 @@ public class DoorsWithPW : MonoBehaviour
     [SerializeField] private bool isOpen = false;
     private PlayerHUD hud;
     private bool isValid;
-    public bool popUpIsOpen = false;
-    [SerializeField] string password;
+    [SerializeField] public bool popUpIsOpen = false;
+
+    [SerializeField] private string password;
 
     private void Start()
     {
@@ -28,8 +29,10 @@ public class DoorsWithPW : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!popUpIsOpen)
-        { 
+        if(!popUpIsOpen)
+        {
+            hud.showPasswordAndButtonVaisseau(false);
+            hud.showPasswordAndButtonMorse(false);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (isOpen)
@@ -43,14 +46,15 @@ public class DoorsWithPW : MonoBehaviour
                 }
             }
         }
+            
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name && isOpen == true)
         {
-            hud.UpdateDoorMessage("E", "Close", true);
+            hud.UpdateDoorMessage("E", "Fermer", true);
         }
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name && isOpen == false)
         {
-            hud.UpdateDoorMessage("E", "Open", true);
+            hud.UpdateDoorMessage("E", "Ouvrir", true);
         }
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name)
         {
@@ -69,9 +73,15 @@ public class DoorsWithPW : MonoBehaviour
         {
             if (hit.transform.name == trigger.transform.name)
             {
+                hud.showPasswordAndButtonVaisseau(false);
+                hud.showPasswordAndButtonMorse(false);
                 if (!isValid)
                 {
                     hud.PopUpDoorWindow();
+                    if(password == "800")
+                        hud.showPasswordAndButtonVaisseau(true);
+                    else if( password == "ESIEE")
+                        hud.showPasswordAndButtonMorse(true);
                 }
                 else
                 {
@@ -91,9 +101,12 @@ public class DoorsWithPW : MonoBehaviour
 
     public void CheckPassword()
     {
-        if (hud.readPassword() == password) isValid = true;
-        else { isValid = false; }
-        Debug.Log(isValid);
+        if (password == "800")
+            if (hud.readPasswordVaisseau() == password) isValid = true;
+            else { isValid = false; }
+        else if (password == "ESIEE")
+            if (hud.readPasswordMorse() == password) isValid = true;
+            else { isValid = false; }
     }
 
     public void OpenDoor()

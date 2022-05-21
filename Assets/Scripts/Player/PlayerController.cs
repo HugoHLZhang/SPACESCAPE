@@ -35,7 +35,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Animator anim;
 
-    [SerializeField] private DoorsWithPW door;
+    [SerializeField] private DoorsWithPW doorVaisseau;
+    [SerializeField] private DoorsWithPW doorBoss;
     [SerializeField] private DialogueManager dialogueManager;
 
     private void Start()
@@ -48,7 +49,8 @@ public class PlayerController : MonoBehaviour
     {
         HandleIsGrounded();
         HandleGravity();
-        if (!door.popUpIsOpen && !dialogueManager.isOpen) { 
+        if (!doorVaisseau.popUpIsOpen && !dialogueManager.isOpen && !doorBoss.popUpIsOpen)
+        { 
             HandleJumping();
             HandleRunning();
             HandleMovement();

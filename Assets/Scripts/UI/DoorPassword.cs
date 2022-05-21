@@ -5,13 +5,20 @@ using UnityEngine.UI;
 
 public class DoorPassword : MonoBehaviour
 {
-    [SerializeField] private InputField password;
+    [SerializeField] public InputField passwordVaisseau;
+    [SerializeField] public InputField passwordMorse;
     [SerializeField] public Text invalidMessage;
+    [SerializeField] private Image background;
+    [SerializeField] private Button buttonVaisseau;
+    [SerializeField] private Button buttonMorse;
 
-
-    public string readPassword()
+    public string readPasswordVaisseau()
     {
-        return password.text;
+        return passwordVaisseau.text;
+    }
+     public string readPasswordMorse()
+    {
+        return passwordMorse.text;
     }
 
     public void setMessage(string message, Color color)
@@ -20,4 +27,19 @@ public class DoorPassword : MonoBehaviour
         invalidMessage.color = color;
     }
 
+    public void setBackground(Color color)
+    {
+        background.color = color;
+    }
+
+    public void showButtonVaisseau(bool show)
+    {
+        buttonVaisseau.gameObject.SetActive(show);
+        passwordVaisseau.gameObject.SetActive(show);
+    } 
+    public void showButtonMorse(bool show)
+    {
+        buttonMorse.gameObject.SetActive(show);
+        passwordMorse.gameObject.SetActive(show);
+    }
 }
