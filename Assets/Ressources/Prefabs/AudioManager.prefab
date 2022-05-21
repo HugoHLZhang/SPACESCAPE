@@ -62,7 +62,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: SwingSound
+  - name: SwingSound1
     clip: {fileID: 8300000, guid: 9ac5d97ab6d4e0a4ead86c25a8e6dba0, type: 3}
     volume: 0.298
     pitch: 1
@@ -130,7 +130,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: DeathScreen
     clip: {fileID: 8300000, guid: 28df4a2e20567eb4faa45c506020f445, type: 3}
-    volume: 0.019
+    volume: 0.108
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -191,6 +191,132 @@ MonoBehaviour:
   - name: EnemyDie
     clip: {fileID: 8300000, guid: 4f677952e5b190946be23d2c1b81bb3e, type: 3}
     volume: 0.026
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BossDie
+    clip: {fileID: 8300000, guid: bbe2cc635647dfe4d9a16aa028cbe9d8, type: 3}
+    volume: 0.067
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl1
+    clip: {fileID: 8300000, guid: cca17db609171764f85e46b5ba632ecf, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl2
+    clip: {fileID: 8300000, guid: c919307cf19b6e849bae955f2ed831fc, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl3
+    clip: {fileID: 8300000, guid: f3f71b7b2f82d7049b04ae95d21d6147, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl4
+    clip: {fileID: 8300000, guid: 9bdbab9b1c4a06045a910cefeb7376d3, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl5
+    clip: {fileID: 8300000, guid: d7a055bccaf7fd9409086c2c25602fd1, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl6
+    clip: {fileID: 8300000, guid: 974de7e79c11f314d8811c4d629f3065, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl7
+    clip: {fileID: 8300000, guid: 2951a84f69e519140833b60bf547deae, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl8
+    clip: {fileID: 8300000, guid: afd8f0011d6820246bb5b29ce5d33823, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl9
+    clip: {fileID: 8300000, guid: ef8a4186aa7d5844cab3a075c503098b, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl10
+    clip: {fileID: 8300000, guid: a96fa38e23e45fb4f8f02b5366eefed3, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: bossgrowl11
+    clip: {fileID: 8300000, guid: 6f476d7e766260747ac883f61c5419ee, type: 3}
+    volume: 0.352
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GunBoss
+    clip: {fileID: 8300000, guid: ead25fefd7b2d1941967e664bad81656, type: 3}
+    volume: 0.06
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwapToSaber
+    clip: {fileID: 8300000, guid: 5cf245054fef8124184bc111db350a80, type: 3}
+    volume: 0.158
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwapToGun
+    clip: {fileID: 8300000, guid: ceeca30c4f710ad4eaa978a6c1048f68, type: 3}
+    volume: 0.491
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwingSound2
+    clip: {fileID: 8300000, guid: eec0c0a84aaa6244aa3ae349f9b5ae77, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwingSound3
+    clip: {fileID: 8300000, guid: ee4928d3610ae904e9ed4b0bd63d8e19, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwingSound4
+    clip: {fileID: 8300000, guid: 1893b24409c9efb4aa4111060f9a636f, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwingSound5
+    clip: {fileID: 8300000, guid: 9de29d2ebc9656f42a5b2e2e39325463, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: CreateAntidote
+    clip: {fileID: 8300000, guid: 2699e508518721b4a90d5ba045718cde, type: 3}
+    volume: 0.171
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TakeElements
+    clip: {fileID: 8300000, guid: 475e81d36f251fc41a20548b7531d920, type: 3}
+    volume: 0.35
     pitch: 1
     loop: 0
     source: {fileID: 0}

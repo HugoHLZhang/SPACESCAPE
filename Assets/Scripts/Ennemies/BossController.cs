@@ -122,12 +122,13 @@ public class BossController : MonoBehaviour
             anim.SetTrigger("Attack");
             playerPosition = target.transform.position;
 
-
             anim.SetFloat("Speed", 0f, 0.3f, Time.deltaTime);
 
             float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
             for (int i = 0; i < 3; i++)
             {
+                FindObjectOfType<AudioManager>().Play("bossgrowl" + Random.Range(1, 11).ToString());
+                FindObjectOfType<AudioManager>().Play("SwingSound" + Random.Range(1, 5).ToString());
                 distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
                 yield return new WaitForSeconds(0.5f);
                 if (distanceBetweenPlayer <= agent.stoppingDistance)
@@ -135,8 +136,11 @@ public class BossController : MonoBehaviour
 
                     stats.DealDamage(statsToDamage);
                     //gameObject.transform.position = playerPosition;
+                    target.GetComponent<PlayerHUD>().FadeRedScreen();
+                    FindObjectOfType<AudioManager>().Play("SaberHit" + Random.Range(1, 4).ToString());
                     FindObjectOfType<AudioManager>().Play("GettingHit");
-
+                    yield return new WaitForSeconds(0.3f);
+                    target.GetComponent<PlayerHUD>().FadeRedScreen();
                 }
             }
         }
@@ -149,17 +153,22 @@ public class BossController : MonoBehaviour
             anim.SetFloat("Speed", 0f, 0.3f, Time.deltaTime);
 
             float distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
-           
-                distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
-                yield return new WaitForSeconds(0.5f);
+            distanceBetweenPlayer = Vector3.Distance(target.position, transform.position) - 0.3f;
+            
+            yield return new WaitForSeconds(0.5f);
                 if (distanceBetweenPlayer <= agent.stoppingDistance) //damage
                 {
 
                     stats.DealDamage(statsToDamage);
                     //gameObject.transform.position = playerPosition;
+                    
+                    target.GetComponent<PlayerHUD>().FadeRedScreen();
                     FindObjectOfType<AudioManager>().Play("GettingHit");
+                    yield return new WaitForSeconds(0.3f);
+                    target.GetComponent<PlayerHUD>().FadeRedScreen();
 
-                }
+
+            }
             
         }
         
@@ -183,6 +192,8 @@ public class BossController : MonoBehaviour
 
             isSwitching = true;
             Swapping(meleeWeapons,rangeWeapons);
+            FindObjectOfType<AudioManager>().Play("bossgrowl" + Random.Range(1, 11).ToString());
+            FindObjectOfType<AudioManager>().Play("SwapToGun");
             MeleePattern = false;
 
         }
@@ -192,6 +203,8 @@ public class BossController : MonoBehaviour
             //Destroy(rangeWeapons);
             Swapping(rangeWeapons, meleeWeapons);
             isSwitching = true;
+            FindObjectOfType<AudioManager>().Play("bossgrowl" + Random.Range(1, 11).ToString());
+            FindObjectOfType<AudioManager>().Play("SwapToSaber");
             MeleePattern = true;
         }
         
