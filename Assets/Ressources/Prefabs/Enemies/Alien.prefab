@@ -304,7 +304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6063286265503128174
 Transform:
   m_ObjectHideFlags: 0
@@ -410,6 +410,7 @@ MonoBehaviour:
   loot_Timer: {fileID: 4082260376388063319, guid: 97be89f04f5200a429af97b1a9dbbb4f, type: 3}
   canAttack: 0
   healthBar: {fileID: 2215884690813456713}
+  isDyingSound: 0
 --- !u!1 &6886959621970556425
 GameObject:
   m_ObjectHideFlags: 0

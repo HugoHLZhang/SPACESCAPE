@@ -66,7 +66,7 @@ public class Doors : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
-            if (hit.transform.name == trigger.transform.name && !hasAlreadyOpenDialogue)
+            if (hit.transform.name == trigger.transform.name)
             {
                 if (!hasAlreadyOpenDialogue && Dialogue != null)
                 {

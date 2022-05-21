@@ -14,15 +14,13 @@ public class EquipmentManager : MonoBehaviour
     private int LayerArms;
     public Animator saberAnim;
 
-    [SerializeField] Items defaultItem = null;
+    
     [SerializeField] PlayerHUD hud;
 
     public bool isSwitching;
     private void Start()
     {
         GetReference();
-        InitVariables();
-
         LayerArms = LayerMask.NameToLayer("Arms");
     }
 
@@ -149,11 +147,6 @@ public class EquipmentManager : MonoBehaviour
         hud = GetComponent<PlayerHUD>();
     }
 
-    private void InitVariables()
-    {
-        inventory.AddItem(defaultItem);
-        
-    }
 
     
 

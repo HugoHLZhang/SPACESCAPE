@@ -23,6 +23,13 @@ public class ElementsInventory : MonoBehaviour
             hud.UpdateElementUI(currentElementIndex, elements[currentElementIndex]);
             currentElementIndex++;
         }
+        else if(currentElementIndex >= maxElements)
+        {
+            RemoveElement();
+            elements[currentElementIndex] = newItem;
+            hud.UpdateElementUI(currentElementIndex, elements[currentElementIndex]);
+            currentElementIndex++;
+        }
     }
 
     public void RemoveElement()

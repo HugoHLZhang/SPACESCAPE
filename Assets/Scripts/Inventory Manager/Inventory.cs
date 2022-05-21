@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Items[] inventory;
-    
+    [SerializeField] Items defaultItem = null;
 
     public void Start()
     {
@@ -15,11 +15,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(Items newItem)
     {
         int newItemIndex = (int)newItem.itemOrder;
-
-        if (inventory[newItemIndex] != null)
-        {
-            RemoveItem(newItemIndex);
-        }
+        Debug.Log(newItemIndex);
         inventory[newItemIndex] = newItem;
 
     }
@@ -36,7 +32,9 @@ public class Inventory : MonoBehaviour
 
     private void InitVariables()
     {
+        
         inventory = new Items[3];
+        this.AddItem(defaultItem);
     }
 
 }

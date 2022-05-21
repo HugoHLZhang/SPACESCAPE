@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b2cf8e7cfb5ad45aac3d98861d91fd, type: 3}
+  m_Name: Neon
+  m_EditorClassIdentifier: 
+  nom: Ne
+  icon: {fileID: 21300000, guid: d9e104fa432db1d498a053600f7150a5, type: 3}
+  description: une bouteille de NEON
+  type: 11
+  prefab: {fileID: 6294013817464243908, guid: 05395024f93f37c4eba52afa7c798322, type: 3}

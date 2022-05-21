@@ -50,6 +50,10 @@ public class PlayerStats : CharacterStats
             yield return new WaitForSeconds(1f);
             poisonTimer+=1f;
             increasePoison(1);
+            if (poison == 75)
+            {
+                FindObjectOfType<AudioManager>().Play("Poison75");
+            }
         }
     }
 
@@ -61,10 +65,7 @@ public class PlayerStats : CharacterStats
             oxygen = 0;
             Die();
         }
-        if (poison >= 75)
-        {
-            FindObjectOfType<AudioManager>().Play("Poison75");
-        }
+        
         if (poison < maxPoison)
         {
             isDead = false;

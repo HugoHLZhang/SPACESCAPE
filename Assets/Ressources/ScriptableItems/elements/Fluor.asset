@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b2cf8e7cfb5ad45aac3d98861d91fd, type: 3}
+  m_Name: Fluor
+  m_EditorClassIdentifier: 
+  nom: F
+  icon: {fileID: 21300000, guid: 82d3ac9a58dc99a4d8f34584180b8a97, type: 3}
+  description: une bouteille de FLUOR
+  type: 10
+  prefab: {fileID: 7688780196069373359, guid: 497f7b7c2e3d32c4f91b8d90bd250c15, type: 3}

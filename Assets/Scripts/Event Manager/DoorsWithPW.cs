@@ -14,6 +14,7 @@ public class DoorsWithPW : MonoBehaviour
     private PlayerHUD hud;
     private bool isValid;
     public bool popUpIsOpen = false;
+    [SerializeField] string password;
 
     private void Start()
     {
@@ -90,7 +91,7 @@ public class DoorsWithPW : MonoBehaviour
 
     public void CheckPassword()
     {
-        if (hud.readPassword() == "123") isValid = true;
+        if (hud.readPassword() == password) isValid = true;
         else { isValid = false; }
         Debug.Log(isValid);
     }
