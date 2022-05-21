@@ -21,6 +21,7 @@ public class PlayerHUD : MonoBehaviour
     [SerializeField] private ItemUI hands;
     [SerializeField] private ItemUI saber;
     [SerializeField] private ItemUI gun;
+    [SerializeField] private ItemUI key;
 
     [SerializeField] private ItemUI element1;
     [SerializeField] private ItemUI element2;
@@ -201,7 +202,10 @@ public class PlayerHUD : MonoBehaviour
         }
     }
 
-
+    public void showKey(bool show)
+    {
+        key.gameObject.SetActive(show);
+    }
 
     public void UpdateItemUI(Items newItem)
     {
