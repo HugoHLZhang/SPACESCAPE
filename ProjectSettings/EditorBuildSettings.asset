@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: b4af56aff1c8a9a4d804bf2c26430a09
   - enabled: 1
-    path: Assets/Ressources/Prefabs/Player/Main.unity
+    path: Assets/Scenes/Main.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/End Menu.unity
