@@ -15,7 +15,7 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private CreateAntidote antidote;
 
     private PlayerStats stats;
-
+    
     private void Start()
     {
         GetReference();

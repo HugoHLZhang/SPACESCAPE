@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2134527903096246891}
   - component: {fileID: 3040077378668273102}
   - component: {fileID: 996545719263947012}
-  - component: {fileID: 2780456871309653210}
   - component: {fileID: 9166983229215700038}
   - component: {fileID: -3093890280790556896}
+  - component: {fileID: 4042495274498001739}
   m_Layer: 8
   m_Name: O2 pickup
   m_TagString: Untagged
@@ -89,19 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2780456871309653210
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645095332067297489}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.20711969, y: 0.90616983, z: 0.20711963}
-  m_Center: {x: 0.00000008195639, y: 0.454717, z: 0.0045637563}
 --- !u!114 &9166983229215700038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,3 +118,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &4042495274498001739
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645095332067297489}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4711208715938537054, guid: 2305a5fdd316733449dcbc6cc96a1937, type: 3}

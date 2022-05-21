@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 869017673074739035}
   - component: {fileID: 3164809744073946001}
   - component: {fileID: 6312842919313237337}
-  - component: {fileID: 4088892712539454131}
   - component: {fileID: 7213217177422918932}
+  - component: {fileID: 4453127051928256541}
   m_Layer: 8
   m_Name: Med Kit pickup
   m_TagString: Untagged
@@ -99,19 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 9b440d036f67fbd48a80bc2e91ebc35f, type: 2}
---- !u!65 &4088892712539454131
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3525005424918483524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.37136918, y: 0.4158609, z: 0.6491698}
-  m_Center: {x: 0.006305836, y: 0.21053407, z: 0.0077367723}
 --- !u!54 &7213217177422918932
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &4453127051928256541
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525005424918483524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 74401447c1ffb164fad07492cbe8a172, type: 3}

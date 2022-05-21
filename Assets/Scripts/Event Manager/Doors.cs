@@ -66,7 +66,7 @@ public class Doors : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
-            if (hit.transform.name == trigger.transform.name)
+            if (hit.transform.name == trigger.transform.name && !hasAlreadyOpenDialogue)
             {
                 if (!hasAlreadyOpenDialogue && Dialogue != null)
                 {
@@ -95,14 +95,14 @@ public class Doors : MonoBehaviour
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
 
-            if (hit.transform.name == trigger.transform.name)
+            if (hit.transform.name == trigger.transform.name )
             {
-                anim.SetTrigger("close");
-                doorFrame.GetComponent<BoxCollider>().enabled = true;
-                doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
-                isOpen = false;
-                hud.UpdateDoorMessage("", "", false);
-                FindObjectOfType<AudioManager>().Play("DoorSound");
+                    anim.SetTrigger("close");
+                    doorFrame.GetComponent<BoxCollider>().enabled = true;
+                    doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
+                    isOpen = false;
+                    hud.UpdateDoorMessage("", "", false);
+                    FindObjectOfType<AudioManager>().Play("DoorSound");
             }
         }
     }

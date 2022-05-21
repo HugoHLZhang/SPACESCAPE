@@ -44,7 +44,7 @@ public class CreateAntidote : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name)
         {
-            hud.UpdateDoorMessage("E", "Concevoir", true);
+            hud.UpdateDoorMessage("E", "Créer", true);
         }
 
     }
@@ -54,7 +54,7 @@ public class CreateAntidote : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
-            if (hit.transform.name == trigger.transform.name)
+            if (hit.transform.name == trigger.transform.name && !isGood)
             {
                 if (elements.GetElement(0) != null && elements.GetElement(1) != null && elements.GetElement(2) != null && elements.GetElement(3) != null) { 
                     if (elements.GetElement(0).nom == "C" && elements.GetElement(1).nom == "H" && elements.GetElement(2).nom == "N" && elements.GetElement(3).nom == "O")
@@ -76,7 +76,10 @@ public class CreateAntidote : MonoBehaviour
                 {
                     hud.UpdateMessage("Teste d'abord l'antidote que tu viens de créer ↜(╰ •ω•)╯ψ");
                 }
-
+            }
+            else if (hit.transform.name == trigger.transform.name && isGood)
+            {
+                hud.UpdateMessage("Tu es guéri. Inutile de rester ici.");
             }
         }
     }
