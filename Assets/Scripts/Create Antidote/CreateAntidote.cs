@@ -42,15 +42,10 @@ public class CreateAntidote : MonoBehaviour
 
         //hud Update
         RaycastHit hit;
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name)
         {
             hud.UpdateDoorMessage("E", "Concevoir", true);
         }
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name != trigger.transform.name)
-        {
-            hud.UpdateDoorMessage("", "", false);
-        }
-
 
     }
 
