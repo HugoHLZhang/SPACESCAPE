@@ -11767,6 +11767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorToZone3
       objectReference: {fileID: 0}
+    - target: {fileID: 6674685273945151683, guid: 623c9e3a7b4df0d46aa915e3c007fed1, type: 3}
+      propertyPath: Dialogue
+      value: 
+      objectReference: {fileID: 2106494237}
     - target: {fileID: 6674685274885115681, guid: 623c9e3a7b4df0d46aa915e3c007fed1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 57.29
@@ -92436,6 +92440,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7342615831978300776, guid: 1c078b502c4ea214da594590a6ae3170, type: 3}
   m_PrefabInstance: {fileID: 2105663279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2106494231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1139952703633201156, guid: 623c9e3a7b4df0d46aa915e3c007fed1, type: 3}
+  m_PrefabInstance: {fileID: 338756306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2106494237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106494231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00ddd33eae28b5148a72170d47ccd942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: azerazerazer
+    sentences:
+    - azerazerazer
+    - azerazerazer
+    - azerazerazer
 --- !u!1 &2117575418
 GameObject:
   m_ObjectHideFlags: 0
