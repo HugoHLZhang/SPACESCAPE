@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5710866711749048455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light Saber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4794267752685268915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: saber6_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8672064009234229436}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: saber3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 250061686768332800}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: saber4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2964546470088907245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: saber6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6292623253854639390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: saber2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2062890103903051504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: manche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8593548730562247607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: saber1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2219437813465859249}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: saber5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 689879888849392997}
   - component: {fileID: 3197368947728870564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light Saber Modal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

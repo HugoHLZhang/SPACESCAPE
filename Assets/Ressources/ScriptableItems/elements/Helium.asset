@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b2cf8e7cfb5ad45aac3d98861d91fd, type: 3}
+  m_Name: Helium
+  m_EditorClassIdentifier: 
+  nom: He
+  icon: {fileID: 21300000, guid: 14125a119f00a7b49b61dd773851d068, type: 3}
+  description: "une bouteille d'H\xC9LIUM"
+  type: 6
+  prefab: {fileID: 5752097843409266185, guid: 991956c39977ae34d9e06522f1e0ffe8, type: 3}

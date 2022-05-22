@@ -34,7 +34,8 @@ public class PlayerHUD : MonoBehaviour
 
     [SerializeField] private FadeInOut doorPassword;
     [SerializeField] private DoorPassword passwordText;
-    [SerializeField] private DoorsWithPW passwordPopup;
+    [SerializeField] private DoorsWithPW passwordPopupVaisseau;
+    [SerializeField] private DoorsWithPW passwordPopupMorse;
 
     [SerializeField] private FadeInOut takingDamage;
 
@@ -43,6 +44,8 @@ public class PlayerHUD : MonoBehaviour
     private void Start()
     {
         message.gameObject.SetActive(false);
+        showPasswordAndButtonMorse(false);
+        showPasswordAndButtonVaisseau(false);
     }
 
     private void Update()
@@ -54,9 +57,26 @@ public class PlayerHUD : MonoBehaviour
         }
     }
 
-    public string readPassword()
+    public string readPasswordVaisseau()
     {
-        return passwordText.readPassword();
+        return passwordText.readPasswordVaisseau();
+    }
+
+    public string readPasswordMorse()
+    {
+        return passwordText.readPasswordMorse();
+    }
+
+    public void showPasswordAndButtonVaisseau(bool show)
+    {
+        passwordText.showButtonVaisseau(show);
+        passwordText.setBackground(new Color(0.8f, 0, 0, 1));
+    }
+
+    public void showPasswordAndButtonMorse(bool show)
+    {
+        passwordText.showButtonMorse(show);
+        passwordText.setBackground(new Color(1, 0.5f, 0, 1)) ;
     }
 
     public void showInvalidMessage(string message, bool active, Color color)
@@ -71,13 +91,14 @@ public class PlayerHUD : MonoBehaviour
         takingDamage.Fade();
     }
 
+
     public void PopUpDoorWindow()
     {
         if (doorPassword.isFaded)
         {
             doorPassword.Fade();
-            passwordPopup.popUpIsOpen = !doorPassword.isFaded;
-            Debug.Log(passwordPopup.popUpIsOpen);
+            passwordPopupVaisseau.popUpIsOpen = !doorPassword.isFaded;
+            passwordPopupMorse.popUpIsOpen = !doorPassword.isFaded;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
         }
@@ -90,7 +111,8 @@ public class PlayerHUD : MonoBehaviour
     public void ClosePopUpWindow()
     {
         doorPassword.Fade();
-        passwordPopup.popUpIsOpen = !doorPassword.isFaded;
+        passwordPopupVaisseau.popUpIsOpen = !doorPassword.isFaded;
+        passwordPopupMorse.popUpIsOpen = !doorPassword.isFaded;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -178,7 +200,6 @@ public class PlayerHUD : MonoBehaviour
             element4.gameObject.SetActive(false);
         }
     }
-
 
 
     public void UpdateItemUI(Items newItem)

@@ -56,6 +56,7 @@ public class PlayerAttack : MonoBehaviour
                 CharacterStats enemyStats = hit.transform.GetComponent<CharacterStats>();
                 StartCoroutine(DamageDelay(enemyStats, currentItem));
             }
+
         }
         /*
         if (Physics.Raycast(ray,out hit, currentItem.range))
@@ -68,8 +69,12 @@ public class PlayerAttack : MonoBehaviour
     }
     private IEnumerator DamageDelay(CharacterStats enemyStats, Items currentItem)
     {
+        if (manager.currentlyEquipedItem == 1)
+        {
+            FindObjectOfType<AudioManager>().Play("SaberHit" + Random.Range(1,4).ToString());
+        }
         yield return new WaitForSeconds(currentItem.fireRate);
-        enemyStats.TakeDamage(currentItem.damage);
+        enemyStats.TakeDamage(currentItem.damage);   
     }
 
     private void Shoot()
@@ -103,8 +108,8 @@ public class PlayerAttack : MonoBehaviour
 
     public IEnumerator playSaberAttackSound()
     {
-        yield return new WaitForSeconds(0.05f);
-        FindObjectOfType<AudioManager>().Play("SwingSound");
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<AudioManager>().Play("SwingSound"+Random.Range(1,5).ToString());
     }
 
 }

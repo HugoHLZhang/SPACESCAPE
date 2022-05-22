@@ -10,7 +10,7 @@ public class EnnemiesController : MonoBehaviour
     private Animator anim = null;
     private float attackTimer;
     private bool hasStopped = false;
-    
+   
     
     private AlienStats stats = null;
 

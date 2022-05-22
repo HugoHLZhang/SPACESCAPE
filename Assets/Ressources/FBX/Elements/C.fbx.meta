@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Boite
-    second: {fileID: 2100000, guid: dcbbe723634a6794991eba5d102b4981, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lettre
-    second: {fileID: 2100000, guid: f05740f6fe263354db4d502869dd2a82, type: 2}
+      name: Carbone
+    second: {fileID: 2100000, guid: d9c16f05cb1643548b1804f778b9b7b1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

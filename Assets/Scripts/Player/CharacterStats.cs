@@ -50,9 +50,13 @@ public class CharacterStats : MonoBehaviour
             oxygen = maxOxygen;
             isDead = false;
         }
-        if (oxygen <= 10)
+        if (oxygen == 15)
         {
             FindObjectOfType<AudioManager>().Play("BreathingPlayer");
+        }
+        if(oxygen > 15)
+        {
+            FindObjectOfType<AudioManager>().Stop("BreathingPlayer");
         }
     }
 

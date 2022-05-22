@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nom: N
   icon: {fileID: 21300000, guid: f530932e184c5cc4c8d899b328b260a1, type: 3}
-  description: une bouteille d'azone
+  description: une bouteille d'AZOTE
   type: 2
   prefab: {fileID: 5697447056164631926, guid: 84b9ba8b3e80eef45a3b52d00f7b45b7, type: 3}

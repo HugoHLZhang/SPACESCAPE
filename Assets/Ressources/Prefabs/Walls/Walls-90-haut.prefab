@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7342615831978300776}
   - component: {fileID: 5929531686012771021}
   - component: {fileID: 8479463286925307399}
-  - component: {fileID: 4697631350435645578}
   - component: {fileID: -1445119186966382572}
+  - component: {fileID: -8318534630327644215}
   m_Layer: 6
   m_Name: Walls-90-haut
   m_TagString: Wall
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4697631350435645578
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7975284085071908818}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.177113, y: 8, z: 1.1441258}
-  m_Center: {x: 0.0045613353, y: 3.976861, z: -1.0462615}
 --- !u!208 &-1445119186966382572
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -114,3 +101,16 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 3.9770002, z: -0.446}
   m_TimeToStationary: 0.5
+--- !u!65 &-8318534630327644215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975284085071908818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.58, y: 8, z: 1.09}
+  m_Center: {x: 0, y: 3.976801, z: -0.83}

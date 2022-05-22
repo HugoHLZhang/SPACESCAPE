@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4329652244717634958}
   - component: {fileID: 844944258943224363}
   - component: {fileID: 3196763100346973921}
-  - component: {fileID: 3166769494138380299}
   - component: {fileID: 3833076978751492066}
   - component: {fileID: 4155756918548800925}
+  - component: {fileID: -8114868209385419264}
   m_Layer: 8
   m_Name: Antidote pickup
   m_TagString: Untagged
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3166769494138380299
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3989577299118677812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.37136918, y: 0.4158609, z: 0.6491698}
-  m_Center: {x: 0.006305836, y: 0.21053407, z: 0.0077367723}
 --- !u!54 &3833076978751492066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +115,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 4744868192eafd94a8a8deab2c371c12, type: 2}
+--- !u!64 &-8114868209385419264
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3989577299118677812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 74401447c1ffb164fad07492cbe8a172, type: 3}

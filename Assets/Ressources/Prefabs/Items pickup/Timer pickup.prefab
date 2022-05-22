@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3741588051843025645}
   - component: {fileID: 307107990676964680}
   - component: {fileID: 2569275407227220354}
-  - component: {fileID: 6572940382624352826}
   - component: {fileID: 5096183772512546029}
   - component: {fileID: 8915532741262497212}
+  - component: {fileID: 7982775161383418120}
   m_Layer: 8
   m_Name: Timer pickup
   m_TagString: Untagged
@@ -90,19 +90,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6572940382624352826
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4082260376388063319}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.11696705, y: 0.7910581, z: 0.6905273}
-  m_Center: {x: 0.017140454, y: 0.39548704, z: -0.000000029802322}
 --- !u!114 &5096183772512546029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +119,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &7982775161383418120
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082260376388063319}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 7b44bb350f0e26c4da5c7d33fa57c940, type: 3}

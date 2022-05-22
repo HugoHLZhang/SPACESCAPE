@@ -5,8 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new Consumable", menuName = "Items/Elements")]
 public class Elements : Item
 {
-    public ElementsType type;
     public GameObject prefab;
 }
-
-public enum ElementsType { Oxygene, Hydrogene, Azote, Carbone }

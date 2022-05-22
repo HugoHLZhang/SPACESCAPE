@@ -15,7 +15,7 @@ public class PlayerPickup : MonoBehaviour
     [SerializeField] private CreateAntidote antidote;
 
     private PlayerStats stats;
-
+    
     private void Start()
     {
         GetReference();
@@ -87,8 +87,8 @@ public class PlayerPickup : MonoBehaviour
                             stats.healFromPoison(newItem.amount);
                             hud.UpdateMessage("Bien joué ! L'antidote a parfaitement fonctionné !");
                             hud.showPoisonBar(false);
-                            StopCoroutine(stats.increasePoisonTimer());
                             FindObjectOfType<AudioManager>().Play("HealSound");
+                            FindObjectOfType<AudioManager>().Stop("Poison75");
                         }
                         else
                         {
@@ -103,6 +103,7 @@ public class PlayerPickup : MonoBehaviour
                     Elements newItem = hit.transform.GetComponent<ItemObject>().item as Elements;
                     elements.AddElement(newItem);
                     hud.UpdateMessage("Tu as ajouté " + newItem.description + " dans ton inventaire.");
+                    FindObjectOfType<AudioManager>().Play("TakeElements");
                 }
 
                 Destroy(hit.transform.gameObject);

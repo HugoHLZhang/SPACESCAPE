@@ -20,6 +20,8 @@ public class PlayerStats : CharacterStats
     [SerializeField] private float nextBreath = 600f;
     [SerializeField] private float poisonTimer = 300f;
 
+    private bool isHealedfromPoison;
+
     private void Start()
     {
         GetReferences();
@@ -45,16 +47,21 @@ public class PlayerStats : CharacterStats
 
     public IEnumerator increasePoisonTimer()
     {
-        while (poisonTimer > 0)
+        while (poisonTimer > 0 && !isHealedfromPoison)
         {
             yield return new WaitForSeconds(1f);
             poisonTimer+=1f;
             increasePoison(1);
+            if (poison == 75)
+            {
+                FindObjectOfType<AudioManager>().Play("Poison75");
+            }
         }
     }
 
     public void CheckPoison()
     {
+        Debug.Log(poison);
         if (poison >= 100)
         {
             health = 0;
@@ -82,6 +89,7 @@ public class PlayerStats : CharacterStats
         {
             poisonAfterAddition = 100;
         }
+
         SetPoisonTo(poisonAfterAddition);
     }
 
@@ -89,6 +97,7 @@ public class PlayerStats : CharacterStats
     {
         int poisonAfterHeal = poison - antidote;
         SetPoisonTo(poisonAfterHeal);
+        isHealedfromPoison = true;
     }
 
     private void GetReferences()
@@ -126,6 +135,7 @@ public class PlayerStats : CharacterStats
         FindObjectOfType<AudioManager>().Stop("BreathingPlayer");
         FindObjectOfType<AudioManager>().Stop("PoisonSound");
         FindObjectOfType<AudioManager>().Play("DeathScreen");
+        FindObjectOfType<AudioManager>().Stop("Poison75");
 
     }
 

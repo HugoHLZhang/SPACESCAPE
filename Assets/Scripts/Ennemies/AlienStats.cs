@@ -11,14 +11,23 @@ public class AlienStats : CharacterStats
     [SerializeField] public GameObject loot_MedKit_virus;
     [SerializeField] public GameObject loot_Timer;
     [SerializeField] private bool canAttack;
+    public HealthBar healthBar;
+    [SerializeField] private bool isDyingSound = false;
 
-    
+
+
     Vector3 RememberMeLocation;
     private bool hasDroppedLoot = false;
 
     private void Start()
     {
         InitVariables();
+        healthBar.setMaxHealth(maxHealth);
+    }
+
+    private void Update()
+    {
+        healthBar.setHealth(this.health);
     }
 
     public void DealDamage(CharacterStats statsToDamage)
@@ -30,7 +39,9 @@ public class AlienStats : CharacterStats
     {
         base.Die();
         base.GetComponentInChildren<Animator>().SetBool("isDying",true);
-        RememberMeLocation =new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+        FindObjectOfType<AudioManager>().Play("EnemyDie");
+
+        RememberMeLocation = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         Destroy(gameObject,3f);
         if (hasDroppedLoot == false && Random.value < 0.4f)
         {
