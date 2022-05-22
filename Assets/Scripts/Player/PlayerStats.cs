@@ -41,7 +41,7 @@ public class PlayerStats : CharacterStats
             
             yield return new WaitForSeconds(2f);
             nextBreath-=2f;
-            LoseOxygen(15);
+            LoseOxygen(1);
         }
     }
 
@@ -49,7 +49,7 @@ public class PlayerStats : CharacterStats
     {
         while (poisonTimer > 0 && !isHealedfromPoison)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             poisonTimer+=1f;
             increasePoison(1);
             if (poison == 75)
