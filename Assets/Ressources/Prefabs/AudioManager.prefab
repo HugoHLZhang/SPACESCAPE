@@ -52,7 +52,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: DeathSound
     clip: {fileID: 8300000, guid: e533e7f6f708f814bb100a135b7b0060, type: 3}
-    volume: 0.17
+    volume: 0.097
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PickOxygen
     clip: {fileID: 8300000, guid: 70844d91f74abe2498f9ecc6ef46cf30, type: 3}
-    volume: 0.308
+    volume: 0.178
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: TimeSound
     clip: {fileID: 8300000, guid: 613d74b1b35fc0140b513c5636705ec0, type: 3}
-    volume: 0.308
+    volume: 0.316
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -124,13 +124,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MainMenuTheme
     clip: {fileID: 8300000, guid: 2bc302e8ae8fbfc4dae653450b6bcaf8, type: 3}
-    volume: 0.308
+    volume: 0.105
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: DeathScreen
     clip: {fileID: 8300000, guid: 28df4a2e20567eb4faa45c506020f445, type: 3}
-    volume: 0.108
+    volume: 0.084
     pitch: 1
     loop: 1
     source: {fileID: 0}

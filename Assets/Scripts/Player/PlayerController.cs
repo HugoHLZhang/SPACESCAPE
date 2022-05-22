@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isCharacterGrounded)
         {
-            velocity.y += Mathf.Sqrt(jumpForce * -2f * gravity);
+            velocity.y += Mathf.Sqrt(jumpForce * -1.3f * gravity);
         }
     }
 
