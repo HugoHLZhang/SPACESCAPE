@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4b99e9db129a2148986e42d533a70af, type: 3}
-  m_Name: saber
+  m_Name: hands
   m_EditorClassIdentifier: 
-  nom: saber
-  icon: {fileID: 21300000, guid: c26b012e5b701184d8d633ef95e5f23c, type: 3}
-  description: saber
-  prefab: {fileID: 705284464825226792, guid: ec19dcbde98fdc4429b4debf9df7a9ed, type: 3}
+  nom: hands
+  icon: {fileID: 21300000, guid: 6e62d94c8dc40d34998e29fee9676912, type: 3}
+  description: main
+  prefab: {fileID: 0}
   gunParticules: {fileID: 0}
-  range: 5
-  damage: 25
-  fireRate: 1
-  itemType: 1
-  itemOrder: 1
+  range: 2
+  damage: 5
+  fireRate: 1.2
+  itemType: 0
+  itemOrder: 0

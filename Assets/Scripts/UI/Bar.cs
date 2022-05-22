@@ -16,7 +16,7 @@ public class Bar : MonoBehaviour
         baseValue = _baseValue;
         maxValue = _maxValue;
 
-        amount.text = baseValue.ToString();
+        amount.text = baseValue.ToString()+"%";
 
         CalculateFillAmount();
     }

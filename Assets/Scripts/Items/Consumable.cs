@@ -9,4 +9,4 @@ public class Consumable : Item
     public int amount;
 }
 
-public enum ConsumableType { O2, Medkit, Time, MedKit_Virus}
+public enum ConsumableType { O2, Medkit, Time, MedKit_Virus, Antidote}

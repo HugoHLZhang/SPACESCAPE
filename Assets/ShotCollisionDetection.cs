@@ -5,12 +5,7 @@ using UnityEngine;
 public class ShotCollisionDetection : MonoBehaviour
 {
 
-
-    //[SerializeField] public GameObject Player;
-
-    private BoxCollider ShotCollider;
     public PlayerStats playerStats;
-    private Collider collision;
 
     private void Start()
     {
@@ -24,9 +19,9 @@ public class ShotCollisionDetection : MonoBehaviour
         {
             
             playerStats.TakeDamage(15);
-            Debug.Log("hit Wall!!");
+            //Debug.Log("hit Wall!!");
         }
 
-        Debug.Log("hit !!");
+        //Debug.Log("hit !!");
     }
 }
