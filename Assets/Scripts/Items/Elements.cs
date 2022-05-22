@@ -9,4 +9,4 @@ public class Elements : Item
     public GameObject prefab;
 }
 
-public enum ElementsType { Oxygene, Hydrogene, Azote, Carbone, Argon, Chlore, Helium, Krypton, Xenon, Radon, Fluor, Neon }
+public enum ElementsType { Oxygene, Hydrogene, Azote, Carbone, Argon, Chlore, Helium, Krypton, Xenon, Radon, Fluor, Neon, Key }
