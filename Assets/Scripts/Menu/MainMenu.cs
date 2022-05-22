@@ -15,7 +15,8 @@ public class MainMenu : MonoBehaviour
     public void BacktoMainMenu()
     {
         SceneManager.LoadScene(0);
-        
+        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
+
     }
     
     public void QuitGame()
