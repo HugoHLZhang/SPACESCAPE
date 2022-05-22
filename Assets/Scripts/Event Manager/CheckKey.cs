@@ -56,6 +56,8 @@ public class CheckKey : MonoBehaviour
                     if (elements.GetElement(0).nom == "Key" || elements.GetElement(1).nom == "Key" || elements.GetElement(2).nom == "Key" || elements.GetElement(3).nom == "Key")
                     {
                         SceneManager.LoadScene(3);
+                        FindObjectOfType<AudioManager>().Stop("Theme");
+                        FindObjectOfType<AudioManager>().Play("TakeOff");
                     }
                     else
                     {
