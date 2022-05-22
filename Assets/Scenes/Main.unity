@@ -2542,71 +2542,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592067807}
   m_CullTransparentMesh: 1
---- !u!1001 &595746636
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6063286265503128163, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_Name
-      value: Alien
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 50.320637
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00010037422
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.6513252
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6063286265503128174, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225712505186573525, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6225712505186573525, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4787c5fd8bb43e04cbbf7e741a185d50, type: 3}
 --- !u!1 &634122092
 GameObject:
   m_ObjectHideFlags: 0
@@ -7660,11 +7595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7262908161827906823, guid: 0535247dca71c0f419283d4d78a03fbe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7262908161827906872, guid: 0535247dca71c0f419283d4d78a03fbe, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7262908161827906872, guid: 0535247dca71c0f419283d4d78a03fbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9419,6 +9354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2299631473452453583}
     m_Modifications:
+    - target: {fileID: 1218373207299144281, guid: 36a4390bd0847d24abe20ee043a3d771, type: 3}
+      propertyPath: m_shotPrefab
+      value: 
+      objectReference: {fileID: 136330, guid: 888b5c62dade8d34a8d630facabd50a8, type: 3}
     - target: {fileID: 1218373208083508320, guid: 36a4390bd0847d24abe20ee043a3d771, type: 3}
       propertyPath: m_Radius
       value: 0.2
@@ -16052,6 +15991,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2202878114906267051, guid: b2b70a41a2ba2b54aa50d26259763730, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 169.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2202878114906267051, guid: b2b70a41a2ba2b54aa50d26259763730, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2202878114906267051, guid: b2b70a41a2ba2b54aa50d26259763730, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -50.77
+      objectReference: {fileID: 0}
     - target: {fileID: 2922687626252432762, guid: b2b70a41a2ba2b54aa50d26259763730, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.572
@@ -16292,7 +16243,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2217531677341561023, guid: b2b70a41a2ba2b54aa50d26259763730, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2b70a41a2ba2b54aa50d26259763730, type: 3}
 --- !u!222 &2161587196557979149
 CanvasRenderer:
@@ -16320,7 +16272,7 @@ Transform:
   - {fileID: 1380711748}
   - {fileID: 1220697253}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2301878433646505828
 PrefabInstance:
@@ -16820,7 +16772,7 @@ MonoBehaviour:
     sentences:
     - Ton vaisseau a atterri dans ma station ?
     - 'Hahahaha c''est pas de chance ! '
-    - "Personne n'a jamais r\xE9ussi \xE0 s'enfuir de SpacEscape"
+    - "Personne n'a jamais r\xE9ussi \xE0 s'enfuir de Space Escape"
     - "Entre mes sbires qui essaieront de te tuer et mes \xE9nigmes..."
     - "Sans compter les kits de soin pi\xE9g\xE9s"
     - "En plus de \xE7a dans moins de 10 minutes, cette station explosera"
@@ -17037,7 +16989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5943371540965992719, guid: 7df4a3b97dc78254097d5b469691c724, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5943371540965992719, guid: 7df4a3b97dc78254097d5b469691c724, type: 3}
       propertyPath: m_LocalPosition.x
