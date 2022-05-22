@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: d9e104fa432db1d498a053600f7150a5, type: 3}
   description: une bouteille de NEON
   type: 11
-  prefab: {fileID: 6294013817464243908, guid: 05395024f93f37c4eba52afa7c798322, type: 3}
+  prefab: {fileID: 4324643074503751170, guid: 05395024f93f37c4eba52afa7c798322, type: 3}

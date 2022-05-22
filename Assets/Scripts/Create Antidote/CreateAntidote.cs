@@ -75,7 +75,7 @@ public class CreateAntidote : MonoBehaviour
                 }
                 else
                 {
-                    hud.UpdateMessage("Teste d'abord l'antidote que tu viens de créer ↜(╰ •ω•)╯ψ");
+                    hud.UpdateMessage("Teste d'abord l'antidote que tu viens de créer !");
                 }
             }
             else if (hit.transform.name == trigger.transform.name && isGood)

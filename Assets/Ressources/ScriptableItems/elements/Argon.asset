@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: eb5ad55cde9218a4ca3eaeb992ce0c09, type: 3}
   description: une bouteille d'ARGON
   type: 4
-  prefab: {fileID: 7693496532127795734, guid: bc7c952056ee00240af393b5515eebe8, type: 3}
+  prefab: {fileID: 1435267661494072515, guid: bc7c952056ee00240af393b5515eebe8, type: 3}

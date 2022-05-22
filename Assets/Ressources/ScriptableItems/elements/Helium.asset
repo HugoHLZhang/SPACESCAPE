@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 14125a119f00a7b49b61dd773851d068, type: 3}
   description: "une bouteille d'H\xC9LIUM"
   type: 6
-  prefab: {fileID: 8130802953290495329, guid: 991956c39977ae34d9e06522f1e0ffe8, type: 3}
+  prefab: {fileID: 5752097843409266185, guid: 991956c39977ae34d9e06522f1e0ffe8, type: 3}

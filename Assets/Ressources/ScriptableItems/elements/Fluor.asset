@@ -16,4 +16,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 82d3ac9a58dc99a4d8f34584180b8a97, type: 3}
   description: une bouteille de FLUOR
   type: 10
-  prefab: {fileID: 7688780196069373359, guid: 497f7b7c2e3d32c4f91b8d90bd250c15, type: 3}
+  prefab: {fileID: 7672551162435405037, guid: 497f7b7c2e3d32c4f91b8d90bd250c15, type: 3}

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nom: C
   icon: {fileID: 21300000, guid: f0b5ea4bda6f8394294b828e70d7c723, type: 3}
-  description: "une bo\xEEte contenant du CARBONE"
+  description: du CARBONE
   type: 3
   prefab: {fileID: 4622077306128563838, guid: d6b69b0731fb66b4a9a80283710f99ac, type: 3}
