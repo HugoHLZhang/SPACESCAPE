@@ -41,7 +41,7 @@ public class PlayerStats : CharacterStats
             
             yield return new WaitForSeconds(2f);
             nextBreath-=2f;
-            LoseOxygen(1);
+            LoseOxygen(15);
         }
     }
 
@@ -127,6 +127,7 @@ public class PlayerStats : CharacterStats
         base.Die();
         Time.timeScale = 1f;
         SceneManager.LoadScene(2); //change scene
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f);
 

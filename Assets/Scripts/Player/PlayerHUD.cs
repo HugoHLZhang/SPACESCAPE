@@ -70,13 +70,13 @@ public class PlayerHUD : MonoBehaviour
     public void showPasswordAndButtonVaisseau(bool show)
     {
         passwordText.showButtonVaisseau(show);
-        passwordText.setBackground(new Color(0.8f, 0, 0, 1));
+        passwordText.setBackground(new Color(0.8f, 0, 0, 0.6f));
     }
 
     public void showPasswordAndButtonMorse(bool show)
     {
         passwordText.showButtonMorse(show);
-        passwordText.setBackground(new Color(1, 0.5f, 0, 1)) ;
+        passwordText.setBackground(new Color(1, 0.5f, 0, 0.6f)) ;
     }
 
     public void showInvalidMessage(string message, bool active, Color color)

@@ -11,6 +11,7 @@ public class CreateAntidote : MonoBehaviour
     [SerializeField] public bool isGood = false;
     [SerializeField] private ElementsInventory elements;
     [SerializeField] private GameObject antidote;
+    public bool isTaken = false;
 
     private Camera fpscam;
     private PlayerStats stats;
@@ -78,7 +79,7 @@ public class CreateAntidote : MonoBehaviour
                     hud.UpdateMessage("Teste d'abord l'antidote que tu viens de créer !");
                 }
             }
-            else if (hit.transform.name == trigger.transform.name && isGood)
+            else if (hit.transform.name == trigger.transform.name && isGood && isTaken)
             {
                 hud.UpdateMessage("Tu es guéri. Inutile de rester ici.");
             }

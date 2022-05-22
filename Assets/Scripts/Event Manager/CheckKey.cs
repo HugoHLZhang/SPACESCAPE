@@ -63,6 +63,10 @@ public class CheckKey : MonoBehaviour
                         SceneManager.LoadScene(3);
                         FindObjectOfType<AudioManager>().Stop("Theme");
                         FindObjectOfType<AudioManager>().Play("TakeOff");
+                        FindObjectOfType<AudioManager>().Stop("Theme");
+                        FindObjectOfType<AudioManager>().Stop("BreathingPlayer");
+                        FindObjectOfType<AudioManager>().Stop("PoisonSound");
+                        FindObjectOfType<AudioManager>().Stop("Poison75");
                     }
                     else
                     {

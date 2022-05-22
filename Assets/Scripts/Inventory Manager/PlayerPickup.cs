@@ -84,6 +84,7 @@ public class PlayerPickup : MonoBehaviour
                         antidote.antidoteInstantiate = false;
                         if (antidote.isGood)
                         {
+                            antidote.isTaken = true;
                             stats.healFromPoison(newItem.amount);
                             hud.UpdateMessage("Bien joué ! L'antidote a parfaitement fonctionné !");
                             hud.showPoisonBar(false);

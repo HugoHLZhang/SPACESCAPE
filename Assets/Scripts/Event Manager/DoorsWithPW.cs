@@ -91,7 +91,8 @@ public class DoorsWithPW : MonoBehaviour
                     doorFrame.GetComponent<BoxCollider>().enabled = false;
                     doorFrame.GetComponent<NavMeshObstacle>().enabled = false;
                     isOpen = true;
-                    hud.showInvalidMessage("Mot de passe correte. Passez au niveau suivant.", true, new Color(0, 0.75f, 0, 1));
+                    hud.showInvalidMessage("Mot de passe correte. Passez au niveau suivant.", true, new Color(1, 0.75f, 0, 1));
+
                     hud.UpdateDoorMessage("", "", false);
                     FindObjectOfType<AudioManager>().Play("DoorSound");
                 }
@@ -152,7 +153,7 @@ public class DoorsWithPW : MonoBehaviour
                 doorFrame.GetComponent<BoxCollider>().enabled = true;
                 doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
                 isOpen = false;
-                hud.showInvalidMessage("", false, new Color(0,0,0));
+                hud.showInvalidMessage("", false, new Color(0,0,0,0));
                 hud.UpdateDoorMessage("", "", false);
                 FindObjectOfType<AudioManager>().Play("DoorSound");
             }
