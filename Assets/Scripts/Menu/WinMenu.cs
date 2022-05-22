@@ -9,11 +9,14 @@ public class WinMenu : MonoBehaviour
         SceneManager.LoadScene(1);
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
+        FindObjectOfType<AudioManager>().Stop("TakeOff");
     }
 
     public void BacktoMainMenu()
     {
         SceneManager.LoadScene(0);
+        FindObjectOfType<AudioManager>().Stop("TakeOff");
+        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
 
     }
 

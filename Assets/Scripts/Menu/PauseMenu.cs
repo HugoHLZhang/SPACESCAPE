@@ -23,6 +23,8 @@ public class PauseMenu : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Theme");
                 FindObjectOfType<AudioManager>().Stop("PauseTheme");
                 FindObjectOfType<AudioManager>().Play("PauseHit");
+                FindObjectOfType<AudioManager>().Play("BreathingPlayer");
+
 
             }
             else//pause on key escape
@@ -33,6 +35,8 @@ public class PauseMenu : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("PauseHit");
                 FindObjectOfType<AudioManager>().Pause("Theme");
                 FindObjectOfType<AudioManager>().Play("PauseTheme");
+                FindObjectOfType<AudioManager>().Pause("BreathingPlayer");
+
             }
         }
 
@@ -47,6 +51,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().Stop("PauseTheme");
+        FindObjectOfType<AudioManager>().Play("BreathingPlayer");
     }
 
     void Pause()
