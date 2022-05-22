@@ -87,7 +87,6 @@ public class PlayerPickup : MonoBehaviour
                             stats.healFromPoison(newItem.amount);
                             hud.UpdateMessage("Bien joué ! L'antidote a parfaitement fonctionné !");
                             hud.showPoisonBar(false);
-                            StopCoroutine(stats.increasePoisonTimer());
                             FindObjectOfType<AudioManager>().Play("HealSound");
                             FindObjectOfType<AudioManager>().Stop("Poison75");
                         }

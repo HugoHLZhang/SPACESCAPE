@@ -20,6 +20,8 @@ public class PlayerStats : CharacterStats
     [SerializeField] private float nextBreath = 600f;
     [SerializeField] private float poisonTimer = 300f;
 
+    private bool isHealedfromPoison;
+
     private void Start()
     {
         GetReferences();
@@ -45,7 +47,7 @@ public class PlayerStats : CharacterStats
 
     public IEnumerator increasePoisonTimer()
     {
-        while (poisonTimer > 0)
+        while (poisonTimer > 0 && !isHealedfromPoison)
         {
             yield return new WaitForSeconds(1f);
             poisonTimer+=1f;
@@ -59,6 +61,7 @@ public class PlayerStats : CharacterStats
 
     public void CheckPoison()
     {
+        Debug.Log(poison);
         if (poison >= 100)
         {
             health = 0;
@@ -94,6 +97,7 @@ public class PlayerStats : CharacterStats
     {
         int poisonAfterHeal = poison - antidote;
         SetPoisonTo(poisonAfterHeal);
+        isHealedfromPoison = true;
     }
 
     private void GetReferences()

@@ -6,11 +6,15 @@ public class EventDisplayCanvas : MonoBehaviour
 {
 
     [SerializeField] public GameObject Canvas;
-    [SerializeField] public GameObject EventSystem;
+
+
+    private void Start()
+    {
+        Canvas.SetActive(false);
+    }
     void displayCanvas()
     {
         Canvas.SetActive(true);
-        EventSystem.SetActive(true);
     }
    
 }
