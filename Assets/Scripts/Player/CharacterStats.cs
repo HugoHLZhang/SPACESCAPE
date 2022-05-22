@@ -12,11 +12,9 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] protected int maxOxygen;
     
     [SerializeField] protected bool isDead;
-    private PlayerHUD hud;
 
     private void Start()
     {
-        hud = GetComponent<PlayerHUD>();
         InitVariables();
     }
 
@@ -85,7 +83,7 @@ public class CharacterStats : MonoBehaviour
         CheckHealth();
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         CheckHealth();
 

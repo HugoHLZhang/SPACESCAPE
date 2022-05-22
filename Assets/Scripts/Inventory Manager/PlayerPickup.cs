@@ -75,7 +75,7 @@ public class PlayerPickup : MonoBehaviour
                     }
                     if (newItem.type == ConsumableType.MedKit_Virus)
                     {
-                        stats.Heal(-newItem.amount);
+                        stats.TakeDamage(newItem.amount);
                         hud.UpdateMessage("Ughh pas de chance, ce kit de soin ne convient pas à ton organisme... Tu perds " + newItem.amount + "% PV.");
                         FindObjectOfType<AudioManager>().Play("PoisonSound");
                     }

@@ -136,11 +136,8 @@ public class BossController : MonoBehaviour
 
                     stats.DealDamage(statsToDamage);
                     //gameObject.transform.position = playerPosition;
-                    target.GetComponent<PlayerHUD>().FadeRedScreen();
                     FindObjectOfType<AudioManager>().Play("SaberHit" + Random.Range(1, 4).ToString());
                     FindObjectOfType<AudioManager>().Play("GettingHit");
-                    yield return new WaitForSeconds(0.3f);
-                    target.GetComponent<PlayerHUD>().FadeRedScreen();
                 }
             }
         }

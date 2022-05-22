@@ -75,10 +75,7 @@ public class EnnemiesController : MonoBehaviour
         if (distanceBetweenPlayer <= agent.stoppingDistance)
         {
             stats.DealDamage(statsToDamage);
-            target.GetComponent<PlayerHUD>().FadeRedScreen();
             FindObjectOfType<AudioManager>().Play("GettingHit");
-            yield return new WaitForSeconds(0.3f);
-            target.GetComponent<PlayerHUD>().FadeRedScreen();
         }
     }
 

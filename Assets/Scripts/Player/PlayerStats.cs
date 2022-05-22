@@ -33,6 +33,12 @@ public class PlayerStats : CharacterStats
     {
         
     }
+    IEnumerator redScreen()
+    {
+        hud.FadeRedScreen();
+        yield return new WaitForSeconds(0.3f);
+        hud.FadeRedScreen();
+    }
 
     IEnumerator timer()
     {
@@ -89,7 +95,7 @@ public class PlayerStats : CharacterStats
         {
             poisonAfterAddition = 100;
         }
-
+        StartCoroutine(redScreen());
         SetPoisonTo(poisonAfterAddition);
     }
 
@@ -120,6 +126,12 @@ public class PlayerStats : CharacterStats
     public void Breathe()
     {
         LoseOxygen(1);
+    }
+    public override void TakeDamage(int damage)
+    {
+
+        StartCoroutine(redScreen());
+        base.TakeDamage(damage);
     }
 
     public override void Die()
