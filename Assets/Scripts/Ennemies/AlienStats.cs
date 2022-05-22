@@ -40,7 +40,7 @@ public class AlienStats : CharacterStats
         base.Die();
         base.GetComponentInChildren<Animator>().SetBool("isDying",true);
         FindObjectOfType<AudioManager>().Play("EnemyDie");
-
+        Destroy(base.GetComponent<CapsuleCollider>());
         RememberMeLocation = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
         Destroy(gameObject,3f);
         if (hasDroppedLoot == false && Random.value < 0.4f)
