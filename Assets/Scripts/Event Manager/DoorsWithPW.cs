@@ -16,6 +16,7 @@ public class DoorsWithPW : MonoBehaviour
     [SerializeField] public bool popUpIsOpen = false;
 
     [SerializeField] private string password;
+    private bool isNumber;
 
     private void Start()
     {
@@ -75,10 +76,11 @@ public class DoorsWithPW : MonoBehaviour
             {
                 hud.showPasswordAndButtonVaisseau(false);
                 hud.showPasswordAndButtonMorse(false);
+                hud.showInvalidMessage("", false, new Color(0, 0, 0));
                 if (!isValid)
                 {
                     hud.PopUpDoorWindow();
-                    if(password == "800")
+                    if(password == "660")
                         hud.showPasswordAndButtonVaisseau(true);
                     else if( password == "ESIEE")
                         hud.showPasswordAndButtonMorse(true);
@@ -101,9 +103,17 @@ public class DoorsWithPW : MonoBehaviour
 
     public void CheckPassword()
     {
-        if (password == "800")
-            if (hud.readPasswordVaisseau() == password) isValid = true;
+        if (password == "660")
+        {
+            int intPassword;
+            isNumber = int.TryParse(hud.readPasswordVaisseau(), out intPassword);
+            Debug.Log(isNumber);
+            Debug.Log(intPassword);
+            if (isNumber)
+                if (int.Parse(password) - 50 <= intPassword && intPassword <= int.Parse(password)) isValid = true;
+                else { isValid = false; }
             else { isValid = false; }
+        }
         else if (password == "ESIEE")
             if (hud.readPasswordMorse() == password) isValid = true;
             else { isValid = false; }
@@ -142,6 +152,7 @@ public class DoorsWithPW : MonoBehaviour
                 doorFrame.GetComponent<BoxCollider>().enabled = true;
                 doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
                 isOpen = false;
+                hud.showInvalidMessage("", false, new Color(0,0,0));
                 hud.UpdateDoorMessage("", "", false);
                 FindObjectOfType<AudioManager>().Play("DoorSound");
             }

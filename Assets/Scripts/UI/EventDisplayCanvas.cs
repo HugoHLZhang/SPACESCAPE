@@ -15,6 +15,8 @@ public class EventDisplayCanvas : MonoBehaviour
     void displayCanvas()
     {
         Canvas.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
    
 }

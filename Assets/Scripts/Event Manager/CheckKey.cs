@@ -51,7 +51,12 @@ public class CheckKey : MonoBehaviour
         {
             if (hit.transform.name == trigger.transform.name)
             {
-                if (elements != null)
+                if (elements.GetElement(0) == null)
+                {
+                    hud.UpdateMessage("Tu n'as pas la clé du vaisseau.");
+                    return;
+                }
+                if (elements.GetElement(0) != null)
                 {
                     if (elements.GetElement(0).nom == "Key" || elements.GetElement(1).nom == "Key" || elements.GetElement(2).nom == "Key" || elements.GetElement(3).nom == "Key")
                     {
@@ -65,6 +70,7 @@ public class CheckKey : MonoBehaviour
                     }
                 }
                 
+
             }
         }
     }
