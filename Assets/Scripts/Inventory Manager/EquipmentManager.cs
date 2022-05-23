@@ -5,23 +5,22 @@ using UnityEngine;
 public class EquipmentManager : MonoBehaviour
 {
     public int currentlyEquipedItem = 0;
+    public Transform currentItemBarrel = null;
     public GameObject currentItemObject = null;
-    public bool GunEquiped;
-    public bool SaberEquiped;
+
     [SerializeField] public Transform ItemHolderR = null;
     private Animator anim;
     private Inventory inventory;
     private int LayerArms;
     public Animator saberAnim;
 
-    [SerializeField] Items defaultItem = null;
+    
     [SerializeField] PlayerHUD hud;
 
+    public bool isSwitching;
     private void Start()
     {
         GetReference();
-        InitVariables();
-
         LayerArms = LayerMask.NameToLayer("Arms");
     }
 
@@ -31,8 +30,9 @@ public class EquipmentManager : MonoBehaviour
     {
 
         //currentItemObject.layer = LayerArms ;
-        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquipedItem != 0 && inventory.GetItem(0) != null)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquipedItem == 2 && inventory.GetItem(0) != null && isSwitching == false)
         {
+            isSwitching = true;
             UnequipItem();
             currentlyEquipedItem = 0;
             anim.SetInteger("itemType", 0);
@@ -46,34 +46,54 @@ public class EquipmentManager : MonoBehaviour
             {
                 hud.UpdateItemSize(inventory.GetItem(1));
             }
-            GunEquiped = false;
-            SaberEquiped = false;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1)
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquipedItem == 1 && inventory.GetItem(0) != null && isSwitching == false)
+        {
+            isSwitching = true;
+            UnequipItem();
+            currentlyEquipedItem = 0;
+            FindObjectOfType<AudioManager>().Stop("EquipSaber");
+            FindObjectOfType<AudioManager>().Play("PowerDown");
+            anim.SetInteger("itemType", 0);
+            //Update itemUI
+            hud.UpdateItemUI(inventory.GetItem(0));
+            if (inventory.GetItem(2) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(2));
+            }
+            if (inventory.GetItem(1) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(1));
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquipedItem != 1 && isSwitching == false)
         {
             if (inventory.GetItem(1) == null)
             {
-                hud.UpdateMessage("No item here ! Try to find it !");
+                hud.UpdateMessage("Tu n'as pas cet objet. Essaye de le trouver.");
                 return;
             }
+            isSwitching = true;
             UnequipItem();
             EquipItem(inventory.GetItem(1));
+            FindObjectOfType<AudioManager>().Play("EquipSaber");
             hud.UpdateItemSize(inventory.GetItem(0));
             if (inventory.GetItem(2) != null)
             {
                 hud.UpdateItemSize(inventory.GetItem(2));
             }
-            GunEquiped = false;
-            SaberEquiped = true;
             inventory.GetItem(1).prefab.layer = LayerArms;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem != 2) 
+        if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem == 0 && isSwitching == false) 
         {
             if(inventory.GetItem(2) == null)
             {
-                hud.UpdateMessage("No item here ! Try to find it !");
+                hud.UpdateMessage("Tu n'as pas cet objet. Essaye de le trouver.");
                 return;
             }
+            isSwitching = true;
             UnequipItem();
             EquipItem(inventory.GetItem(2));
             hud.UpdateItemSize(inventory.GetItem(0));
@@ -81,22 +101,39 @@ public class EquipmentManager : MonoBehaviour
             {
                 hud.UpdateItemSize(inventory.GetItem(1));
             }
-            GunEquiped = true;
-            SaberEquiped = false;
             //inventory.GetItem(2).prefab.layer = LayerArms;
 
         }
-        
-        
+
+        if (Input.GetKeyDown(KeyCode.Alpha3) && currentlyEquipedItem == 1 && isSwitching == false)
+        {
+            if (inventory.GetItem(2) == null)
+            {
+                hud.UpdateMessage("Tu n'as pas cet objet. Essaye de le trouver.");
+                return;
+            }
+            isSwitching = true;
+            UnequipItem();
+            FindObjectOfType<AudioManager>().Stop("EquipSaber");
+            FindObjectOfType<AudioManager>().Play("PowerDown");
+            EquipItem(inventory.GetItem(2));
+            hud.UpdateItemSize(inventory.GetItem(0));
+            if (inventory.GetItem(1) != null)
+            {
+                hud.UpdateItemSize(inventory.GetItem(1));
+            }
+            //inventory.GetItem(2).prefab.layer = LayerArms;
+
+        }
+
+
     }
 
     private void EquipItem(Items item)
     {
         currentlyEquipedItem = (int)item.itemOrder;
         anim.SetInteger("itemType", (int)item.itemType);
-        //Update itemUI
         hud.UpdateItemUI(item);
-        
     }
 
     private void UnequipItem()
@@ -110,11 +147,6 @@ public class EquipmentManager : MonoBehaviour
         hud = GetComponent<PlayerHUD>();
     }
 
-    private void InitVariables()
-    {
-        inventory.AddItem(defaultItem);
-        
-    }
 
     
 

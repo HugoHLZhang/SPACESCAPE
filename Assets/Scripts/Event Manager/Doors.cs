@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Doors : MonoBehaviour
 {
-    [SerializeField] public Camera fpscam;
+    private Camera fpscam;
     [SerializeField] public float range = 5f;
-    [SerializeField] private GameObject door;
+    [SerializeField] private GameObject doorFrame;
     [SerializeField] private GameObject trigger;
-    public Animator anim;
+    [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
-    [SerializeField] private PlayerHUD hud;
+    [SerializeField] private DialogueTrigger Dialogue;
+    private PlayerHUD hud;
+    private PlayerStats stats;
+    private bool hasAlreadyOpenDialogue = false;
 
     private void Start()
     {
-        door.AddComponent<BoxCollider>();
+        stats = PlayerStats.playerStats;
+        fpscam = CameraController.cam;
+        hud = PlayerHUD.hud;
+        doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
+        doorFrame.GetComponent<BoxCollider>().enabled = true;
+        hud.showPoisonBar(false);
+        Dialogue = GetComponentInChildren<DialogueTrigger>();
     }
 
     // Update is called once per frame
@@ -37,13 +47,13 @@ public class Doors : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name && isOpen == true)
         {
-            hud.UpdateDoorMessage("E", "Close", true);
+            hud.UpdateDoorMessage("E", "Fermer", true);
         }
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger.transform.name && isOpen == false)
         {
-            hud.UpdateDoorMessage("E", "Open", true);
+            hud.UpdateDoorMessage("E", "Ouvrir", true);
         }
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == door.transform.name)
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name)
         {
             hud.UpdateDoorMessage("", "", false);
         }
@@ -58,10 +68,22 @@ public class Doors : MonoBehaviour
         {
             if (hit.transform.name == trigger.transform.name)
             {
+                if (!hasAlreadyOpenDialogue && Dialogue != null)
+                {
+                    Dialogue.TriggerDialogue();
+                    hasAlreadyOpenDialogue = true;
+                }
                 anim.SetTrigger("open");
-                Destroy(door.GetComponent<BoxCollider>());
+                doorFrame.GetComponent<BoxCollider>().enabled = false;
+                doorFrame.GetComponent<NavMeshObstacle>().enabled = false;
                 isOpen = true;
                 hud.UpdateDoorMessage("", "", false);
+                FindObjectOfType<AudioManager>().Play("DoorSound");
+                if(hit.transform.tag == "Poison")
+                {
+                    hud.showPoisonBar(true);
+                    StartCoroutine(stats.increasePoisonTimer());
+                }
             }
 
         }
@@ -73,12 +95,14 @@ public class Doors : MonoBehaviour
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
 
-            if (hit.transform.name == trigger.transform.name)
+            if (hit.transform.name == trigger.transform.name )
             {
-                anim.SetTrigger("close");
-                door.AddComponent<BoxCollider>();
-                isOpen = false;
-                hud.UpdateDoorMessage("", "", false);
+                    anim.SetTrigger("close");
+                    doorFrame.GetComponent<BoxCollider>().enabled = true;
+                    doorFrame.GetComponent<NavMeshObstacle>().enabled = true;
+                    isOpen = false;
+                    hud.UpdateDoorMessage("", "", false);
+                    FindObjectOfType<AudioManager>().Play("DoorSound");
             }
         }
     }

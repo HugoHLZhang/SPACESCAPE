@@ -7,7 +7,7 @@ public class AnimationItemsEventManager : MonoBehaviour
 
     private EquipmentManager manager;
     private Inventory inventory;
-    
+    private int randomIndex;
 
     private void Start()
     {
@@ -23,11 +23,18 @@ public class AnimationItemsEventManager : MonoBehaviour
     public void InstantiateItem()
     {
         manager.currentItemObject =  Instantiate(inventory.GetItem(manager.currentlyEquipedItem).prefab, manager.ItemHolderR);
+        manager.currentItemBarrel = manager.currentItemObject.transform.GetChild(0);
         if(manager.currentlyEquipedItem == 1)
         {
             manager.saberAnim = manager.currentItemObject.GetComponent<Animator>();
         }
+    }
 
+    
+
+    public void EndAnimation()
+    {
+        manager.isSwitching = false;
     }
 
     public void ExpandSaber()
@@ -39,7 +46,6 @@ public class AnimationItemsEventManager : MonoBehaviour
     {
         manager.saberAnim.SetTrigger("collapse");
     }
-
 
     private void GetReference()
     {

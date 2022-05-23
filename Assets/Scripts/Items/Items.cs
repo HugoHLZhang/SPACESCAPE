@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new Item", menuName = "Items")]
+[CreateAssetMenu(fileName = "new Item", menuName = "Items/Weapons")]
 
 public class Items : Item
 {
     public GameObject prefab;
+    public GameObject gunParticules;
     public float range;
+    public int damage;
+    public float fireRate;
     public ItemType itemType;
     public ItemOrder itemOrder;
 }

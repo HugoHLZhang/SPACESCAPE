@@ -10,7 +10,7 @@ public class CharacterStats : MonoBehaviour
 
     [SerializeField] protected int oxygen;
     [SerializeField] protected int maxOxygen;
-
+    
     [SerializeField] protected bool isDead;
 
     private void Start()
@@ -49,9 +49,17 @@ public class CharacterStats : MonoBehaviour
             oxygen = maxOxygen;
             isDead = false;
         }
+        if (oxygen == 15)
+        {
+            FindObjectOfType<AudioManager>().Play("BreathingPlayer");
+        }
+        if(oxygen > 15)
+        {
+            FindObjectOfType<AudioManager>().Stop("BreathingPlayer");
+        }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         isDead = true;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -75,14 +83,19 @@ public class CharacterStats : MonoBehaviour
         CheckHealth();
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
+        CheckHealth();
+
         int healthAfterDamge = health - damage;
         SetHealthTo(healthAfterDamge);
+        
+        
     }
 
     public void LoseOxygen(int amount)
     {
+        CheckHealth();
         int oxygenAfterTime = oxygen - amount;
         SetOxygenTo(oxygenAfterTime);
     }
@@ -99,7 +112,7 @@ public class CharacterStats : MonoBehaviour
         SetOxygenTo(oxygenAfterTakeOxygen);
     }
 
-    public void InitVariables()
+    public virtual void InitVariables()
     {
         maxOxygen = 100;
         maxHealth = 100;

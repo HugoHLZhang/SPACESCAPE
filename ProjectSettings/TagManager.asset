@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Destroyable
+  - Wall
+  - Ground
+  - Poison
+  - Tube
   layers:
   - Default
   - TransparentFX
@@ -16,9 +21,9 @@ TagManager:
   - Pickup
   - Trigger
   - SpaceShip
-  - 
-  - 
-  - 
+  - Alien
+  - Obstacle
+  - Wall
   - 
   - 
   - 

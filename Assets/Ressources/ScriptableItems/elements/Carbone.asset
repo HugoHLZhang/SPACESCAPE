@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b2cf8e7cfb5ad45aac3d98861d91fd, type: 3}
+  m_Name: Carbone
+  m_EditorClassIdentifier: 
+  nom: C
+  icon: {fileID: 21300000, guid: f0b5ea4bda6f8394294b828e70d7c723, type: 3}
+  description: du CARBONE
+  type: 3
+  prefab: {fileID: 4622077306128563838, guid: d6b69b0731fb66b4a9a80283710f99ac, type: 3}

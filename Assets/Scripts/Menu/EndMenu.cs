@@ -7,12 +7,16 @@ public class EndMenu : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);//main
+        SceneManager.LoadScene(1);//main
+        FindObjectOfType<AudioManager>().Stop("DeathScreen");
+        FindObjectOfType<AudioManager>().Play("Theme");
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);//menu
+        SceneManager.LoadScene(0);//menu
+        FindObjectOfType<AudioManager>().Stop("DeathScreen");
+        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
     }
     public void QuitGame()
     {

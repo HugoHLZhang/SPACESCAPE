@@ -13,17 +13,30 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) //et différent de mort
+        if (Input.GetKeyDown(KeyCode.P)) //et différent de mort
         {
             if (GameIsPaused)
             {
                 Resume();
+                Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                FindObjectOfType<AudioManager>().Play("Theme");
+                FindObjectOfType<AudioManager>().Stop("PauseTheme");
+                FindObjectOfType<AudioManager>().Play("PauseHit");
+                FindObjectOfType<AudioManager>().Play("BreathingPlayer");
+
+
             }
             else//pause on key escape
             {
                 Pause();
+                Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
+                FindObjectOfType<AudioManager>().Play("PauseHit");
+                FindObjectOfType<AudioManager>().Pause("Theme");
+                FindObjectOfType<AudioManager>().Play("PauseTheme");
+                FindObjectOfType<AudioManager>().Pause("BreathingPlayer");
+
             }
         }
 
@@ -36,6 +49,9 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f; //time is back to normal 
         GameIsPaused = false;
+        FindObjectOfType<AudioManager>().Play("Theme");
+        FindObjectOfType<AudioManager>().Stop("PauseTheme");
+        FindObjectOfType<AudioManager>().Play("BreathingPlayer");
     }
 
     void Pause()
@@ -49,8 +65,11 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Loading Menu...");
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1); //change scene
-        RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f); 
+        SceneManager.LoadScene(0); //change scene
+        RenderSettings.skybox.SetFloat("Rotation", (Time.timeSinceLevelLoad) * 0.2f);
+        FindObjectOfType<AudioManager>().Stop("Theme");
+        FindObjectOfType<AudioManager>().Stop("PauseTheme");
+        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
     }
 
     public void QuitGame()
