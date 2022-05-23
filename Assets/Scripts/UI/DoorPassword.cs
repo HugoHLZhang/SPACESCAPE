@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DoorPassword : MonoBehaviour
 {
+    [SerializeField] public Text titre;
     [SerializeField] public InputField passwordVaisseau;
     [SerializeField] public InputField passwordMorse;
     [SerializeField] public Text invalidMessage;
@@ -35,14 +36,19 @@ public class DoorPassword : MonoBehaviour
 
     public void showButtonVaisseau(bool show)
     {
+        titre.gameObject.SetActive(show);
         buttonVaisseau.gameObject.SetActive(show);
         passwordVaisseau.gameObject.SetActive(show);
         closeButton.gameObject.SetActive(show);
+        invalidMessage.gameObject.SetActive(show);
+        
     } 
     public void showButtonMorse(bool show)
     {
+        titre.gameObject.SetActive(show);
         buttonMorse.gameObject.SetActive(show);
         passwordMorse.gameObject.SetActive(show);
         closeButton.gameObject.SetActive(show);
+        invalidMessage.gameObject.SetActive(show);
     }
 }

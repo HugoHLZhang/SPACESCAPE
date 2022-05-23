@@ -83,9 +83,10 @@ public class DoorsWithPW : MonoBehaviour
         {
             if (hit.transform.name == trigger.transform.name || hit.transform.name == trigger2.transform.name)
             {
-                hud.showInvalidMessage("", false, new Color(0, 0, 0, 0));
+                
                 hud.showPasswordAndButtonVaisseau(false);
                 hud.showPasswordAndButtonMorse(false);
+                hud.showInvalidMessage("", false, new Color(0, 0, 0, 0));
                 if (!isValid)
                 {
                     hud.PopUpDoorWindow();

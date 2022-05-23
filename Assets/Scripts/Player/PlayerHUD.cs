@@ -78,7 +78,7 @@ public class PlayerHUD : MonoBehaviour
     {
         passwordText.showButtonMorse(show);
         if(show)
-        passwordText.setBackground(new Color(1, 0.5f, 0, 0.6f)) ;
+        passwordText.setBackground(new Color(0, 0, 0, 0.6f)) ;
     }
 
     public void showInvalidMessage(string message, bool active, Color color)
@@ -99,7 +99,6 @@ public class PlayerHUD : MonoBehaviour
         if (doorPassword.isFaded)
         {
             doorPassword.Fade();
-            passwordText.setBackground(new Color(0, 0, 0, 0));
             passwordPopupVaisseau.popUpIsOpen = !doorPassword.isFaded;
             passwordPopupMorse.popUpIsOpen = !doorPassword.isFaded;
             Cursor.visible = true;
@@ -113,7 +112,6 @@ public class PlayerHUD : MonoBehaviour
 
     public void ClosePopUpWindow()
     {
-        passwordText.setBackground(new Color(0, 0, 0, 0));
         doorPassword.Fade();
         passwordPopupVaisseau.popUpIsOpen = !doorPassword.isFaded;
         passwordPopupMorse.popUpIsOpen = !doorPassword.isFaded;
