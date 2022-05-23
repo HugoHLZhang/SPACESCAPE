@@ -9,6 +9,7 @@ public class DoorsWithPW : MonoBehaviour
     [SerializeField] public float range = 5f;
     [SerializeField] private GameObject doorFrame;
     [SerializeField] private GameObject trigger;
+    [SerializeField] private GameObject trigger2;
     [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen = false;
     private PlayerHUD hud;
@@ -57,7 +58,15 @@ public class DoorsWithPW : MonoBehaviour
         {
             hud.UpdateDoorMessage("E", "Ouvrir", true);
         }
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name)
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger2.transform.name && isOpen == true)
+        {
+            hud.UpdateDoorMessage("E", "Fermer", true);
+        }
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger2.transform.name && isOpen == false)
+        {
+            hud.UpdateDoorMessage("E", "Ouvrir", true);
+        }
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name && hit.transform.name != trigger2.transform.name)
         {
             hud.UpdateDoorMessage("", "", false);
         }
@@ -72,11 +81,11 @@ public class DoorsWithPW : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
-            if (hit.transform.name == trigger.transform.name)
+            if (hit.transform.name == trigger.transform.name || hit.transform.name == trigger2.transform.name)
             {
+                hud.showInvalidMessage("", false, new Color(0, 0, 0, 0));
                 hud.showPasswordAndButtonVaisseau(false);
                 hud.showPasswordAndButtonMorse(false);
-                hud.showInvalidMessage("", false, new Color(0, 0, 0));
                 if (!isValid)
                 {
                     hud.PopUpDoorWindow();
@@ -84,6 +93,7 @@ public class DoorsWithPW : MonoBehaviour
                         hud.showPasswordAndButtonVaisseau(true);
                     else if( password == "ESIEE")
                         hud.showPasswordAndButtonMorse(true);
+
                 }
                 else
                 {
@@ -146,7 +156,7 @@ public class DoorsWithPW : MonoBehaviour
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
 
-            if (hit.transform.name == trigger.transform.name)
+            if (hit.transform.name == trigger.transform.name || hit.transform.name == trigger2.transform.name)
             {
 
                 anim.SetTrigger("close");

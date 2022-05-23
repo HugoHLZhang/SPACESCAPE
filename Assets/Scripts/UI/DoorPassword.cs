@@ -11,6 +11,7 @@ public class DoorPassword : MonoBehaviour
     [SerializeField] private Image background;
     [SerializeField] private Button buttonVaisseau;
     [SerializeField] private Button buttonMorse;
+    [SerializeField] private Button closeButton;
 
     public string readPasswordVaisseau()
     {
@@ -36,10 +37,12 @@ public class DoorPassword : MonoBehaviour
     {
         buttonVaisseau.gameObject.SetActive(show);
         passwordVaisseau.gameObject.SetActive(show);
+        closeButton.gameObject.SetActive(show);
     } 
     public void showButtonMorse(bool show)
     {
         buttonMorse.gameObject.SetActive(show);
         passwordMorse.gameObject.SetActive(show);
+        closeButton.gameObject.SetActive(show);
     }
 }
