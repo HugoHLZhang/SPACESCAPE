@@ -8,7 +8,7 @@ public class ItemObject : MonoBehaviour
 
     public void Update()
     {
-        if(item.nom == "Timer")
+        if(item.nom == "Timer" || item.nom == "Key")
         {
             gameObject.transform.Rotate(Vector3.up, 50f * Time.deltaTime, Space.World);
         }
