@@ -9,6 +9,7 @@ public class Doors : MonoBehaviour
     [SerializeField] public float range = 5f;
     [SerializeField] private GameObject doorFrame;
     [SerializeField] private GameObject trigger;
+    [SerializeField] private GameObject trigger2;
     [SerializeField] public Animator anim;
     [SerializeField] private bool isOpen= false;
     [SerializeField] private DialogueTrigger Dialogue;
@@ -53,7 +54,15 @@ public class Doors : MonoBehaviour
         {
             hud.UpdateDoorMessage("E", "Ouvrir", true);
         }
-        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name)
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger2.transform.name && isOpen == true)
+        {
+            hud.UpdateDoorMessage("E", "Fermer", true);
+        }
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.name == trigger2.transform.name && isOpen == false)
+        {
+            hud.UpdateDoorMessage("E", "Ouvrir", true);
+        }
+        if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range) && hit.transform.tag == doorFrame.transform.tag && hit.transform.name != trigger.transform.name && hit.transform.name != trigger2.transform.name)
         {
             hud.UpdateDoorMessage("", "", false);
         }
@@ -66,7 +75,7 @@ public class Doors : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
-            if (hit.transform.name == trigger.transform.name)
+            if (hit.transform.name == trigger.transform.name || hit.transform.name == trigger2.transform.name)
             {
                 if (!hasAlreadyOpenDialogue && Dialogue != null)
                 {
@@ -95,7 +104,7 @@ public class Doors : MonoBehaviour
         if (Physics.Raycast(fpscam.transform.position, fpscam.transform.forward, out hit, range))
         {
 
-            if (hit.transform.name == trigger.transform.name )
+            if (hit.transform.name == trigger.transform.name || hit.transform.name == trigger2.transform.name)
             {
                     anim.SetTrigger("close");
                     doorFrame.GetComponent<BoxCollider>().enabled = true;
